@@ -25,13 +25,17 @@ body {
 }
 
 .logo {
-    font-size: 25px;
     color: #ededed;
     text-decoration: none;
     font-weight: 600;
     cursor: pointer;
     opacity: 0;
     animation: slideRight 1s ease forwards;
+    width: 10%;
+}
+
+.logo > img {
+    width: 100%;
 }
 
 .navbar  a {
