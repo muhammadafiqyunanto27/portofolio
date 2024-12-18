@@ -11,46 +11,87 @@
 
 <body>
     <header class="header">
-        <a href="./index.html" class="logo"><img src="./assets/Cuplikan_layar_2024-12-17_134000-removebg-preview.png" alt="MAY"></a>
+        <a href="./index.html" class="logo">
+            <img id="logo-image" src="./assets/Cuplikan_layar_2024-12-17_134000-removebg-preview.png" alt="Logo MAY">
+        </a>
         <nav class="navbar">
-
-            <a href="" style="--i:1;"><i class='bx bx-sun'></i></a>
-            <a href="" style="--i:2;" class="active">Home</a>
+            <a href="#" style="--i:1;" class="toggle-theme"><i class='bx bx-sun'></i></a>
+            <a href="./index.html" style="--i:2;" class="active">Home</a>
             <a href="./about.html" style="--i:3;">About</a>
-            <a href="" style="--i:4;">Portofolio</a>
-            <a href="" style="--i:5;">Contact</a>
+            <a href="./portofolio.html" style="--i:4;">Portfolio</a>
+            <a href="./contact.html" style="--i:5;">Contact</a>
         </nav>
     </header>
 
     <div class="home">
         <div class="home-content">
-            <h1>
-                Hi I'm
-            </h1>
+            <h1>Hi, I'm</h1>
             <h1>Muhammad Afiq Yunanto</h1>
             <h3>Fullstack Web Developer</h3>
             <p>Seorang Fullstack Developer dengan kemampuan menguasai teknologi frontend dan backend seperti HTML, CSS,
-                JavaScript, React.js, Node.js,PHP, Laravel, dan MySQL. Memiliki pengalaman dalam membangun aplikasi web dinamis dan
-                skalabel dengan pendekatan Agile</p>
+                JavaScript, React.js, Node.js, PHP, Laravel, dan MySQL. Memiliki pengalaman dalam membangun aplikasi web
+                dinamis dan skalabel dengan pendekatan Agile.</p>
             <div class="btn-box">
-                <a href="">Hire Me</a>
-                <a href="">Let's talk</a>
+                <a href="https://api.whatsapp.com/send/?phone=6282219785260&text&type=phone_number&app_absent=0"
+                    target="_blank">Hire Me</a>
+                <a href="https://api.whatsapp.com/send/?phone=6282219785260&text&type=phone_number&app_absent=0"
+                    target="_blank">Let's talk</a>
             </div>
         </div>
 
         <div class="home-sci">
-            <a href="" style="--i:1;"><i class='bx bxl-linkedin-square'></i></a>
-            <a href="" style="--i:2;"><i class='bx bxl-github'></i></a>
-            <a href="" style="--i:3;"><i class='bx bxl-instagram'></i></a>
-            <a href="" style="--i:4;"><i class='bx bxl-gmail'></i></a>
-            <a href="" style="--i:4;"><i class='bx bxl-youtube'></i></a>
-
+            <a href="https://id.linkedin.com/in/muhammad-afiq-yunanto-093391296" target="_blank" style="--i:1;"><i
+                    class='bx bxl-linkedin-square'></i></a>
+            <a href="https://github.com/muhammadafiqyunanto27" target="_blank" style="--i:2;"><i
+                    class='bx bxl-github'></i></a>
+            <a href="https://www.instagram.com/muhammadafiqyunanto/" target="_blank" style="--i:3;"><i
+                    class='bx bxl-instagram'></i></a>
+            <a href="mailto:muhammadafiqyunanto@gmail.com" target="_blank" style="--i:4;"><i class='bx bxl-gmail'></i></a>
+            <a href="https://www.youtube.com/@Muhammadafiqyunanto" target="_blank" style="--i:5;"><i
+                    class='bx bxl-youtube'></i></a>
         </div>
     </div>
 
     <div class="hero-img">
-        <img src="./assets/port-afiq-removebg-preview.png" alt="">
+        <img src="./assets/port-afiq-removebg-preview.png" alt="Foto Profil Muhammad Afiq Yunanto">
     </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const toggleModeButton = document.querySelector('.toggle-theme');
+            const body = document.body;
+            const logoImage = document.getElementById('logo-image');
+
+            if (logoImage && toggleModeButton) {
+                const updateLogo = () => {
+                    logoImage.src = body.classList.contains('light-mode')
+                        ? "./assets/Cuplikan_layar_2024-12-17_132550-removebg-preview.png"
+                        : "./assets/Cuplikan_layar_2024-12-17_134000-removebg-preview.png";
+                };
+
+                if (localStorage.getItem('theme') === 'light') {
+                    body.classList.add('light-mode');
+                    toggleModeButton.innerHTML = "<i class='bx bx-moon'></i>";
+                    updateLogo();
+                }
+
+                toggleModeButton.addEventListener('click', () => {
+                    if (body.classList.contains('light-mode')) {
+                        body.classList.remove('light-mode');
+                        toggleModeButton.innerHTML = "<i class='bx bx-sun'></i>";
+                        localStorage.setItem('theme', 'dark');
+                    } else {
+                        body.classList.add('light-mode');
+                        toggleModeButton.innerHTML = "<i class='bx bx-moon'></i>";
+                        localStorage.setItem('theme', 'light');
+                    }
+                    updateLogo();
+                });
+            } else {
+                console.error('Logo image or toggle button not found.');
+            }
+        });
+    </script>
 </body>
 
 </html>

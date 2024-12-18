@@ -288,3 +288,55 @@ body {
         opacity: 1;
     }
 }
+
+/* mode siang */
+/* Mode Siang */
+body.light-mode {
+    background-color: #ffffff;
+    color: #081b29;
+}
+
+body.light-mode .navbar > a:hover,
+body.light-mode .navbar > a.active,
+body.light-mode .btn-box > a:hover {
+    color: #ff7b00;
+}
+
+body.light-mode .home-content > h3 {
+    color: #ff7b00;
+}
+
+body.light-mode .home-sci > a,
+body.light-mode .navbar > a:nth-child(1) {
+    color: #ff7b00;
+    border-color: #ff7b00;
+}
+
+body.light-mode .home-sci > a:hover,
+body.light-mode .navbar > a:nth-child(1):hover {
+    color: #ffffff;
+}
+
+body.light-mode .home-sci > a:hover::before,
+body.light-mode .navbar > a:nth-child(1):hover::before {
+    background: #ff7b00;
+}
+
+body.light-mode .btn-box > a {
+    background-color: #ff7b00;
+    border-color: #ff7b00;
+    color: #ffffff;
+}
+
+body.light-mode .btn-box > a:nth-child(2) {
+    background: transparent;
+    color: #ff7b00;
+}
+
+body.light-mode .btn-box > a:nth-child(2):hover {
+    color: #ffffff;
+}
+
+body.light-mode .btn-box a::before {
+    background: #ff7b00;
+}
