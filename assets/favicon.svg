@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="MAY">
+    <title>MAY</title>
+    <rect width="64" height="64" rx="15" fill="#000000" />
+    <rect x="1.25" y="1.25" width="61.5" height="61.5" rx="13.75" fill="none" stroke="#22b4f2" stroke-opacity="0.32" stroke-width="1.5" />
+    <text x="32" y="42"
+        font-family="Plus Jakarta Sans, Segoe UI, Arial, sans-serif"
+        font-size="24" font-weight="800" letter-spacing="-1"
+        text-anchor="middle" fill="#22b4f2">MAY</text>
+</svg>

@@ -1,26 +1,507 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id" data-theme="dark" class="no-js">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> About Me </title>
+
+    <title>Tentang — Muhammad Afiq Yunanto</title>
+    <meta name="description" content="Pengalaman, pendidikan, dan keahlian Muhammad Afiq Yunanto sebagai Fullstack Web Developer.">
+    <meta name="author" content="Muhammad Afiq Yunanto">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://afiq-portofolio.vercel.app/about.html">
+
+    <meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)">
+    <meta name="theme-color" content="#fbfbfc" media="(prefers-color-scheme: light)">
+
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="id_ID">
+    <meta property="og:title" content="Tentang — Muhammad Afiq Yunanto">
+    <meta property="og:description" content="Pengalaman, pendidikan, dan keahlian seorang Fullstack Web Developer.">
+    <meta property="og:url" content="https://afiq-portofolio.vercel.app/about.html">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <link rel="icon" href="./assets/favicon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="./assets/portrait.png">
+    <link rel="manifest" href="./site.webmanifest">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap">
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css">
+
+    <link rel="stylesheet" href="./styles/tokens.css">
+    <link rel="stylesheet" href="./styles/base.css">
+    <link rel="stylesheet" href="./styles/components.css">
+    <link rel="stylesheet" href="./styles/pages.css">
+
+    <script>
+        (function () {
+            var root = document.documentElement;
+            root.classList.remove("no-js");
+            try {
+                var stored = window.localStorage.getItem("may-portfolio-theme");
+                var theme = stored || (window.matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark");
+                root.setAttribute("data-theme", theme);
+            } catch (error) {
+                root.setAttribute("data-theme", "dark");
+            }
+        })();
+    </script>
 </head>
+
 <body>
-    
+    <a class="skip-link" href="#main">Lompat ke konten utama</a>
 
     <header class="header">
-        <a href="./index.html" class="logo">MAY</a>
-        <nav class="navbar">
+        <div class="container header__inner">
+            <a class="brand" href="./index.html" aria-label="Muhammad Afiq Yunanto — beranda">
+                <img class="brand__logo" src="./assets/logo-dark.png"
+                    data-logo-dark="./assets/logo-dark.png" data-logo-light="./assets/logo-light.png"
+                    alt="Logo Muhammad Afiq Yunanto" width="106" height="30">
+            </a>
 
-            <a href="" style="--i:1;"><i class='bx bx-sun'></i></a>
-            <a href="./index.html" style="--i:2;" class="active">Home</a>
-            <a href="./about.html" style="--i:3;">About</a>
-            <a href="./portofolio.html" style="--i:4;">Portofolio</a>
-            <a href="./contact.html" style="--i:5;">Contact</a>
-        </nav>
+            <nav class="nav" id="nav" aria-label="Navigasi utama">
+                <a class="nav__link" href="./index.html">Home</a>
+                <a class="nav__link" href="./about.html">About</a>
+                <a class="nav__link" href="./portofolio.html">Portofolio</a>
+                <a class="nav__link" href="./contact.html">Contact</a>
+            </nav>
+
+            <div class="header__controls">
+                <button class="icon-btn theme-toggle" type="button" aria-label="Ganti tema terang/gelap">
+                    <i class="bx bx-sun icon-sun" aria-hidden="true"></i>
+                    <i class="bx bx-moon icon-moon" aria-hidden="true"></i>
+                </button>
+                <button class="icon-btn nav-toggle" type="button" aria-label="Buka menu" aria-expanded="false"
+                    aria-controls="nav">
+                    <span class="nav-toggle__bars" aria-hidden="true"></span>
+                </button>
+            </div>
+        </div>
     </header>
 
+    <main id="main">
+        <section class="page-head container">
+            <span class="eyebrow">Tentang</span>
+            <h1 class="page-head__title">Saya belajar dengan membangun</h1>
+            <p class="page-head__lead">
+                Bukan orang yang percaya pada coba-coba tanpa arah. Satu proyek, satu kesalahan,
+                satu perbaikan, lalu lanjut.
+            </p>
+            <nav class="breadcrumb" aria-label="Remah roti">
+                <a href="./index.html">Home</a>
+                <span class="breadcrumb__sep" aria-hidden="true">/</span>
+                <span>About</span>
+            </nav>
+        </section>
 
+        <!-- ================= BIO ================= -->
+        <section class="section" id="profil" style="padding-top:var(--space-lg)">
+            <div class="container about-grid">
+                <div class="prose reveal">
+                    <p>
+                        Nama saya <strong>Muhammad Afiq Yunanto</strong>. Saya mulai menulis kode saat
+                        belajar HTML di sekolah, langsung mencoba membuat satu halaman berisi nama
+                        dan foto. Tidak ada yang berjalan mulus — layout berantakan, gambar tidak
+                        muncul, dan saya hampir menyerah.
+                    </p>
+                    <p>
+                        Titik baliknya ketika saya sadar: kesalahan di browser adalah pelajaran
+                        terbaik yang pernah saya dapat. Dari situ saya belajar JavaScript secara
+                        bertahap, lalu beralih ke framework frontend, backend, dan basis data.
+                    </p>
+                    <p>
+                        Karena itu, cara saya belajar terasa melompat-lompat. Saya sering mengerjakan
+                        proyek kecil hanya untuk memahami satu konsep — membuat API CRUD,
+                        menghitung zakat dengan JavaScript murni, membangun generator QR. Semua
+                        repository itu publik dan masih bisa dibuka.
+                    </p>
+                    <p>
+                        Yang membuat saya bertahan adalah kesukaan pada prosesnya. Mengubah
+                        kebutuhan, menemukan bug yang elusive, lalu menyelesaikannya dengan cara yang
+                        elegan — itu bagian yang paling saya nikmati.
+                    </p>
 
+                    <div class="cluster" style="margin-top:var(--space-lg)">
+                        <span class="badge badge--accent">
+                            <span class="badge__dot" aria-hidden="true"></span> Terbuka untuk kerja sama
+                        </span>
+                        <span class="badge">Magang &amp; Freelance</span>
+                        <span class="badge">Remote friendly</span>
+                    </div>
+                </div>
+
+                <aside class="about-side reveal">
+                    <div class="card">
+                        <div class="facts">
+                            <div class="facts__row">
+                                <span class="facts__key">Nama</span>
+                                <span class="facts__val">Muhammad Afiq Yunanto</span>
+                            </div>
+                            <div class="facts__row">
+                                <span class="facts__key">Peran</span>
+                                <span class="facts__val">Fullstack Developer</span>
+                            </div>
+                            <div class="facts__row">
+                                <span class="facts__key">Lokasi</span>
+                                <span class="facts__val">Indonesia</span>
+                            </div>
+                            <div class="facts__row">
+                                <span class="facts__key">Bahasa</span>
+                                <span class="facts__val">Indonesia, Inggris</span>
+                            </div>
+                            <div class="facts__row">
+                                <span class="facts__key">Fokus</span>
+                                <span class="facts__val">Web App, REST API</span>
+                            </div>
+                            <div class="facts__row">
+                                <span class="facts__key">Status</span>
+                                <span class="facts__val" style="color:var(--success)">Tersedia</span>
+                            </div>
+                        </div>
+                        <a class="btn btn--primary btn--block" style="margin-top:var(--space-md)" href="./contact.html">
+                            Hubungi Saya <i class="bx bx-right-arrow-alt" aria-hidden="true"></i>
+                        </a>
+                    </div>
+
+                    <div class="card">
+                        <h2 class="footer__title">Temukan saya</h2>
+                        <div class="socials">
+                            <a class="socials__link" href="https://github.com/muhammadafiqyunanto27" target="_blank"
+                                rel="noopener" aria-label="GitHub"><i class="bx bxl-github" aria-hidden="true"></i></a>
+                            <a class="socials__link" href="https://id.linkedin.com/in/muhammad-afiq-yunanto-093391296"
+                                target="_blank" rel="noopener" aria-label="LinkedIn"><i class="bx bxl-linkedin-square"
+                                    aria-hidden="true"></i></a>
+                            <a class="socials__link" href="https://www.instagram.com/muhammadafiqyunanto/" target="_blank"
+                                rel="noopener" aria-label="Instagram"><i class="bx bxl-instagram" aria-hidden="true"></i></a>
+                            <a class="socials__link" href="https://www.youtube.com/@Muhammadafiqyunanto" target="_blank"
+                                rel="noopener" aria-label="YouTube"><i class="bx bxl-youtube" aria-hidden="true"></i></a>
+                            <a class="socials__link" href="mailto:muhammadafiqyunanto@gmail.com" aria-label="Email">
+                                <i class="bx bxl-gmail" aria-hidden="true"></i>
+                            </a>
+                        </div>
+                    </div>
+                </aside>
+            </div>
+        </section>
+
+        <!-- ================= SKILLS ================= -->
+        <section class="section" id="skill">
+            <div class="container">
+                <div class="section__head reveal">
+                    <span class="eyebrow">Keahlian</span>
+                    <h2 class="section__title">Seberapa jauh saya bisa</h2>
+                    <p class="section__lead">
+                        Angka ini perkiraan jujur, diukur dari berapa sering saya memakai teknologi
+                        tersebut di project nyata — bukan dari course yang pernah saya tonton.
+                    </p>
+                </div>
+
+                <div class="skill-columns">
+                    <div class="skill-group reveal">
+                        <h3 class="skill-group__title">Frontend</h3>
+                        <div class="skill">
+                            <div class="skill__head"><span>HTML &amp; CSS</span><span class="skill__value">92%</span></div>
+                            <div class="skill__bar"><div class="skill__fill" data-skill-fill="92"></div></div>
+                        </div>
+                        <div class="skill">
+                            <div class="skill__head"><span>JavaScript (ES2022)</span><span class="skill__value">85%</span></div>
+                            <div class="skill__bar"><div class="skill__fill" data-skill-fill="85"></div></div>
+                        </div>
+                        <div class="skill">
+                            <div class="skill__head"><span>Tailwind CSS</span><span class="skill__value">80%</span></div>
+                            <div class="skill__bar"><div class="skill__fill" data-skill-fill="80"></div></div>
+                        </div>
+                        <div class="skill">
+                            <div class="skill__head"><span>TypeScript</span><span class="skill__value">75%</span></div>
+                            <div class="skill__bar"><div class="skill__fill" data-skill-fill="75"></div></div>
+                        </div>
+                        <div class="skill">
+                            <div class="skill__head"><span>React &amp; Next.js</span><span class="skill__value">72%</span></div>
+                            <div class="skill__bar"><div class="skill__fill" data-skill-fill="72"></div></div>
+                        </div>
+                    </div>
+
+                    <div class="skill-group reveal">
+                        <h3 class="skill-group__title">Backend</h3>
+                        <div class="skill">
+                            <div class="skill__head"><span>Node.js &amp; Express</span><span class="skill__value">80%</span></div>
+                            <div class="skill__bar"><div class="skill__fill" data-skill-fill="80"></div></div>
+                        </div>
+                        <div class="skill">
+                            <div class="skill__head"><span>REST API Design</span><span class="skill__value">78%</span></div>
+                            <div class="skill__bar"><div class="skill__fill" data-skill-fill="78"></div></div>
+                        </div>
+                        <div class="skill">
+                            <div class="skill__head"><span>TypeScript (server)</span><span class="skill__value">75%</span></div>
+                            <div class="skill__bar"><div class="skill__fill" data-skill-fill="75"></div></div>
+                        </div>
+                        <div class="skill">
+                            <div class="skill__head"><span>Autentikasi &amp; JWT</span><span class="skill__value">72%</span></div>
+                            <div class="skill__bar"><div class="skill__fill" data-skill-fill="72"></div></div>
+                        </div>
+                        <div class="skill">
+                            <div class="skill__head"><span>PHP &amp; Laravel</span><span class="skill__value">70%</span></div>
+                            <div class="skill__bar"><div class="skill__fill" data-skill-fill="70"></div></div>
+                        </div>
+                        <div class="skill">
+                            <div class="skill__head"><span>Unit Testing (Vitest)</span><span class="skill__value">65%</span></div>
+                            <div class="skill__bar"><div class="skill__fill" data-skill-fill="65"></div></div>
+                        </div>
+                    </div>
+
+                    <div class="skill-group reveal">
+                        <h3 class="skill-group__title">Data &amp; Tools</h3>
+                        <div class="skill">
+                            <div class="skill__head"><span>Git &amp; GitHub</span><span class="skill__value">85%</span></div>
+                            <div class="skill__bar"><div class="skill__fill" data-skill-fill="85"></div></div>
+                        </div>
+                        <div class="skill">
+                            <div class="skill__head"><span>Vercel / Deployment</span><span class="skill__value">80%</span></div>
+                            <div class="skill__bar"><div class="skill__fill" data-skill-fill="80"></div></div>
+                        </div>
+                        <div class="skill">
+                            <div class="skill__head"><span>MySQL</span><span class="skill__value">75%</span></div>
+                            <div class="skill__bar"><div class="skill__fill" data-skill-fill="75"></div></div>
+                        </div>
+                        <div class="skill">
+                            <div class="skill__head"><span>PostgreSQL</span><span class="skill__value">70%</span></div>
+                            <div class="skill__bar"><div class="skill__fill" data-skill-fill="70"></div></div>
+                        </div>
+                        <div class="skill">
+                            <div class="skill__head"><span>Astro</span><span class="skill__value">68%</span></div>
+                            <div class="skill__bar"><div class="skill__fill" data-skill-fill="68"></div></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= TIMELINE ================= -->
+        <section class="section" id="pengalaman">
+            <div class="container">
+                <div class="section__head reveal">
+                    <span class="eyebrow">Perjalanan</span>
+                    <h2 class="section__title">Pengalaman &amp; pendidikan</h2>
+                </div>
+
+                <div class="grid" style="grid-template-columns:repeat(auto-fit,minmax(300px,1fr))">
+                    <div class="reveal">
+                        <h3 class="skill-group__title" style="margin-bottom:var(--space-md)">Pengalaman</h3>
+                        <div class="timeline">
+                            <article class="timeline__item">
+                                <p class="timeline__period">2026 — Sekarang</p>
+                                <h4 class="timeline__role">Fullstack Web Developer</h4>
+                                <p class="timeline__org">Proyek Independen &amp; Freelance</p>
+                                <ul class="timeline__list">
+                                    <li>Membangun aplikasi fullstack dengan Next.js, Express, dan PostgreSQL.</li>
+                                    <li>Menerapkan pengujian otomatis agar refactor tidak merusak fitur lama.</li>
+                                </ul>
+                            </article>
+
+                            <article class="timeline__item">
+                                <p class="timeline__period">2026</p>
+                                <h4 class="timeline__role">Magang — Manajemen Aset &amp; Asrama</h4>
+                                <p class="timeline__org">Proyek Magang</p>
+                                <ul class="timeline__list">
+                                    <li>Mengembangkan aplikasi manajemen aset dan asrama dengan Laravel.</li>
+                                    <li>Membuat fitur CRUD, autentikasi, dan laporan.</li>
+                                    <li>Belajar alur kerja industri dan standar kode bersama tim.</li>
+                                </ul>
+                            </article>
+
+                            <article class="timeline__item">
+                                <p class="timeline__period">2023 — Sekarang</p>
+                                <h4 class="timeline__role">Self-Learning &amp; Open Source</h4>
+                                <p class="timeline__org">GitHub</p>
+                                <ul class="timeline__list">
+                                    <li>Belajar mandiri lewat project kecil dan dokumentasi resmi.</li>
+                                    <li>Menulis 57+ repository publik, dari HTML sederhana sampai aplikasi fullstack.</li>
+                                    <li>Menjaga disiplin version control dan dokumentasi README.</li>
+                                </ul>
+                            </article>
+                        </div>
+                    </div>
+
+                    <div class="reveal">
+                        <h3 class="skill-group__title" style="margin-bottom:var(--space-md)">Pendidikan</h3>
+                        <div class="timeline">
+                            <article class="timeline__item">
+                                <p class="timeline__period">Sedang berlangsung</p>
+                                <h4 class="timeline__role">S1 Informatika</h4>
+                                <p class="timeline__org">Perguruan Tinggi</p>
+                                <ul class="timeline__list">
+                                    <li>Struktur Data, Basis Data, Jaringan, Pemrograman Berorientasi Objek, Pemrograman Web.</li>
+                                    <li>Tugas besar dan proyek kelompok dikerjakan lewat GitHub.</li>
+                                </ul>
+                            </article>
+
+                            <article class="timeline__item">
+                                <p class="timeline__period">2023</p>
+                                <h4 class="timeline__role">Fondasi Web Development</h4>
+                                <p class="timeline__org">Mandiri</p>
+                                <ul class="timeline__list">
+                                    <li>Menguasai semantik HTML dan CSS modern dari nol.</li>
+                                    <li>Memahami DOM, event, asynchronous JavaScript, dan Fetch API.</li>
+                                </ul>
+                            </article>
+
+                            <article class="timeline__item">
+                                <p class="timeline__period">Berlangsung</p>
+                                <h4 class="timeline__role">Sertifikasi</h4>
+                                <p class="timeline__org">Udemy · Dicoding · Lainnya</p>
+                                <ul class="timeline__list">
+                                    <li>Kursus JavaScript, Node.js, dan PHP — langsung dipraktikkan di project.</li>
+                                    <li>Target berikutnya: sertifikasi cloud dan unit testing.</li>
+                                </ul>
+                            </article>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= HOW I WORK ================= -->
+        <section class="section" id="prinsip">
+            <div class="container">
+                <div class="section__head reveal">
+                    <span class="eyebrow">Prinsip kerja</span>
+                    <h2 class="section__title">Empat hal yang sayapegang</h2>
+                </div>
+
+                <div class="capabilities">
+                    <article class="capability reveal">
+                        <span class="capability__label">01</span>
+                        <div>
+                            <h3 class="capability__title">Kode yang bisa dirawat</h3>
+                            <p class="capability__text">
+                                Saya menulis agar orang lain — termasuk saya di masa depan —
+                                gampang membaca. Struktur jelas, nama variabel bermakna, komentar
+                                hanya di tempat yang perlu.
+                            </p>
+                        </div>
+                    </article>
+
+                    <article class="capability reveal">
+                        <span class="capability__label">02</span>
+                        <div>
+                            <h3 class="capability__title">Jujur soal kemampuan</h3>
+                            <p class="capability__text">
+                                Saya lebih suka bilang "belum bisa" daripada mengklaim sesuatu
+                                belum dikuasai. Portofolio ini menunjukkan apa yang benar-benar saya
+                                bangun.
+                            </p>
+                        </div>
+                    </article>
+
+                    <article class="capability reveal">
+                        <span class="capability__label">03</span>
+                        <div>
+                            <h3 class="capability__title">Terus belajar</h3>
+                            <p class="capability__text">
+                                Teknologi web berubah cepat. Saya berusaha mempelajari minimal satu hal
+                                baru setiap bulanan dan langsung mempraktikkannya.
+                            </p>
+                        </div>
+                    </article>
+
+                    <article class="capability reveal">
+                        <span class="capability__label">04</span>
+                        <div>
+                            <h3 class="capability__title">Kolaboratif</h3>
+                            <p class="capability__text">
+                                Saya peduli pada konteks, bukan ego. Kalau ada cara yang lebih baik
+                                dari usulan saya, saya dengan senang hati beralih.
+                            </p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= CTA ================= -->
+        <section class="section">
+            <div class="container">
+                <div class="cta glass reveal">
+                    <span class="eyebrow">Langkah berikutnya</span>
+                    <h2 class="cta__title" style="margin-top:var(--space-sm)">Tertarik bekerja sama?</h2>
+                    <p class="cta__text">
+                        Kalau Anda sedang membuka lowongan magang atau freelance, saya sangat
+                        tertarik mendengarnya. Mari ngobrol.
+                    </p>
+                    <div class="cta__actions">
+                        <a class="btn btn--primary" href="./contact.html">
+                            <i class="bx bx-envelope" aria-hidden="true"></i> Kirim Pesan
+                        </a>
+                        <a class="btn btn--ghost" href="./portofolio.html">
+                            Lihat Portofolio <i class="bx bx-right-arrow-alt" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__grid">
+                <div>
+                    <a class="brand" href="./index.html">
+                        <img class="brand__logo" src="./assets/logo-dark.png" data-logo-dark="./assets/logo-dark.png"
+                            data-logo-light="./assets/logo-light.png" alt="Logo Muhammad Afiq Yunanto" width="106"
+                            height="30">
+                    </a>
+                    <p class="footer__text">
+                        Fullstack Web Developer. Builds clean, measurable web apps that people
+                        actually use.
+                    </p>
+                    <div class="socials socials--footer" style="margin-top:var(--space-md)">
+                        <a class="socials__link" href="https://github.com/muhammadafiqyunanto27" target="_blank"
+                            rel="noopener" aria-label="GitHub"><i class="bx bxl-github" aria-hidden="true"></i></a>
+                        <a class="socials__link" href="https://id.linkedin.com/in/muhammad-afiq-yunanto-093391296"
+                            target="_blank" rel="noopener" aria-label="LinkedIn"><i class="bx bxl-linkedin-square"
+                                aria-hidden="true"></i></a>
+                        <a class="socials__link" href="https://www.instagram.com/muhammadafiqyunanto/" target="_blank"
+                            rel="noopener" aria-label="Instagram"><i class="bx bxl-instagram" aria-hidden="true"></i></a>
+                        <a class="socials__link" href="mailto:muhammadafiqyunanto@gmail.com" aria-label="Email">
+                            <i class="bx bxl-gmail" aria-hidden="true"></i>
+                        </a>
+                        <a class="socials__link" href="https://www.youtube.com/@Muhammadafiqyunanto" target="_blank"
+                            rel="noopener" aria-label="YouTube"><i class="bx bxl-youtube" aria-hidden="true"></i></a>
+                    </div>
+                </div>
+
+                <div>
+                    <h2 class="footer__title">Halaman</h2>
+                    <ul class="footer__list">
+                        <li><a href="./index.html">Home</a></li>
+                        <li><a href="./about.html">About</a></li>
+                        <li><a href="./portofolio.html">Portofolio</a></li>
+                        <li><a href="./contact.html">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h2 class="footer__title">Kontak</h2>
+                    <ul class="footer__list">
+                        <li><a href="mailto:muhammadafiqyunanto@gmail.com">muhammadafiqyunanto@gmail.com</a></li>
+                        <li><a href="https://wa.me/6282219785260" target="_blank" rel="noopener">+62 822-1978-5260</a></li>
+                        <li><a href="https://github.com/muhammadafiqyunanto27" target="_blank" rel="noopener">GitHub</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer__bottom">
+                <p>&copy; <span data-year>2026</span> Muhammad Afiq Yunanto</p>
+                <p>HTML · CSS · JavaScript — tanpa framework</p>
+            </div>
+        </div>
+    </footer>
+
+    <button class="back-to-top" type="button" aria-label="Kembali ke atas">
+        <i class="bx bx-chevron-up" aria-hidden="true"></i>
+    </button>
+
+    <script src="./js/main.js" defer></script>
 </body>
 </html>

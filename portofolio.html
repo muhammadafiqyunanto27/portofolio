@@ -1,26 +1,670 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id" data-theme="dark" class="no-js">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> My Portofolio </title>
+
+    <title>Portofolio — Muhammad Afiq Yunanto</title>
+    <meta name="description" content="Kumpulan project Muhammad Afiq Yunanto: aplikasi web fullstack, REST API, landing page, dan tool interaktif dengan React, Next.js, Node.js, dan Laravel.">
+    <meta name="author" content="Muhammad Afiq Yunanto">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://afiq-portofolio.vercel.app/portofolio.html">
+
+    <meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)">
+    <meta name="theme-color" content="#fbfbfc" media="(prefers-color-scheme: light)">
+
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="id_ID">
+    <meta property="og:title" content="Portofolio — Muhammad Afiq Yunanto">
+    <meta property="og:description" content="Project web fullstack, API, dan tool interaktif.">
+    <meta property="og:url" content="https://afiq-portofolio.vercel.app/portofolio.html">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <link rel="icon" href="./assets/favicon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="./assets/portrait.png">
+    <link rel="manifest" href="./site.webmanifest">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap">
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css">
+
+    <link rel="stylesheet" href="./styles/tokens.css">
+    <link rel="stylesheet" href="./styles/base.css">
+    <link rel="stylesheet" href="./styles/components.css">
+    <link rel="stylesheet" href="./styles/pages.css">
+
+    <script>
+        (function () {
+            var root = document.documentElement;
+            root.classList.remove("no-js");
+            try {
+                var stored = window.localStorage.getItem("may-portfolio-theme");
+                var theme = stored || (window.matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark");
+                root.setAttribute("data-theme", theme);
+            } catch (error) {
+                root.setAttribute("data-theme", "dark");
+            }
+        })();
+    </script>
 </head>
+
 <body>
-    
+    <a class="skip-link" href="#main">Lompat ke konten utama</a>
 
     <header class="header">
-        <a href="./index.html" class="logo">MAY</a>
-        <nav class="navbar">
+        <div class="container header__inner">
+            <a class="brand" href="./index.html" aria-label="Muhammad Afiq Yunanto — beranda">
+                <img class="brand__logo" src="./assets/logo-dark.png"
+                    data-logo-dark="./assets/logo-dark.png" data-logo-light="./assets/logo-light.png"
+                    alt="Logo Muhammad Afiq Yunanto" width="106" height="30">
+            </a>
 
-            <a href="" style="--i:1;"><i class='bx bx-sun'></i></a>
-            <a href="./index.html" style="--i:2;" class="active">Home</a>
-            <a href="./about.html" style="--i:3;">About</a>
-            <a href="./portofolio.html" style="--i:4;">Portofolio</a>
-            <a href="./contact.html" style="--i:5;">Contact</a>
-        </nav>
+            <nav class="nav" id="nav" aria-label="Navigasi utama">
+                <a class="nav__link" href="./index.html">Home</a>
+                <a class="nav__link" href="./about.html">About</a>
+                <a class="nav__link" href="./portofolio.html">Portofolio</a>
+                <a class="nav__link" href="./contact.html">Contact</a>
+            </nav>
+
+            <div class="header__controls">
+                <button class="icon-btn theme-toggle" type="button" aria-label="Ganti tema terang/gelap">
+                    <i class="bx bx-sun icon-sun" aria-hidden="true"></i>
+                    <i class="bx bx-moon icon-moon" aria-hidden="true"></i>
+                </button>
+                <button class="icon-btn nav-toggle" type="button" aria-label="Buka menu" aria-expanded="false"
+                    aria-controls="nav">
+                    <span class="nav-toggle__bars" aria-hidden="true"></span>
+                </button>
+            </div>
+        </div>
     </header>
 
+    <main id="main">
+        <section class="page-head container">
+            <span class="eyebrow">Portofolio</span>
+            <h1 class="page-head__title">Yang saya bangun</h1>
+            <p class="page-head__lead">
+                Mayoritas repository saya publik — kode bisa dibaca, dijalankan ulang, dan diberi
+                masukan. Saring sesuai kebutuhan Anda.
+            </p>
+            <nav class="breadcrumb" aria-label="Remah roti">
+                <a href="./index.html">Home</a>
+                <span class="breadcrumb__sep" aria-hidden="true">/</span>
+                <span>Portofolio</span>
+            </nav>
+        </section>
 
+        <section class="section" style="padding-top:var(--space-lg)">
+            <div class="container">
+                <div class="filters" role="group" aria-label="Saring project berdasarkan kategori">
+                    <button class="filter" type="button" data-filter="all" aria-pressed="true">
+                        Semua<span class="filter__count" data-filter-count>0</span>
+                    </button>
+                    <button class="filter" type="button" data-filter="frontend" aria-pressed="false">
+                        Frontend<span class="filter__count" data-filter-count>0</span>
+                    </button>
+                    <button class="filter" type="button" data-filter="backend" aria-pressed="false">
+                        Backend<span class="filter__count" data-filter-count>0</span>
+                    </button>
+                    <button class="filter" type="button" data-filter="fullstack" aria-pressed="false">
+                        Fullstack<span class="filter__count" data-filter-count>0</span>
+                    </button>
+                    <button class="filter" type="button" data-filter="laravel" aria-pressed="false">
+                        Laravel<span class="filter__count" data-filter-count>0</span>
+                    </button>
+                </div>
 
+                <p class="visually-hidden" role="status" data-work-count>Menampilkan seluruh project</p>
+
+                <div class="grid work-grid" data-work-grid>
+                    <article class="card card--hover project reveal" data-category="fullstack typescript">
+                        <div class="project__top">
+                            <span class="project__lang" style="--lang-color:#3178c6">TypeScript</span>
+                            <span class="badge">Fullstack</span>
+                        </div>
+                        <h2 class="project__title">
+                            <a href="https://ku-a.vercel.app" target="_blank" rel="noopener">KU-A — Website Kelas</a>
+                        </h2>
+                        <p class="project__desc">
+                            Website profil kelas dengan empat tingkat hak akses. Pengunjung melihat
+                            portofolio anggota dan laporan keuangan, tiap pengguna hanya mengedit
+                            bagian sesuai otoritasnya. Semua keputusan desain ada di folder
+                            <code>docs/</code>.
+                        </p>
+                        <div class="project__tags">
+                            <span class="tag">Next.js</span>
+                            <span class="tag">Tailwind</span>
+                            <span class="tag">PostgreSQL</span>
+                            <span class="tag">JWT</span>
+                        </div>
+                        <div class="project__links">
+                            <a class="project__link" href="https://ku-a.vercel.app" target="_blank" rel="noopener">
+                                <i class="bx bx-world" aria-hidden="true"></i> Demo
+                            </a>
+                            <a class="project__link" href="https://github.com/muhammadafiqyunanto27/KU-A"
+                                target="_blank" rel="noopener">
+                                <i class="bx bxl-github" aria-hidden="true"></i> Kode
+                            </a>
+                        </div>
+                    </article>
+
+                    <article class="card card--hover project reveal" data-category="fullstack javascript">
+                        <div class="project__top">
+                            <span class="project__lang" style="--lang-color:#f1e05a">JavaScript</span>
+                            <span class="badge">Fullstack</span>
+                        </div>
+                        <h2 class="project__title">
+                            <a href="https://mafyngate.vercel.app" target="_blank" rel="noopener">MafynGate</a>
+                        </h2>
+                        <p class="project__desc">
+                            Aplikasi gerbang sekolah, dipisah dua repository: frontend Next.js untuk
+                            antarmuka, backend JavaScript untuk REST API, autentikasi, dan data
+                            kehadiran.
+                        </p>
+                        <div class="project__tags">
+                            <span class="tag">Next.js</span>
+                            <span class="tag">Node.js</span>
+                            <span class="tag">REST API</span>
+                        </div>
+                        <div class="project__links">
+                            <a class="project__link" href="https://mafyngate.vercel.app" target="_blank" rel="noopener">
+                                <i class="bx bx-world" aria-hidden="true"></i> Demo
+                            </a>
+                            <a class="project__link"
+                                href="https://github.com/muhammadafiqyunanto27/mafyngate-frontend" target="_blank"
+                                rel="noopener">
+                                <i class="bx bxl-github" aria-hidden="true"></i> Frontend
+                            </a>
+                            <a class="project__link"
+                                href="https://github.com/muhammadafiqyunanto27/mafyngate-backend" target="_blank"
+                                rel="noopener">
+                                <i class="bx bxl-github" aria-hidden="true"></i> Backend
+                            </a>
+                        </div>
+                    </article>
+
+                    <article class="card card--hover project reveal" data-category="frontend astro">
+                        <div class="project__top">
+                            <span class="project__lang" style="--lang-color:#ff5a03">Astro</span>
+                            <span class="badge">Frontend</span>
+                        </div>
+                        <h2 class="project__title">
+                            <a href="https://rqcahayakebaikan.web.id/" target="_blank" rel="noopener">RQCK Landing Page</a>
+                        </h2>
+                        <p class="project__desc">
+                            Landing page untuk lembaga belajar Al-Qur'an. Dibangun dengan Astro agar
+                            cepat dimuat dan mudah dikelola editor non-teknis.
+                        </p>
+                        <div class="project__tags">
+                            <span class="tag">Astro</span>
+                            <span class="tag">SEO</span>
+                            <span class="tag">Responsif</span>
+                        </div>
+                        <div class="project__links">
+                            <a class="project__link" href="https://rqcahayakebaikan.web.id/" target="_blank"
+                                rel="noopener">
+                                <i class="bx bx-world" aria-hidden="true"></i> Demo
+                            </a>
+                            <a class="project__link" href="https://github.com/muhammadafiqyunanto27/rqck-landing"
+                                target="_blank" rel="noopener">
+                                <i class="bx bxl-github" aria-hidden="true"></i> Kode
+                            </a>
+                        </div>
+                    </article>
+
+                    <article class="card card--hover project reveal" data-category="fullstack laravel">
+                        <div class="project__top">
+                            <span class="project__lang" style="--lang-color:#4F5D95">Laravel</span>
+                            <span class="badge">Magang</span>
+                        </div>
+                        <h2 class="project__title">
+                            <a href="https://github.com/muhammadafiqyunanto27/magang-manajemen-aset-dan-asrama"
+                                target="_blank" rel="noopener">Manajemen Aset &amp; Asrama</a>
+                        </h2>
+                        <p class="project__desc">
+                            Aplikasi magang untuk mengelola inventaris aset dan data penghuni asrama.
+                            Mencakup CRUD, autentikasi, dan pelaporan.
+                        </p>
+                        <div class="project__tags">
+                            <span class="tag">Laravel</span>
+                            <span class="tag">Blade</span>
+                            <span class="tag">CRUD</span>
+                        </div>
+                        <div class="project__links">
+                            <a class="project__link"
+                                href="https://github.com/muhammadafiqyunanto27/magang-manajemen-aset-dan-asrama"
+                                target="_blank" rel="noopener">
+                                <i class="bx bxl-github" aria-hidden="true"></i> Kode
+                            </a>
+                        </div>
+                    </article>
+
+                    <article class="card card--hover project reveal" data-category="fullstack typescript">
+                        <div class="project__top">
+                            <span class="project__lang" style="--lang-color:#3178c6">TypeScript</span>
+                            <span class="badge">Fullstack</span>
+                        </div>
+                        <h2 class="project__title">
+                            <a href="https://ppqita-sts-2-psb-app-afiq.vercel.app" target="_blank" rel="noopener">PPQita — Aplikasi PSB</a>
+                        </h2>
+                        <p class="project__desc">
+                            Aplikasi pendaftaran siswa baru: formulir bertahap, validasi input, dan
+                            pengelolaan data pendaftar.
+                        </p>
+                        <div class="project__tags">
+                            <span class="tag">TypeScript</span>
+                            <span class="tag">Validasi</span>
+                        </div>
+                        <div class="project__links">
+                            <a class="project__link" href="https://ppqita-sts-2-psb-app-afiq.vercel.app" target="_blank"
+                                rel="noopener">
+                                <i class="bx bx-world" aria-hidden="true"></i> Demo
+                            </a>
+                            <a class="project__link"
+                                href="https://github.com/muhammadafiqyunanto27/ppqita-sts-2-psb-app--afiq-" target="_blank"
+                                rel="noopener">
+                                <i class="bx bxl-github" aria-hidden="true"></i> Kode
+                            </a>
+                        </div>
+                    </article>
+
+                    <article class="card card--hover project reveal" data-category="backend typescript">
+                        <div class="project__top">
+                            <span class="project__lang" style="--lang-color:#3178c6">TypeScript</span>
+                            <span class="badge">Backend</span>
+                        </div>
+                        <h2 class="project__title">
+                            <a href="https://github.com/muhammadafiqyunanto27/aplikasi-kasir-console"
+                                target="_blank" rel="noopener">Aplikasi Kasir Console</a>
+                        </h2>
+                        <p class="project__desc">
+                            Program kasir berbasis terminal untuk mengelola menu, keranjang, dan
+                            menghitung total. Menekankan logika bisnis yang jelas tanpa bergantung
+                            pada antarmuka.
+                        </p>
+                        <div class="project__tags">
+                            <span class="tag">TypeScript</span>
+                            <span class="tag">CLI</span>
+                        </div>
+                        <div class="project__links">
+                            <a class="project__link"
+                                href="https://github.com/muhammadafiqyunanto27/aplikasi-kasir-console" target="_blank"
+                                rel="noopener">
+                                <i class="bx bxl-github" aria-hidden="true"></i> Kode
+                            </a>
+                        </div>
+                    </article>
+
+                    <article class="card card--hover project reveal" data-category="fullstack typescript">
+                        <div class="project__top">
+                            <span class="project__lang" style="--lang-color:#3178c6">TypeScript</span>
+                            <span class="badge">Fullstack</span>
+                        </div>
+                        <h2 class="project__title">
+                            <a href="https://github.com/muhammadafiqyunanto27/aplikasi-pencatatan-hafalan"
+                                target="_blank" rel="noopener">Pencatatan Hafalan</a>
+                        </h2>
+                        <p class="project__desc">
+                            Aplikasi mencatat dan memantau progres hafalan Al-Qur'an, dengan rekap
+                            bertingkat sehingga progres mudah dievaluasi dari waktu ke waktu.
+                        </p>
+                        <div class="project__tags">
+                            <span class="tag">TypeScript</span>
+                            <span class="tag">CRUD</span>
+                            <span class="tag">Rekap</span>
+                        </div>
+                        <div class="project__links">
+                            <a class="project__link"
+                                href="https://github.com/muhammadafiqyunanto27/aplikasi-pencatatan-hafalan"
+                                target="_blank" rel="noopener">
+                                <i class="bx bxl-github" aria-hidden="true"></i> Kode
+                            </a>
+                        </div>
+                    </article>
+
+                    <article class="card card--hover project reveal" data-category="frontend javascript">
+                        <div class="project__top">
+                            <span class="project__lang" style="--lang-color:#f1e05a">JavaScript</span>
+                            <span class="badge">Frontend</span>
+                        </div>
+                        <h2 class="project__title">
+                            <a href="https://kalkulator-pwa-eight.vercel.app" target="_blank" rel="noopener">Kalkulator PWA</a>
+                        </h2>
+                        <p class="project__desc">
+                            Kalkulator yang bisa dipasang di layar utama ponsel. Dibangun dengan
+                            service worker agar tetap berfungsi saat internet terputus.
+                        </p>
+                        <div class="project__tags">
+                            <span class="tag">PWA</span>
+                            <span class="tag">Offline</span>
+                        </div>
+                        <div class="project__links">
+                            <a class="project__link" href="https://kalkulator-pwa-eight.vercel.app" target="_blank"
+                                rel="noopener">
+                                <i class="bx bx-world" aria-hidden="true"></i> Demo
+                            </a>
+                            <a class="project__link" href="https://github.com/muhammadafiqyunanto27/kalkulator-pwa"
+                                target="_blank" rel="noopener">
+                                <i class="bx bxl-github" aria-hidden="true"></i> Kode
+                            </a>
+                        </div>
+                    </article>
+
+                    <article class="card card--hover project reveal" data-category="frontend html">
+                        <div class="project__top">
+                            <span class="project__lang" style="--lang-color:#e34c26">HTML</span>
+                            <span class="badge">Frontend</span>
+                        </div>
+                        <h2 class="project__title">
+                            <a href="https://kalkulator-zakat-mal.vercel.app/" target="_blank" rel="noopener">Kalkulator Zakat Mal</a>
+                        </h2>
+                        <p class="project__desc">
+                            Menghitung hak zakat wajib dari nilai harta berdasarkan kategori barang
+                            dan tempo masa ijab. Repository dengan bintang terbanyak di akun saya.
+                        </p>
+                        <div class="project__tags">
+                            <span class="tag">JavaScript</span>
+                            <span class="tag">Zakat</span>
+                        </div>
+                        <div class="project__links">
+                            <a class="project__link" href="https://kalkulator-zakat-mal.vercel.app/" target="_blank"
+                                rel="noopener">
+                                <i class="bx bx-world" aria-hidden="true"></i> Demo
+                            </a>
+                            <a class="project__link"
+                                href="https://github.com/muhammadafiqyunanto27/kalkulator-zakat-mal" target="_blank"
+                                rel="noopener">
+                                <i class="bx bxl-github" aria-hidden="true"></i> Kode
+                            </a>
+                        </div>
+                    </article>
+
+                    <article class="card card--hover project reveal" data-category="frontend javascript">
+                        <div class="project__top">
+                            <span class="project__lang" style="--lang-color:#f1e05a">JavaScript</span>
+                            <span class="badge">Frontend</span>
+                        </div>
+                        <h2 class="project__title">
+                            <a href="https://regenfit.vercel.app" target="_blank" rel="noopener">RegenFit</a>
+                        </h2>
+                        <p class="project__desc">
+                            Aplikasi kebugaran dengan tampilan bersih dan interaksi ringan. Fokus pada
+                            pengalaman pengguna di layar kecil dan aksesibilitas kontrol.
+                        </p>
+                        <div class="project__tags">
+                            <span class="tag">JavaScript</span>
+                            <span class="tag">UI</span>
+                        </div>
+                        <div class="project__links">
+                            <a class="project__link" href="https://regenfit.vercel.app" target="_blank" rel="noopener">
+                                <i class="bx bx-world" aria-hidden="true"></i> Demo
+                            </a>
+                            <a class="project__link" href="https://github.com/muhammadafiqyunanto27/regenfit"
+                                target="_blank" rel="noopener">
+                                <i class="bx bxl-github" aria-hidden="true"></i> Kode
+                            </a>
+                        </div>
+                    </article>
+
+                    <article class="card card--hover project reveal" data-category="fullstack javascript">
+                        <div class="project__top">
+                            <span class="project__lang" style="--lang-color:#f1e05a">JavaScript</span>
+                            <span class="badge">Fullstack</span>
+                        </div>
+                        <h2 class="project__title">
+                            <a href="https://protoype-management-keuangan.vercel.app" target="_blank"
+                                rel="noopener">Prototipe Manajemen Keuangan</a>
+                        </h2>
+                        <p class="project__desc">
+                            Prototipe untuk mencatat pemasukan, pengeluaran, dan saldo. Masih tahap
+                            prototipe dan jadi bahan belajar saya.
+                        </p>
+                        <div class="project__tags">
+                            <span class="tag">JavaScript</span>
+                            <span class="tag">Prototipe</span>
+                        </div>
+                        <div class="project__links">
+                            <a class="project__link" href="https://protoype-management-keuangan.vercel.app"
+                                target="_blank" rel="noopener">
+                                <i class="bx bx-world" aria-hidden="true"></i> Demo
+                            </a>
+                            <a class="project__link"
+                                href="https://github.com/muhammadafiqyunanto27/protoype-management-keuangan"
+                                target="_blank" rel="noopener">
+                                <i class="bx bxl-github" aria-hidden="true"></i> Kode
+                            </a>
+                        </div>
+                    </article>
+
+                    <article class="card card--hover project reveal" data-category="frontend typescript">
+                        <div class="project__top">
+                            <span class="project__lang" style="--lang-color:#3178c6">TypeScript</span>
+                            <span class="badge">Frontend</span>
+                        </div>
+                        <h2 class="project__title">
+                            <a href="https://github.com/muhammadafiqyunanto27/qr-generator" target="_blank"
+                                rel="noopener">QR Generator</a>
+                        </h2>
+                        <p class="project__desc">
+                            Generator kode QR langsung di browser. Seluruh proses berjalan di sisi
+                            klien, jadi tidak ada data yang dikirim ke server mana pun.
+                        </p>
+                        <div class="project__tags">
+                            <span class="tag">TypeScript</span>
+                            <span class="tag">QR</span>
+                        </div>
+                        <div class="project__links">
+                            <a class="project__link" href="https://github.com/muhammadafiqyunanto27/qr-generator"
+                                target="_blank" rel="noopener">
+                                <i class="bx bxl-github" aria-hidden="true"></i> Kode
+                            </a>
+                        </div>
+                    </article>
+
+                    <article class="card card--hover project reveal" data-category="frontend html">
+                        <div class="project__top">
+                            <span class="project__lang" style="--lang-color:#e34c26">HTML</span>
+                            <span class="badge">Frontend</span>
+                        </div>
+                        <h2 class="project__title">
+                            <a href="https://dompet-app-six.vercel.app" target="_blank" rel="noopener">Dompet App</a>
+                        </h2>
+                        <p class="project__desc">
+                            Aplikasi dompet digital sederhana untuk mencatat transaksi harian,
+                            dengan tampilan ringkas dan ringan.
+                        </p>
+                        <div class="project__tags">
+                            <span class="tag">HTML</span>
+                            <span class="tag">CRUD</span>
+                            <span class="tag">LocalStorage</span>
+                        </div>
+                        <div class="project__links">
+                            <a class="project__link" href="https://dompet-app-six.vercel.app" target="_blank"
+                                rel="noopener">
+                                <i class="bx bx-world" aria-hidden="true"></i> Demo
+                            </a>
+                            <a class="project__link" href="https://github.com/muhammadafiqyunanto27/dompet-app"
+                                target="_blank" rel="noopener">
+                                <i class="bx bxl-github" aria-hidden="true"></i> Kode
+                            </a>
+                        </div>
+                    </article>
+
+                    <article class="card card--hover project reveal" data-category="backend laravel">
+                        <div class="project__top">
+                            <span class="project__lang" style="--lang-color:#4F5D95">Laravel</span>
+                            <span class="badge">Backend</span>
+                        </div>
+                        <h2 class="project__title">
+                            <a href="https://github.com/muhammadafiqyunanto27/daftar-pegawai" target="_blank"
+                                rel="noopener">Daftar Pegawai</a>
+                        </h2>
+                        <p class="project__desc">
+                            Aplikasi pengelolaan pegawai berbasis Laravel dengan Blade template, CRUD
+                            data karyawan, dan fitur pencarian.
+                        </p>
+                        <div class="project__tags">
+                            <span class="tag">Laravel</span>
+                            <span class="tag">Blade</span>
+                            <span class="tag">MySQL</span>
+                        </div>
+                        <div class="project__links">
+                            <a class="project__link" href="https://github.com/muhammadafiqyunanto27/daftar-pegawai"
+                                target="_blank" rel="noopener">
+                                <i class="bx bxl-github" aria-hidden="true"></i> Kode
+                            </a>
+                        </div>
+                    </article>
+
+                    <article class="card card--hover project reveal" data-category="backend laravel">
+                        <div class="project__top">
+                            <span class="project__lang" style="--lang-color:#4F5D95">Laravel</span>
+                            <span class="badge">Backend</span>
+                        </div>
+                        <h2 class="project__title">
+                            <a href="https://github.com/muhammadafiqyunanto27/todolist-laravel" target="_blank"
+                                rel="noopener">Todo List — Laravel</a>
+                        </h2>
+                        <p class="project__desc">
+                            Latihan CRUD dengan Eloquent: membuat, membaca, mengubah, dan menghapus
+                            todo beserta relasinya.
+                        </p>
+                        <div class="project__tags">
+                            <span class="tag">Laravel</span>
+                            <span class="tag">Eloquent</span>
+                            <span class="tag">CRUD</span>
+                        </div>
+                        <div class="project__links">
+                            <a class="project__link" href="https://github.com/muhammadafiqyunanto27/todolist-laravel"
+                                target="_blank" rel="noopener">
+                                <i class="bx bxl-github" aria-hidden="true"></i> Kode
+                            </a>
+                        </div>
+                    </article>
+
+                    <article class="card card--hover project reveal" data-category="backend javascript">
+                        <div class="project__top">
+                            <span class="project__lang" style="--lang-color:#f1e05a">JavaScript</span>
+                            <span class="badge">Backend</span>
+                        </div>
+                        <h2 class="project__title">
+                            <a href="https://github.com/muhammadafiqyunanto27/crud-siswa-api-nodejs"
+                                target="_blank" rel="noopener">CRUD Siswa API — Node.js</a>
+                        </h2>
+                        <p class="project__desc">
+                            REST API CRUD siswa dengan Node.js dan Express, termasuk validasi data dan
+                            penanganan error yang rapi di setiap endpoint.
+                        </p>
+                        <div class="project__tags">
+                            <span class="tag">Node.js</span>
+                            <span class="tag">Express</span>
+                            <span class="tag">REST API</span>
+                        </div>
+                        <div class="project__links">
+                            <a class="project__link"
+                                href="https://github.com/muhammadafiqyunanto27/crud-siswa-api-nodejs" target="_blank"
+                                rel="noopener">
+                                <i class="bx bxl-github" aria-hidden="true"></i> Kode
+                            </a>
+                        </div>
+                    </article>
+                </div>
+
+                <p class="work-empty" data-work-empty>Belum ada project pada kategori ini.</p>
+
+                <p class="work-note reveal">
+                    <span>Repo lengkap, termasuk latihan harian dan tugas kuliah, ada di GitHub saya.</span>
+                    <a class="btn btn--ghost btn--sm"
+                        href="https://github.com/muhammadafiqyunanto27?tab=repositories" target="_blank" rel="noopener">
+                        Buka semua repository <i class="bx bx-right-arrow-alt" aria-hidden="true"></i>
+                    </a>
+                </p>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container">
+                <div class="cta glass reveal">
+                    <span class="eyebrow">Mari lanjutkan</span>
+                    <h2 class="cta__title" style="margin-top:var(--space-sm)">Ingin melihat saya bekerja?</h2>
+                    <p class="cta__text">
+                        Saya lebih senang mendiskusikan kebutuhan Anda daripada sekadar mengirim
+                        daftar proyek. Ceritakan masalah yang sedang Anda hadapi.
+                    </p>
+                    <div class="cta__actions">
+                        <a class="btn btn--primary" href="./contact.html">
+                            <i class="bx bx-envelope" aria-hidden="true"></i> Hubungi Saya
+                        </a>
+                        <a class="btn btn--ghost" href="./about.html">
+                            Kenali saya <i class="bx bx-right-arrow-alt" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__grid">
+                <div>
+                    <a class="brand" href="./index.html">
+                        <img class="brand__logo" src="./assets/logo-dark.png" data-logo-dark="./assets/logo-dark.png"
+                            data-logo-light="./assets/logo-light.png" alt="Logo Muhammad Afiq Yunanto" width="106"
+                            height="30">
+                    </a>
+                    <p class="footer__text">
+                        Fullstack Web Developer. Builds clean, measurable web apps that people
+                        actually use.
+                    </p>
+                    <div class="socials socials--footer" style="margin-top:var(--space-md)">
+                        <a class="socials__link" href="https://github.com/muhammadafiqyunanto27" target="_blank"
+                            rel="noopener" aria-label="GitHub"><i class="bx bxl-github" aria-hidden="true"></i></a>
+                        <a class="socials__link" href="https://id.linkedin.com/in/muhammad-afiq-yunanto-093391296"
+                            target="_blank" rel="noopener" aria-label="LinkedIn"><i class="bx bxl-linkedin-square"
+                                aria-hidden="true"></i></a>
+                        <a class="socials__link" href="https://www.instagram.com/muhammadafiqyunanto/" target="_blank"
+                            rel="noopener" aria-label="Instagram"><i class="bx bxl-instagram" aria-hidden="true"></i></a>
+                        <a class="socials__link" href="mailto:muhammadafiqyunanto@gmail.com" aria-label="Email">
+                            <i class="bx bxl-gmail" aria-hidden="true"></i>
+                        </a>
+                        <a class="socials__link" href="https://www.youtube.com/@Muhammadafiqyunanto" target="_blank"
+                            rel="noopener" aria-label="YouTube"><i class="bx bxl-youtube" aria-hidden="true"></i></a>
+                    </div>
+                </div>
+
+                <div>
+                    <h2 class="footer__title">Halaman</h2>
+                    <ul class="footer__list">
+                        <li><a href="./index.html">Home</a></li>
+                        <li><a href="./about.html">About</a></li>
+                        <li><a href="./portofolio.html">Portofolio</a></li>
+                        <li><a href="./contact.html">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h2 class="footer__title">Kontak</h2>
+                    <ul class="footer__list">
+                        <li><a href="mailto:muhammadafiqyunanto@gmail.com">muhammadafiqyunanto@gmail.com</a></li>
+                        <li><a href="https://wa.me/6282219785260" target="_blank" rel="noopener">+62 822-1978-5260</a></li>
+                        <li><a href="https://github.com/muhammadafiqyunanto27" target="_blank" rel="noopener">GitHub</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer__bottom">
+                <p>&copy; <span data-year>2026</span> Muhammad Afiq Yunanto</p>
+                <p>HTML · CSS · JavaScript — tanpa framework</p>
+            </div>
+        </div>
+    </footer>
+
+    <button class="back-to-top" type="button" aria-label="Kembali ke atas">
+        <i class="bx bx-chevron-up" aria-hidden="true"></i>
+    </button>
+
+    <script src="./js/main.js" defer></script>
 </body>
 </html>

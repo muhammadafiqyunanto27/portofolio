@@ -1,26 +1,376 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id" data-theme="dark" class="no-js">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Contact Me </title>
+
+    <title>Kontak — Muhammad Afiq Yunanto</title>
+    <meta name="description" content="Hubungi Muhammad Afiq Yunanto untuk lowongan magang, proyek freelance, atau kolaborasi. Tersedia via WhatsApp, email, LinkedIn, dan GitHub.">
+    <meta name="author" content="Muhammad Afiq Yunanto">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://afiq-portofolio.vercel.app/contact.html">
+
+    <meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)">
+    <meta name="theme-color" content="#fbfbfc" media="(prefers-color-scheme: light)">
+
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="id_ID">
+    <meta property="og:title" content="Kontak — Muhammad Afiq Yunanto">
+    <meta property="og:description" content="Tersedia untuk magang, freelance, dan kolaborasi.">
+    <meta property="og:url" content="https://afiq-portofolio.vercel.app/contact.html">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <link rel="icon" href="./assets/favicon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="./assets/portrait.png">
+    <link rel="manifest" href="./site.webmanifest">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap">
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css">
+
+    <link rel="stylesheet" href="./styles/tokens.css">
+    <link rel="stylesheet" href="./styles/base.css">
+    <link rel="stylesheet" href="./styles/components.css">
+    <link rel="stylesheet" href="./styles/pages.css">
+
+    <script>
+        (function () {
+            var root = document.documentElement;
+            root.classList.remove("no-js");
+            try {
+                var stored = window.localStorage.getItem("may-portfolio-theme");
+                var theme = stored || (window.matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark");
+                root.setAttribute("data-theme", theme);
+            } catch (error) {
+                root.setAttribute("data-theme", "dark");
+            }
+        })();
+    </script>
 </head>
+
 <body>
-    
+    <a class="skip-link" href="#main">Lompat ke konten utama</a>
 
     <header class="header">
-        <a href="./index.html" class="logo">MAY</a>
-        <nav class="navbar">
+        <div class="container header__inner">
+            <a class="brand" href="./index.html" aria-label="Muhammad Afiq Yunanto — beranda">
+                <img class="brand__logo" src="./assets/logo-dark.png"
+                    data-logo-dark="./assets/logo-dark.png" data-logo-light="./assets/logo-light.png"
+                    alt="Logo Muhammad Afiq Yunanto" width="106" height="30">
+            </a>
 
-            <a href="" style="--i:1;"><i class='bx bx-sun'></i></a>
-            <a href="./index.html" style="--i:2;" class="active">Home</a>
-            <a href="./about.html" style="--i:3;">About</a>
-            <a href="./portofolio.html" style="--i:4;">Portofolio</a>
-            <a href="./contact.html" style="--i:5;">Contact</a>
-        </nav>
+            <nav class="nav" id="nav" aria-label="Navigasi utama">
+                <a class="nav__link" href="./index.html">Home</a>
+                <a class="nav__link" href="./about.html">About</a>
+                <a class="nav__link" href="./portofolio.html">Portofolio</a>
+                <a class="nav__link" href="./contact.html">Contact</a>
+            </nav>
+
+            <div class="header__controls">
+                <button class="icon-btn theme-toggle" type="button" aria-label="Ganti tema terang/gelap">
+                    <i class="bx bx-sun icon-sun" aria-hidden="true"></i>
+                    <i class="bx bx-moon icon-moon" aria-hidden="true"></i>
+                </button>
+                <button class="icon-btn nav-toggle" type="button" aria-label="Buka menu" aria-expanded="false"
+                    aria-controls="nav">
+                    <span class="nav-toggle__bars" aria-hidden="true"></span>
+                </button>
+            </div>
+        </div>
     </header>
 
+    <main id="main">
+        <section class="page-head container">
+            <span class="eyebrow">Kontak</span>
+            <h1 class="page-head__title">Mari terhubung</h1>
+            <p class="page-head__lead">
+                Lowongan magang, proyek freelance, atau sekadar ingin berdiskusi soal web
+                development — pilih cara yang paling nyaman untuk Anda.
+            </p>
+            <nav class="breadcrumb" aria-label="Remah roti">
+                <a href="./index.html">Home</a>
+                <span class="breadcrumb__sep" aria-hidden="true">/</span>
+                <span>Contact</span>
+            </nav>
+        </section>
 
+        <section class="section" style="padding-top:var(--space-lg)">
+            <div class="container contact-grid">
+                <!-- ---------- Sidebar ---------- -->
+                <div class="contact-aside">
+                    <div class="contact-list reveal">
+                        <a class="contact-item" href="https://wa.me/6282219785260" target="_blank" rel="noopener">
+                            <i class="bx bxl-whatsapp" aria-hidden="true"></i>
+                            <span>
+                                <span class="contact-item__label">WhatsApp</span>
+                                <span class="contact-item__value">+62 822-1978-5260</span>
+                            </span>
+                        </a>
 
+                        <a class="contact-item" href="mailto:muhammadafiqyunanto@gmail.com">
+                            <i class="bx bxl-gmail" aria-hidden="true"></i>
+                            <span>
+                                <span class="contact-item__label">Email</span>
+                                <span class="contact-item__value">muhammadafiqyunanto@gmail.com</span>
+                            </span>
+                        </a>
+
+                        <a class="contact-item" href="https://id.linkedin.com/in/muhammad-afiq-yunanto-093391296"
+                            target="_blank" rel="noopener">
+                            <i class="bx bxl-linkedin-square" aria-hidden="true"></i>
+                            <span>
+                                <span class="contact-item__label">LinkedIn</span>
+                                <span class="contact-item__value">muhammad-afiq-yunanto</span>
+                            </span>
+                        </a>
+
+                        <a class="contact-item" href="https://github.com/muhammadafiqyunanto27" target="_blank"
+                            rel="noopener">
+                            <i class="bx bxl-github" aria-hidden="true"></i>
+                            <span>
+                                <span class="contact-item__label">GitHub</span>
+                                <span class="contact-item__value">muhammadafiqyunanto27</span>
+                            </span>
+                        </a>
+
+                        <a class="contact-item" href="https://www.instagram.com/muhammadafiqyunanto/" target="_blank"
+                            rel="noopener">
+                            <i class="bx bxl-instagram" aria-hidden="true"></i>
+                            <span>
+                                <span class="contact-item__label">Instagram</span>
+                                <span class="contact-item__value">@muhammadafiqyunanto</span>
+                            </span>
+                        </a>
+                    </div>
+
+                    <div class="note glass reveal">
+                        <i class="bx bx-time" style="color:var(--accent);font-size:1.2rem" aria-hidden="true"></i>
+                        <div>
+                            <p class="note__title">Balas dalam 1×24 jam</p>
+                            <p class="note__text">Pada hari kerja. Untuk yang mendesak, WhatsApp tercepat.</p>
+                        </div>
+                    </div>
+
+                    <div class="note glass reveal">
+                        <i class="bx bx-briefcase" style="color:var(--accent);font-size:1.2rem" aria-hidden="true"></i>
+                        <div>
+                            <p class="note__title">Sedang mencari</p>
+                            <p class="note__text">Magang web developer, freelance, dan kolaborasi open source.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ---------- Form ---------- -->
+                <div class="contact-panel glass reveal">
+                    <h2 class="contact-panel__title">Kirim pesan</h2>
+                    <p class="contact-panel__sub">
+                        Isi formnya dan pesan akan tersusun rapi di WhatsApp saya. Tidak ada data yang
+                        dikirim ke server mana pun.
+                    </p>
+
+                    <!--
+                        No backend by design: this is a static site.
+                        js/main.js validates the fields, composes the message, then hands
+                        it to WhatsApp (data-channel="whatsapp").
+                        Set data-channel="mailto" to open the mail client instead.
+                    -->
+                    <form class="form" data-contact-form data-channel="whatsapp"
+                        data-phone="6282219785260" data-email="muhammadafiqyunanto@gmail.com" novalidate
+                        style="margin-top:var(--space-md)">
+
+                        <div class="form__row">
+                            <div class="field">
+                                <label class="field__label" for="name">Nama <span class="req"
+                                        aria-hidden="true">*</span></label>
+                                <input class="field__control" type="text" id="name" name="name"
+                                    placeholder="Nama lengkap Anda" autocomplete="name" required
+                                    aria-describedby="error-name">
+                                <span class="field__error" id="error-name" role="alert"></span>
+                            </div>
+
+                            <div class="field">
+                                <label class="field__label" for="email">Email <span class="req"
+                                        aria-hidden="true">*</span></label>
+                                <input class="field__control" type="email" id="email" name="email"
+                                    placeholder="nama@email.com" autocomplete="email" required
+                                    aria-describedby="error-email">
+                                <span class="field__error" id="error-email" role="alert"></span>
+                            </div>
+                        </div>
+
+                        <div class="field">
+                            <label class="field__label" for="subject">Subjek <span class="req"
+                                    aria-hidden="true">*</span></label>
+                            <input class="field__control" type="text" id="subject" name="subject"
+                                placeholder="Contoh: Lowongan magang web developer" required
+                                aria-describedby="error-subject">
+                            <span class="field__error" id="error-subject" role="alert"></span>
+                        </div>
+
+                        <div class="field">
+                            <label class="field__label" for="message">Pesan <span class="req"
+                                    aria-hidden="true">*</span></label>
+                            <textarea class="field__control" id="message" name="message" rows="6" maxlength="2000"
+                                placeholder="Ceritakan sedikit tentang kebutuhan atau proyek Anda…"
+                                required aria-describedby="hint-message error-message"></textarea>
+                            <span class="field__hint" id="hint-message">Semakin jelas detailnya, semakin cepat saya bisa membantu.</span>
+                            <span class="field__counter" data-char-counter aria-hidden="true">0 / 2000</span>
+                            <span class="field__error" id="error-message" role="alert"></span>
+                        </div>
+
+                        <p class="form__status" data-form-status role="status" aria-live="polite"></p>
+
+                        <div class="cluster" style="justify-content:space-between">
+                            <button class="btn btn--primary" type="submit">
+                                <i class="bx bxl-whatsapp" aria-hidden="true"></i> Kirim via WhatsApp
+                            </button>
+                            <a class="btn btn--ghost" href="mailto:muhammadafiqyunanto@gmail.com">
+                                <i class="bx bx-envelope" aria-hidden="true"></i> Kirim via Email
+                            </a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============ FAQ ============ -->
+        <section class="section" id="faq">
+            <div class="container container--narrow">
+                <div class="section__head reveal">
+                    <span class="eyebrow">Pertanyaan umum</span>
+                    <h2 class="section__title">Mungkin sudah dijelaskan di sini</h2>
+                </div>
+
+                <div class="accordion reveal">
+                    <details class="accordion__item">
+                        <summary class="accordion__trigger">
+                            Apakah saya bisa magang atau bekerja sama secara freelance?
+                            <i class="bx bx-plus" aria-hidden="true"></i>
+                        </summary>
+                        <div class="accordion__panel">
+                            Bisa. Saya terbuka untuk magang sebagai web developer fullstack maupun
+                            proyek freelance. Yang paling membantu: deskripsi singkat tentang lingkup
+                            pekerjaan, durasi, dan teknologi yang akan dipakai.
+                        </div>
+                    </details>
+
+                    <details class="accordion__item">
+                        <summary class="accordion__trigger">
+                            Teknologi apa yang paling saya kuasai?
+                            <i class="bx bx-plus" aria-hidden="true"></i>
+                        </summary>
+                        <div class="accordion__panel">
+                            Untuk frontend: JavaScript, TypeScript, React, dan Next.js. Untuk backend:
+                            Node.js dengan Express, serta PHP dengan Laravel. Untuk basis data: MySQL
+                            dan PostgreSQL.
+                        </div>
+                    </details>
+
+                    <details class="accordion__item">
+                        <summary class="accordion__trigger">
+                            Berapa lama waktu pengerjaan sebuah proyek?
+                            <i class="bx bx-plus" aria-hidden="true"></i>
+                        </summary>
+                        <div class="accordion__panel">
+                            Tergantung kompleksitasnya. CRUD sederhana biasanya selesai 1–2 minggu;
+                            aplikasi fullstack dengan autentikasi dan laporan lebih lama. Estimasi
+                            selalu saya berikan setelah requirement dibahas.
+                        </div>
+                    </details>
+
+                    <details class="accordion__item">
+                        <summary class="accordion__trigger">
+                            Boleh pakai portofolio ini sebagai referensi belajar?
+                            <i class="bx bx-plus" aria-hidden="true"></i>
+                        </summary>
+                        <div class="accordion__panel">
+                            Silakan. Kalau Anda ingin membuat versi sendiri, saya senang membantu.
+                        </div>
+                    </details>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" style="padding-top:0">
+            <div class="container">
+                <div class="cta glass reveal">
+                    <span class="eyebrow">Lebih cepat</span>
+                    <h2 class="cta__title" style="margin-top:var(--space-sm)">Lebih suka langsung?</h2>
+                    <p class="cta__text">Kirim pesan singkat di WhatsApp — biasanya itu kanal yang paling cepat saya balas.</p>
+                    <div class="cta__actions">
+                        <a class="btn btn--primary" href="https://wa.me/6282219785260" target="_blank" rel="noopener">
+                            <i class="bx bxl-whatsapp" aria-hidden="true"></i> Buka WhatsApp
+                        </a>
+                        <a class="btn btn--ghost" href="./portofolio.html">
+                            Lihat Portofolio <i class="bx bx-right-arrow-alt" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__grid">
+                <div>
+                    <a class="brand" href="./index.html">
+                        <img class="brand__logo" src="./assets/logo-dark.png" data-logo-dark="./assets/logo-dark.png"
+                            data-logo-light="./assets/logo-light.png" alt="Logo Muhammad Afiq Yunanto" width="106"
+                            height="30">
+                    </a>
+                    <p class="footer__text">
+                        Fullstack Web Developer. Builds clean, measurable web apps that people
+                        actually use.
+                    </p>
+                    <div class="socials socials--footer" style="margin-top:var(--space-md)">
+                        <a class="socials__link" href="https://github.com/muhammadafiqyunanto27" target="_blank"
+                            rel="noopener" aria-label="GitHub"><i class="bx bxl-github" aria-hidden="true"></i></a>
+                        <a class="socials__link" href="https://id.linkedin.com/in/muhammad-afiq-yunanto-093391296"
+                            target="_blank" rel="noopener" aria-label="LinkedIn"><i class="bx bxl-linkedin-square"
+                                aria-hidden="true"></i></a>
+                        <a class="socials__link" href="https://www.instagram.com/muhammadafiqyunanto/" target="_blank"
+                            rel="noopener" aria-label="Instagram"><i class="bx bxl-instagram" aria-hidden="true"></i></a>
+                        <a class="socials__link" href="mailto:muhammadafiqyunanto@gmail.com" aria-label="Email">
+                            <i class="bx bxl-gmail" aria-hidden="true"></i>
+                        </a>
+                        <a class="socials__link" href="https://www.youtube.com/@Muhammadafiqyunanto" target="_blank"
+                            rel="noopener" aria-label="YouTube"><i class="bx bxl-youtube" aria-hidden="true"></i></a>
+                    </div>
+                </div>
+
+                <div>
+                    <h2 class="footer__title">Halaman</h2>
+                    <ul class="footer__list">
+                        <li><a href="./index.html">Home</a></li>
+                        <li><a href="./about.html">About</a></li>
+                        <li><a href="./portofolio.html">Portofolio</a></li>
+                        <li><a href="./contact.html">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h2 class="footer__title">Kontak</h2>
+                    <ul class="footer__list">
+                        <li><a href="mailto:muhammadafiqyunanto@gmail.com">muhammadafiqyunanto@gmail.com</a></li>
+                        <li><a href="https://wa.me/6282219785260" target="_blank" rel="noopener">+62 822-1978-5260</a></li>
+                        <li><a href="https://github.com/muhammadafiqyunanto27" target="_blank" rel="noopener">GitHub</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer__bottom">
+                <p>&copy; <span data-year>2026</span> Muhammad Afiq Yunanto</p>
+                <p>HTML · CSS · JavaScript — tanpa framework</p>
+            </div>
+        </div>
+    </footer>
+
+    <button class="back-to-top" type="button" aria-label="Kembali ke atas">
+        <i class="bx bx-chevron-up" aria-hidden="true"></i>
+    </button>
+
+    <script src="./js/main.js" defer></script>
 </body>
 </html>

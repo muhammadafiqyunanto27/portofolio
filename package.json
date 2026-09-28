@@ -1,0 +1,32 @@
+{
+  "name": "portofolio",
+  "version": "2.0.0",
+  "private": true,
+  "description": "Portofolio Muhammad Afiq Yunanto — static site (HTML, CSS, JavaScript) tanpa build step.",
+  "author": {
+    "name": "Muhammad Afiq Yunanto",
+    "url": "https://github.com/muhammadafiqyunanto27"
+  },
+  "homepage": "https://afiq-portofolio.vercel.app/",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/muhammadafiqyunanto27/portofolio.git"
+  },
+  "keywords": [
+    "portfolio",
+    "static-site",
+    "html",
+    "css",
+    "javascript"
+  ],
+  "license": "MIT",
+  "scripts": {
+    "dev": "node scripts/serve.mjs",
+    "start": "node scripts/serve.mjs",
+    "check": "node scripts/check.mjs",
+    "test": "node scripts/check.mjs"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

@@ -1,0 +1,156 @@
+/* ==========================================================================
+   tokens.css — Design tokens
+   Single source of truth. Light/dark is switched via `data-theme` on <html>.
+
+   Direction: black, quiet, one accent, glass. Everything else gets out of
+   the way so the content is the only thing competing for attention.
+   ========================================================================== */
+
+:root {
+    /* ---------- Brand ---------- */
+    --brand-cyan: #00abf0;
+    --brand-navy: #081b29;
+
+    /* ---------- Typography ---------- */
+    --font-sans: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, "Segoe UI",
+        Roboto, "Helvetica Neue", Arial, sans-serif;
+    --font-mono: "JetBrains Mono", ui-monospace, "Cascadia Code", Consolas, monospace;
+
+    --fs-xs: 0.75rem;
+    --fs-sm: 0.8125rem;
+    --fs-base: 0.9375rem;
+    --fs-md: clamp(1rem, 0.3vw + 0.95rem, 1.0625rem);
+    --fs-lg: clamp(1.125rem, 0.5vw + 1rem, 1.25rem);
+    --fs-h4: clamp(1.15rem, 0.7vw + 1.05rem, 1.375rem);
+    --fs-h3: clamp(1.5rem, 1.6vw + 1.15rem, 1.9rem);
+    --fs-h2: clamp(1.85rem, 2.8vw + 1.2rem, 2.75rem);
+    --fs-h1: clamp(2.4rem, 5.5vw + 1.2rem, 4.5rem);
+
+    --lh-tight: 1.05;
+    --lh-snug: 1.3;
+    --lh-normal: 1.65;
+
+    --tracking-tight: -0.035em;
+    --tracking-normal: -0.015em;
+    --tracking-wide: 0.14em;
+
+    /* ---------- Spacing ---------- */
+    --space-2xs: 0.5rem;
+    --space-xs: 0.75rem;
+    --space-sm: 1rem;
+    --space-md: 1.5rem;
+    --space-lg: 2.25rem;
+    --space-xl: 3.5rem;
+    --space-2xl: 5rem;
+    --space-section: clamp(4.5rem, 10vw, 8.5rem);
+
+    /* ---------- Radii ---------- */
+    --radius-sm: 8px;
+    --radius-md: 12px;
+    --radius-lg: 18px;
+    --radius-xl: 24px;
+    --radius-pill: 999px;
+
+    /* ---------- Layout ---------- */
+    --container: 1120px;
+    --container-narrow: 780px;
+    --gutter: clamp(1.25rem, 5vw, 2.5rem);
+    --header-h: 64px;
+
+    /* ---------- Motion ---------- */
+    --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+    --dur-fast: 150ms;
+    --dur-base: 280ms;
+    --dur-slow: 650ms;
+
+    --z-sticky: 100;
+    --z-header: 200;
+    --z-top: 400;
+}
+
+/* ==========================================================================
+   Dark — the primary theme. Pure black so the glass reads as glass.
+   ========================================================================== */
+
+:root,
+[data-theme="dark"] {
+    color-scheme: dark;
+
+    --bg: #000000;
+    --bg-elev: #08080a;
+    --bg-deep: #000000;
+
+    /* Frosted surfaces */
+    --glass: rgba(255, 255, 255, 0.035);
+    --glass-hover: rgba(255, 255, 255, 0.06);
+    --glass-strong: rgba(255, 255, 255, 0.07);
+    --glass-border: rgba(255, 255, 255, 0.085);
+    --glass-border-hover: rgba(255, 255, 255, 0.16);
+    --glass-blur: 20px;
+    --glass-edge: rgba(255, 255, 255, 0.07);
+
+    --text: #f4f4f5;
+    --text-muted: #a1a1aa;
+    --text-faint: #6b6b74;
+
+    --accent: #22b4f2;
+    --accent-hover: #5acbf7;
+    --accent-contrast: #000000;
+    --accent-soft: rgba(34, 180, 242, 0.12);
+    --accent-line: rgba(34, 180, 242, 0.35);
+
+    --success: #34d399;
+    --danger: #fb7185;
+
+    --shadow-sm: 0 4px 16px -8px rgba(0, 0, 0, 0.8);
+    --shadow-md: 0 18px 40px -20px rgba(0, 0, 0, 0.9);
+    --shadow-lg: 0 32px 64px -28px rgba(0, 0, 0, 0.95);
+    --shadow-lift: 0 24px 48px -24px rgba(0, 0, 0, 0.9);
+
+    /* Ambient colour. Kept deliberately sparse: glass is invisible without it. */
+    --glow-1: rgba(34, 180, 242, 0.13);
+    --glow-2: rgba(34, 180, 242, 0.06);
+    --field-bg: rgba(255, 255, 255, 0.03);
+}
+
+/* ==========================================================================
+   Light — same structure, inverted. Accent darkens to clear AA on white.
+   ========================================================================== */
+
+[data-theme="light"] {
+    color-scheme: light;
+
+    --bg: #fbfbfc;
+    --bg-elev: #ffffff;
+    --bg-deep: #f4f4f6;
+
+    --glass: rgba(255, 255, 255, 0.66);
+    --glass-hover: rgba(255, 255, 255, 0.86);
+    --glass-strong: rgba(255, 255, 255, 0.9);
+    --glass-border: rgba(9, 9, 11, 0.09);
+    --glass-border-hover: rgba(9, 9, 11, 0.16);
+    --glass-blur: 18px;
+    --glass-edge: rgba(255, 255, 255, 0.9);
+
+    --text: #09090b;
+    --text-muted: #52525b;
+    --text-faint: #8b8b94;
+
+    --accent: #00729f;
+    --accent-hover: #005a80;
+    --accent-contrast: #ffffff;
+    --accent-soft: rgba(0, 114, 159, 0.08);
+    --accent-line: rgba(0, 114, 159, 0.3);
+
+    --success: #0f7a52;
+    --danger: #c0334a;
+
+    --shadow-sm: 0 2px 10px -6px rgba(9, 9, 11, 0.18);
+    --shadow-md: 0 16px 34px -20px rgba(9, 9, 11, 0.25);
+    --shadow-lg: 0 30px 60px -30px rgba(9, 9, 11, 0.3);
+    --shadow-lift: 0 20px 44px -24px rgba(9, 9, 11, 0.28);
+
+    --glow-1: rgba(0, 114, 159, 0.09);
+    --glow-2: rgba(0, 114, 159, 0.05);
+    --field-bg: rgba(255, 255, 255, 0.8);
+}

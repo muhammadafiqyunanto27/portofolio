@@ -1,97 +1,445 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="id" data-theme="dark" class="no-js">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./styles/style.css">
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <title>Muhammad Afiq Yunanto</title>
+
+    <title>Muhammad Afiq Yunanto — Fullstack Web Developer</title>
+    <meta name="description" content="Portofolio Muhammad Afiq Yunanto, Fullstack Web Developer yang membangun aplikasi web dengan React, Next.js, Node.js, Laravel, dan TypeScript.">
+    <meta name="author" content="Muhammad Afiq Yunanto">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://afiq-portofolio.vercel.app/">
+
+    <meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)">
+    <meta name="theme-color" content="#fbfbfc" media="(prefers-color-scheme: light)">
+
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="id_ID">
+    <meta property="og:site_name" content="Muhammad Afiq Yunanto">
+    <meta property="og:title" content="Muhammad Afiq Yunanto — Fullstack Web Developer">
+    <meta property="og:description" content="Saya membangun aplikasi web yang bersih, terukur, dan benar-benar dipakai.">
+    <meta property="og:url" content="https://afiq-portofolio.vercel.app/">
+    <meta property="og:image" content="https://afiq-portofolio.vercel.app/assets/portrait.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Muhammad Afiq Yunanto — Fullstack Web Developer">
+    <meta name="twitter:image" content="https://afiq-portofolio.vercel.app/assets/portrait.png">
+
+    <link rel="icon" href="./assets/favicon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="./assets/portrait.png">
+    <link rel="manifest" href="./site.webmanifest">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap">
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css">
+
+    <link rel="stylesheet" href="./styles/tokens.css">
+    <link rel="stylesheet" href="./styles/base.css">
+    <link rel="stylesheet" href="./styles/components.css">
+    <link rel="stylesheet" href="./styles/pages.css">
+
+    <!-- Theme applied before first paint: no flash of the wrong background. -->
+    <script>
+        (function () {
+            var root = document.documentElement;
+            root.classList.remove("no-js");
+            try {
+                var stored = window.localStorage.getItem("may-portfolio-theme");
+                var theme = stored || (window.matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark");
+                root.setAttribute("data-theme", theme);
+            } catch (error) {
+                root.setAttribute("data-theme", "dark");
+            }
+        })();
+    </script>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Muhammad Afiq Yunanto",
+        "jobTitle": "Fullstack Web Developer",
+        "url": "https://afiq-portofolio.vercel.app/",
+        "image": "https://afiq-portofolio.vercel.app/assets/portrait.png",
+        "email": "mailto:muhammadafiqyunanto@gmail.com",
+        "address": { "@type": "PostalAddress", "addressCountry": "ID" },
+        "sameAs": [
+            "https://github.com/muhammadafiqyunanto27",
+            "https://id.linkedin.com/in/muhammad-afiq-yunanto-093391296",
+            "https://www.instagram.com/muhammadafiqyunanto/",
+            "https://www.youtube.com/@Muhammadafiqyunanto"
+        ],
+        "knowsAbout": ["JavaScript", "TypeScript", "React", "Next.js", "Node.js", "Express", "PHP", "Laravel", "MySQL", "PostgreSQL", "Tailwind CSS", "Astro"]
+    }
+    </script>
 </head>
 
 <body>
-    <header class="header">
-        <a href="./index.html" class="logo">
-            <img id="logo-image" src="./assets/Cuplikan_layar_2024-12-17_134000-removebg-preview.png" alt="Logo MAY">
-        </a>
-        <nav class="navbar">
-            <a href="#" style="--i:1;" class="toggle-theme"><i class='bx bx-sun'></i></a>
-            <a href="./index.html" style="--i:2;" class="active">Home</a>
-            <a href="./about.html" style="--i:3;">About</a>
-            <a href="./portofolio.html" style="--i:4;">Portfolio</a>
-            <a href="./contact.html" style="--i:5;">Contact</a>
-        </nav>
-    </header>
+    <a class="skip-link" href="#main">Lompat ke konten utama</a>
 
-    <div class="home">
-        <div class="home-content">
-            <h1>Hi, I'm</h1>
-            <h1>Muhammad Afiq Yunanto</h1>
-            <h3>Fullstack Web Developer</h3>
-            <p>Seorang Fullstack Developer dengan kemampuan menguasai teknologi frontend dan backend seperti HTML, CSS,
-                JavaScript, React.js, Node.js, PHP, Laravel, dan MySQL. Memiliki pengalaman dalam membangun aplikasi web
-                dinamis dan skalabel dengan pendekatan Agile.</p>
-            <div class="btn-box">
-                <a href="https://api.whatsapp.com/send/?phone=6282219785260&text&type=phone_number&app_absent=0"
-                    target="_blank">Hire Me</a>
-                <a href="https://api.whatsapp.com/send/?phone=6282219785260&text&type=phone_number&app_absent=0"
-                    target="_blank">Let's talk</a>
+    <header class="header">
+        <div class="container header__inner">
+            <a class="brand" href="./index.html" aria-label="Muhammad Afiq Yunanto — beranda">
+                <img class="brand__logo" src="./assets/logo-dark.png"
+                    data-logo-dark="./assets/logo-dark.png" data-logo-light="./assets/logo-light.png"
+                    alt="Logo Muhammad Afiq Yunanto" width="106" height="30">
+            </a>
+
+            <nav class="nav" id="nav" aria-label="Navigasi utama">
+                <a class="nav__link" href="./index.html">Home</a>
+                <a class="nav__link" href="./about.html">About</a>
+                <a class="nav__link" href="./portofolio.html">Portofolio</a>
+                <a class="nav__link" href="./contact.html">Contact</a>
+            </nav>
+
+            <div class="header__controls">
+                <button class="icon-btn theme-toggle" type="button" aria-label="Ganti tema terang/gelap">
+                    <i class="bx bx-sun icon-sun" aria-hidden="true"></i>
+                    <i class="bx bx-moon icon-moon" aria-hidden="true"></i>
+                </button>
+                <button class="icon-btn nav-toggle" type="button" aria-label="Buka menu" aria-expanded="false"
+                    aria-controls="nav">
+                    <span class="nav-toggle__bars" aria-hidden="true"></span>
+                </button>
             </div>
         </div>
+    </header>
 
-        <div class="home-sci">
-            <a href="https://id.linkedin.com/in/muhammad-afiq-yunanto-093391296" target="_blank" style="--i:1;"><i
-                    class='bx bxl-linkedin-square'></i></a>
-            <a href="https://github.com/muhammadafiqyunanto27" target="_blank" style="--i:2;"><i
-                    class='bx bxl-github'></i></a>
-            <a href="https://www.instagram.com/muhammadafiqyunanto/" target="_blank" style="--i:3;"><i
-                    class='bx bxl-instagram'></i></a>
-            <a href="mailto:muhammadafiqyunanto@gmail.com" target="_blank" style="--i:4;"><i class='bx bxl-gmail'></i></a>
-            <a href="https://www.youtube.com/@Muhammadafiqyunanto" target="_blank" style="--i:5;"><i
-                    class='bx bxl-youtube'></i></a>
+    <main id="main">
+        <!-- ================= HERO ================= -->
+        <section class="hero container">
+            <div class="hero__content">
+                <p class="hero__hello">Halo, saya Afiq</p>
+                <h1 class="hero__name">Fullstack Web<br>Developer</h1>
+
+                <p class="hero__role">
+                    <span data-typewriter
+                        data-roles="JavaScript &amp; TypeScript|React &amp; Next.js|Node.js &amp; Laravel|Selalu belajar hal baru">JavaScript &amp;
+                        TypeScript</span><span class="hero__caret" aria-hidden="true"></span>
+                </p>
+
+                <p class="hero__desc">
+                    Saya membangun aplikasi web dari ujung ke ujung — antarmuka yang terasa cepat,
+                    API yang rapi, dan basis data yang bertahan di bawah beban. Tulisannya terbuka,
+                    jadi saya menilai diri sendiri pada kode yang benar-benar saya tulis.
+                </p>
+
+                <div class="hero__actions">
+                    <a class="btn btn--primary" href="./portofolio.html">
+                        Lihat Karya <i class="bx bx-right-arrow-alt" aria-hidden="true"></i>
+                    </a>
+                    <a class="btn btn--ghost" href="https://wa.me/6282219785260?text=Halo%20Afiq%2C%20saya%20melihat%20portofoliomu%20dan%20tertarik%20untuk%20berdiskusi."
+                        target="_blank" rel="noopener">
+                        Hire Me
+                    </a>
+                </div>
+            </div>
+
+            <div class="hero__bottom">
+                <div class="hero__facts">
+                    <div class="hero__fact">
+                        <span class="hero__fact-value">57</span>
+                        <span class="hero__fact-label">Repository</span>
+                    </div>
+                    <div class="hero__fact">
+                        <span class="hero__fact-value">16</span>
+                        <span class="hero__fact-label">Project Pilihan</span>
+                    </div>
+                    <div class="hero__fact">
+                        <span class="hero__fact-value">20+</span>
+                        <span class="hero__fact-label">Demo Daring</span>
+                    </div>
+                    <div class="hero__fact">
+                        <span class="hero__fact-value" style="color:var(--success)">Tersedia</span>
+                        <span class="hero__fact-label">Status</span>
+                    </div>
+                </div>
+
+                <div class="hero__portrait">
+                    <img src="./assets/portrait.png" alt="Foto Muhammad Afiq Yunanto" width="110" height="110">
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= CAPABILITIES ================= -->
+        <section class="section" id="keahlian">
+            <div class="container">
+                <div class="section__head reveal">
+                    <span class="eyebrow">Yang saya kerjakan</span>
+                    <h2 class="section__title">Empat hal yang saya kerjakan terus</h2>
+                </div>
+
+                <div class="capabilities">
+                    <article class="capability reveal">
+                        <span class="capability__label">01</span>
+                        <div>
+                            <h3 class="capability__title">Antarmuka web</h3>
+                            <p class="capability__text">
+                                Layout responsif yang rapi di layar kecil maupun besar, aksesibel
+                                sejak awal, dan tidak berat dimuat. Saya pakai React, Next.js, dan
+                                Astro, dengan Tailwind CSS untuk styling.
+                            </p>
+                        </div>
+                    </article>
+
+                    <article class="capability reveal">
+                        <span class="capability__label">02</span>
+                        <div>
+                            <h3 class="capability__title">API &amp; backend</h3>
+                            <p class="capability__text">
+                                REST API dengan Express atau Laravel. Endpoint-nya tervalidasi,
+                                errornya ditangani jelas, dan dokumentasinya bisa dibaca orang lain
+                                di tim.
+                            </p>
+                        </div>
+                    </article>
+
+                    <article class="capability reveal">
+                        <span class="capability__label">03</span>
+                        <div>
+                            <h3 class="capability__title">Data &amp; basis data</h3>
+                            <p class="capability__text">
+                                Model data yang benar di MySQL dan PostgreSQL, termasuk relasi,
+                                indeks, dan migrasi — bukan sekadar tabel yang kebetulan jalan.
+                            </p>
+                        </div>
+                    </article>
+
+                    <article class="capability reveal">
+                        <span class="capability__label">04</span>
+                        <div>
+                            <h3 class="capability__title">Kualitas &amp; pengujian</h3>
+                            <p class="capability__text">
+                                Unit testing dengan Vitest, version control yang rapi, dan bias
+                                kecil menulis dokumentasi. Tujuannya: perubahan tidak diam-diam
+                                merusak fitur lama.
+                            </p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= STACK ================= -->
+        <section class="section--tight">
+            <div class="container">
+                <div class="section__head reveal">
+                    <span class="eyebrow">Stack</span>
+                    <h2 class="section__title">Teknologi yang saya pakai</h2>
+                </div>
+                <div class="stack reveal">
+                    <span class="tag">HTML5</span>
+                    <span class="tag">CSS3</span>
+                    <span class="tag">JavaScript</span>
+                    <span class="tag">TypeScript</span>
+                    <span class="tag">React</span>
+                    <span class="tag">Next.js</span>
+                    <span class="tag">Astro</span>
+                    <span class="tag">Tailwind CSS</span>
+                    <span class="tag">Node.js</span>
+                    <span class="tag">Express</span>
+                    <span class="tag">PHP</span>
+                    <span class="tag">Laravel</span>
+                    <span class="tag">MySQL</span>
+                    <span class="tag">PostgreSQL</span>
+                    <span class="tag">PWA</span>
+                    <span class="tag">Git</span>
+                    <span class="tag">Vercel</span>
+                    <span class="tag">Vitest</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= SELECTED WORK ================= -->
+        <section class="section" id="karya">
+            <div class="container">
+                <div class="section__head reveal">
+                    <span class="eyebrow">Pilihan</span>
+                    <h2 class="section__title">Tiga project terbaru</h2>
+                    <p class="section__lead">Kodenya terbuka, jadi Anda bisa membacanya sendiri.</p>
+                </div>
+
+                <div class="grid work-grid">
+                    <article class="card card--hover project reveal">
+                        <div class="project__top">
+                            <span class="project__lang" style="--lang-color:#3178c6">TypeScript</span>
+                        </div>
+                        <h3 class="project__title">
+                            <a href="https://ku-a.vercel.app" target="_blank" rel="noopener">KU-A — Website Kelas</a>
+                        </h3>
+                        <p class="project__desc">
+                            Website profil kelas dengan empat tingkat hak akses: pengunjung melihat
+                            portofolio anggota dan laporan keuangan, tiap pengguna hanya mengedit
+                            bagian sesuai otoritasnya.
+                        </p>
+                        <div class="project__tags">
+                            <span class="tag">Next.js</span>
+                            <span class="tag">Tailwind</span>
+                            <span class="tag">PostgreSQL</span>
+                        </div>
+                        <div class="project__links">
+                            <a class="project__link" href="https://ku-a.vercel.app" target="_blank" rel="noopener">
+                                <i class="bx bx-world" aria-hidden="true"></i> Demo
+                            </a>
+                            <a class="project__link" href="https://github.com/muhammadafiqyunanto27/KU-A"
+                                target="_blank" rel="noopener">
+                                <i class="bx bxl-github" aria-hidden="true"></i> Kode
+                            </a>
+                        </div>
+                    </article>
+
+                    <article class="card card--hover project reveal">
+                        <div class="project__top">
+                            <span class="project__lang" style="--lang-color:#f1e05a">JavaScript</span>
+                        </div>
+                        <h3 class="project__title">
+                            <a href="https://mafyngate.vercel.app" target="_blank" rel="noopener">MafynGate</a>
+                        </h3>
+                        <p class="project__desc">
+                            Aplikasi gerbang sekolah, dipisah jadi dua repository: frontend Next.js
+                            untuk antarmuka, backend JavaScript untuk API, autentikasi, dan data
+                            kehadiran.
+                        </p>
+                        <div class="project__tags">
+                            <span class="tag">Next.js</span>
+                            <span class="tag">Node.js</span>
+                            <span class="tag">REST API</span>
+                        </div>
+                        <div class="project__links">
+                            <a class="project__link" href="https://mafyngate.vercel.app" target="_blank" rel="noopener">
+                                <i class="bx bx-world" aria-hidden="true"></i> Demo
+                            </a>
+                            <a class="project__link"
+                                href="https://github.com/muhammadafiqyunanto27/mafyngate-frontend" target="_blank"
+                                rel="noopener">
+                                <i class="bx bxl-github" aria-hidden="true"></i> Kode
+                            </a>
+                        </div>
+                    </article>
+
+                    <article class="card card--hover project reveal">
+                        <div class="project__top">
+                            <span class="project__lang" style="--lang-color:#ff5a03">Astro</span>
+                        </div>
+                        <h3 class="project__title">
+                            <a href="https://rqcahayakebaikan.web.id/" target="_blank" rel="noopener">RQCK Landing Page</a>
+                        </h3>
+                        <p class="project__desc">
+                            Landing page untuk lembaga belajar Al-Qur'an. Dibangun dengan Astro
+                            supaya cepat dimuat dan mudah dikelola editor non-teknis.
+                        </p>
+                        <div class="project__tags">
+                            <span class="tag">Astro</span>
+                            <span class="tag">SEO</span>
+                            <span class="tag">Responsif</span>
+                        </div>
+                        <div class="project__links">
+                            <a class="project__link" href="https://rqcahayakebaikan.web.id/" target="_blank"
+                                rel="noopener">
+                                <i class="bx bx-world" aria-hidden="true"></i> Demo
+                            </a>
+                            <a class="project__link" href="https://github.com/muhammadafiqyunanto27/rqck-landing"
+                                target="_blank" rel="noopener">
+                                <i class="bx bxl-github" aria-hidden="true"></i> Kode
+                            </a>
+                        </div>
+                    </article>
+                </div>
+
+                <p class="work-note reveal">
+                    <span>Project lengkap, termasuk latihan harian dan tugas kuliah, ada di GitHub saya.</span>
+                    <a class="btn btn--ghost btn--sm" href="./portofolio.html">
+                        Lihat semua 16 project <i class="bx bx-right-arrow-alt" aria-hidden="true"></i>
+                    </a>
+                </p>
+            </div>
+        </section>
+
+        <!-- ================= CTA ================= -->
+        <section class="section">
+            <div class="container">
+                <div class="cta glass reveal">
+                    <span class="eyebrow">Mari bekerja sama</span>
+                    <h2 class="cta__title" style="margin-top:var(--space-sm)">Punya proyek yang ingin dikerjakan?</h2>
+                    <p class="cta__text">
+                        Saya terbuka untuk magang, freelance, maupun kolaborasi jangka panjang.
+                        Ceritakan kebutuhannya — biasanya saya balas dalam 1×24 jam.
+                    </p>
+                    <div class="cta__actions">
+                        <a class="btn btn--primary"
+                            href="https://wa.me/6282219785260?text=Halo%20Afiq%2C%20saya%20punya%20ide%20proyek%20yang%20ingin%20kita%20diskusikan."
+                            target="_blank" rel="noopener">
+                            <i class="bx bxl-whatsapp" aria-hidden="true"></i> Chat via WhatsApp
+                        </a>
+                        <a class="btn btn--ghost" href="mailto:muhammadafiqyunanto@gmail.com">
+                            <i class="bx bx-envelope" aria-hidden="true"></i> Kirim Email
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__grid">
+                <div>
+                    <a class="brand" href="./index.html">
+                        <img class="brand__logo" src="./assets/logo-dark.png" data-logo-dark="./assets/logo-dark.png"
+                            data-logo-light="./assets/logo-light.png" alt="Logo Muhammad Afiq Yunanto" width="106"
+                            height="30">
+                    </a>
+                    <p class="footer__text">
+                        Fullstack Web Developer. Builds clean, measurable web apps that people
+                        actually use.
+                    </p>
+                    <div class="socials socials--footer" style="margin-top:var(--space-md)">
+                        <a class="socials__link" href="https://github.com/muhammadafiqyunanto27" target="_blank"
+                            rel="noopener" aria-label="GitHub"><i class="bx bxl-github" aria-hidden="true"></i></a>
+                        <a class="socials__link" href="https://id.linkedin.com/in/muhammad-afiq-yunanto-093391296"
+                            target="_blank" rel="noopener" aria-label="LinkedIn"><i class="bx bxl-linkedin-square"
+                                aria-hidden="true"></i></a>
+                        <a class="socials__link" href="https://www.instagram.com/muhammadafiqyunanto/" target="_blank"
+                            rel="noopener" aria-label="Instagram"><i class="bx bxl-instagram" aria-hidden="true"></i></a>
+                        <a class="socials__link" href="mailto:muhammadafiqyunanto@gmail.com" aria-label="Email">
+                            <i class="bx bxl-gmail" aria-hidden="true"></i>
+                        </a>
+                        <a class="socials__link" href="https://www.youtube.com/@Muhammadafiqyunanto" target="_blank"
+                            rel="noopener" aria-label="YouTube"><i class="bx bxl-youtube" aria-hidden="true"></i></a>
+                    </div>
+                </div>
+
+                <div>
+                    <h2 class="footer__title">Halaman</h2>
+                    <ul class="footer__list">
+                        <li><a href="./index.html">Home</a></li>
+                        <li><a href="./about.html">About</a></li>
+                        <li><a href="./portofolio.html">Portofolio</a></li>
+                        <li><a href="./contact.html">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h2 class="footer__title">Kontak</h2>
+                    <ul class="footer__list">
+                        <li><a href="mailto:muhammadafiqyunanto@gmail.com">muhammadafiqyunanto@gmail.com</a></li>
+                        <li><a href="https://wa.me/6282219785260" target="_blank" rel="noopener">+62 822-1978-5260</a></li>
+                        <li><a href="https://github.com/muhammadafiqyunanto27" target="_blank" rel="noopener">GitHub</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer__bottom">
+                <p>&copy; <span data-year>2026</span> Muhammad Afiq Yunanto</p>
+                <p>HTML · CSS · JavaScript — tanpa framework</p>
+            </div>
         </div>
-    </div>
+    </footer>
 
-    <div class="hero-img">
-        <img src="./assets/port-afiq-removebg-preview.png" alt="Foto Profil Muhammad Afiq Yunanto">
-    </div>
+    <button class="back-to-top" type="button" aria-label="Kembali ke atas">
+        <i class="bx bx-chevron-up" aria-hidden="true"></i>
+    </button>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const toggleModeButton = document.querySelector('.toggle-theme');
-            const body = document.body;
-            const logoImage = document.getElementById('logo-image');
-
-            if (logoImage && toggleModeButton) {
-                const updateLogo = () => {
-                    logoImage.src = body.classList.contains('light-mode')
-                        ? "./assets/Cuplikan_layar_2024-12-17_132550-removebg-preview.png"
-                        : "./assets/Cuplikan_layar_2024-12-17_134000-removebg-preview.png";
-                };
-
-                if (localStorage.getItem('theme') === 'light') {
-                    body.classList.add('light-mode');
-                    toggleModeButton.innerHTML = "<i class='bx bx-moon'></i>";
-                    updateLogo();
-                }
-
-                toggleModeButton.addEventListener('click', () => {
-                    if (body.classList.contains('light-mode')) {
-                        body.classList.remove('light-mode');
-                        toggleModeButton.innerHTML = "<i class='bx bx-sun'></i>";
-                        localStorage.setItem('theme', 'dark');
-                    } else {
-                        body.classList.add('light-mode');
-                        toggleModeButton.innerHTML = "<i class='bx bx-moon'></i>";
-                        localStorage.setItem('theme', 'light');
-                    }
-                    updateLogo();
-                });
-            } else {
-                console.error('Logo image or toggle button not found.');
-            }
-        });
-    </script>
+    <script src="./js/main.js" defer></script>
 </body>
-
 </html>
