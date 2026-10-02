@@ -112,6 +112,40 @@
     gap: 0.4rem;
 }
 
+/* --- Language switch --- */
+
+.lang-switch {
+    display: inline-flex;
+    align-items: center;
+    gap: 2px;
+    padding: 2px;
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius-pill);
+    background: var(--glass);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+}
+
+.lang-switch__btn {
+    padding: 0.32rem 0.55rem;
+    border-radius: var(--radius-pill);
+    font-family: var(--font-mono);
+    font-size: 0.6875rem;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    color: var(--text-faint);
+    transition: color var(--dur-fast) var(--ease-out), background-color var(--dur-fast) var(--ease-out);
+}
+
+.lang-switch__btn:hover {
+    color: var(--text);
+}
+
+.lang-switch__btn[aria-pressed="true"] {
+    background: var(--accent);
+    color: var(--accent-contrast);
+}
+
 .icon-btn {
     display: inline-flex;
     align-items: center;
@@ -242,12 +276,12 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    gap: 0.55rem;
-    padding: 0.8rem 1.45rem;
+    gap: 0.5rem;
+    padding: 0.85rem 1.6rem;
     border: 1px solid transparent;
     border-radius: var(--radius-pill);
-    font-size: var(--fs-sm);
-    font-weight: 600;
+    font-size: var(--fs-base);
+    font-weight: 500;
     text-align: center;
     white-space: nowrap;
     transition: transform var(--dur-fast) var(--ease-out), background-color var(--dur-base) var(--ease-out),
@@ -256,11 +290,11 @@
 }
 
 .btn:hover {
-    transform: translateY(-2px);
+    background: var(--accent-hover);
 }
 
 .btn:active {
-    transform: translateY(0);
+    transform: scale(0.96);
 }
 
 .btn i {
@@ -362,10 +396,9 @@
 }
 
 .card--hover:hover {
-    transform: translateY(-4px);
     background: var(--glass-hover);
     border-color: var(--glass-border-hover);
-    box-shadow: inset 0 1px 0 var(--glass-edge), var(--shadow-lift);
+    box-shadow: inset 0 1px 0 var(--glass-edge), var(--shadow-md);
 }
 
 .card__title {
@@ -404,10 +437,9 @@
 }
 
 .socials__link:hover {
-    color: var(--accent);
+    color: var(--text);
     background: var(--glass-hover);
-    border-color: var(--accent-line);
-    transform: translateY(-3px);
+    border-color: var(--glass-border-hover);
 }
 
 .socials--footer .socials__link {
@@ -440,14 +472,6 @@
     font-family: var(--font-mono);
     font-size: 0.6875rem;
     color: var(--text-faint);
-}
-
-.project__lang::before {
-    content: "";
-    width: 7px;
-    height: 7px;
-    border-radius: 50%;
-    background: var(--lang-color, var(--accent));
 }
 
 .project__title {

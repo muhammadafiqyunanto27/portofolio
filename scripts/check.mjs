@@ -8,6 +8,7 @@
  *   4. no stray characters from other scripts slipped into the copy
  *   5. <title> and meta description are unique per page and within sane lengths
  *   6. markup is balanced for the elements we care about
+ *   7. the bilingual layer is wired: language switch, EN title/description, no empty data-en
  *
  * Run with: npm run check
  */
@@ -145,6 +146,27 @@ for (const file of htmlFiles) {
     /* 6. balanced markup */
     const imbalance = unbalancedTags(html);
     if (imbalance) fail(name, `markup tidak seimbang — ${imbalance}`);
+
+    /* 7. bilingual wiring: switch, per-page EN copy, and no empty translations */
+    if (!/class="lang-switch"/.test(html)) fail(name, "language switch tidak ada di header");
+    if (!/data-lang="id"/.test(html) || !/data-lang="en"/.test(html)) {
+        fail(name, 'tombol bahasa harus punya data-lang="id" dan data-lang="en"');
+    }
+    if (!/<html[^>]+data-en-title="[^"]{5,}"/i.test(html)) {
+        fail(name, "<html> tidak punya data-en-title (judul halaman bilingual)");
+    }
+    if (!/<html[^>]+data-en-desc="[^"]{20,}"/i.test(html)) {
+        fail(name, "<html> tidak punya data-en-desc (deskripsi bilingual)");
+    }
+
+    for (const m of html.matchAll(/\bdata-en(?:-aria|-ph)?="([^"]*)"/g)) {
+        if (!m[1].trim()) {
+            const line = html.slice(0, m.index).split("\n").length;
+            fail(name, `terjemahan kosong di baris ~${line}`);
+        }
+    }
+    const translations = [...html.matchAll(/\bdata-en(?:-aria|-ph)?="/g)].length;
+    notes.push(`${name}: ${translations} string terjemahan`);
 
     /* 1. local assets referenced by the page must exist */
     const assetRefs = new Set();

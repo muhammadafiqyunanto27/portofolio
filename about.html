@@ -1,32 +1,31 @@
 <!DOCTYPE html>
-<html lang="id" data-theme="dark" class="no-js">
+<html lang="id" data-theme="dark" class="no-js"
+    data-en-title="About — Muhammad Afiq Yunanto"
+    data-en-desc="About Muhammad Afiq Yunanto: a Full-Stack and Software Developer with a software engineering background, currently studying D4 Financial Analysis at POLINES.">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Tentang — Muhammad Afiq Yunanto</title>
-    <meta name="description" content="Pengalaman, pendidikan, dan keahlian Muhammad Afiq Yunanto sebagai Fullstack Web Developer.">
+    <meta name="description" content="Biodata, pendidikan, pengalaman, dan fokus Muhammad Afiq Yunanto: Software Developer yang memperdalam web development dan analisis keuangan.">
     <meta name="author" content="Muhammad Afiq Yunanto">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://afiq-portofolio.vercel.app/about.html">
 
     <meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)">
-    <meta name="theme-color" content="#fbfbfc" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#f5f5f5" media="(prefers-color-scheme: light)">
 
     <meta property="og:type" content="website">
     <meta property="og:locale" content="id_ID">
     <meta property="og:title" content="Tentang — Muhammad Afiq Yunanto">
-    <meta property="og:description" content="Pengalaman, pendidikan, dan keahlian seorang Fullstack Web Developer.">
+    <meta property="og:description" content="Background, pendidikan, pengalaman, dan fokus seorang Software Developer.">
     <meta property="og:url" content="https://afiq-portofolio.vercel.app/about.html">
     <meta name="twitter:card" content="summary_large_image">
 
-    <link rel="icon" href="./assets/favicon.svg" type="image/svg+xml">
+    <link rel="icon" href="./assets/favicon.png" type="image/png">
     <link rel="apple-touch-icon" href="./assets/portrait.png">
     <link rel="manifest" href="./site.webmanifest">
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap">
     <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css">
 
     <link rel="stylesheet" href="./styles/tokens.css">
@@ -50,7 +49,7 @@
 </head>
 
 <body>
-    <a class="skip-link" href="#main">Lompat ke konten utama</a>
+    <a class="skip-link" href="#main"><span data-en="Skip to main content">Lompat ke konten utama</span></a>
 
     <header class="header">
         <div class="container header__inner">
@@ -63,17 +62,22 @@
             <nav class="nav" id="nav" aria-label="Navigasi utama">
                 <a class="nav__link" href="./index.html">Home</a>
                 <a class="nav__link" href="./about.html">About</a>
-                <a class="nav__link" href="./portofolio.html">Portofolio</a>
-                <a class="nav__link" href="./contact.html">Contact</a>
+                <a class="nav__link" href="./portofolio.html" data-en="Portfolio">Portofolio</a>
+                <a class="nav__link" href="./contact.html" data-en="Contact">Contact</a>
             </nav>
 
             <div class="header__controls">
-                <button class="icon-btn theme-toggle" type="button" aria-label="Ganti tema terang/gelap">
+                <div class="lang-switch" role="group" aria-label="Bahasa / Language">
+                    <button class="lang-switch__btn" type="button" data-lang="id" aria-pressed="true">ID</button>
+                    <button class="lang-switch__btn" type="button" data-lang="en" aria-pressed="false">EN</button>
+                </div>
+                <button class="icon-btn theme-toggle" type="button" aria-label="Ganti tema terang/gelap"
+                    data-en-aria="Switch between light and dark theme">
                     <i class="bx bx-sun icon-sun" aria-hidden="true"></i>
                     <i class="bx bx-moon icon-moon" aria-hidden="true"></i>
                 </button>
-                <button class="icon-btn nav-toggle" type="button" aria-label="Buka menu" aria-expanded="false"
-                    aria-controls="nav">
+                <button class="icon-btn nav-toggle" type="button" aria-label="Buka menu" data-en-aria="Open menu"
+                    aria-expanded="false" aria-controls="nav">
                     <span class="nav-toggle__bars" aria-hidden="true"></span>
                 </button>
             </div>
@@ -82,11 +86,10 @@
 
     <main id="main">
         <section class="page-head container">
-            <span class="eyebrow">Tentang</span>
-            <h1 class="page-head__title">Saya belajar dengan membangun</h1>
+            <span class="eyebrow" data-en="About">Tentang</span>
+            <h1 class="page-head__title"><span data-en="Where technology meets finance">Di persimpangan teknologi dan keuangan</span></h1>
             <p class="page-head__lead">
-                Bukan orang yang percaya pada coba-coba tanpa arah. Satu proyek, satu kesalahan,
-                satu perbaikan, lalu lanjut.
+                <span data-en="I learn by building, then I go deeper into the business side of every system I make.">Saya belajar dengan membangun, lalu memperdalam pemahaman bisnis di balik setiap sistem yang saya buat.</span>
             </p>
             <nav class="breadcrumb" aria-label="Remah roti">
                 <a href="./index.html">Home</a>
@@ -95,77 +98,67 @@
             </nav>
         </section>
 
-        <!-- ================= BIO ================= -->
+        <!-- ================= QUICK PROFILE ================= -->
         <section class="section" id="profil" style="padding-top:var(--space-lg)">
             <div class="container about-grid">
                 <div class="prose reveal">
                     <p>
-                        Nama saya <strong>Muhammad Afiq Yunanto</strong>. Saya mulai menulis kode saat
-                        belajar HTML di sekolah, langsung mencoba membuat satu halaman berisi nama
-                        dan foto. Tidak ada yang berjalan mulus — layout berantakan, gambar tidak
-                        muncul, dan saya hampir menyerah.
+                        <span data-en="My name is Muhammad Afiq Yunanto. I am a D4 Financial Analysis student at Politeknik Negeri Semarang, coming from a software engineering background. My interest lies in web development, especially in building interfaces that are modern, responsive, and genuinely pleasant to use.">Nama saya <strong>Muhammad Afiq Yunanto</strong>. Saya mahasiswa <strong>D4 Analisis Keuangan</strong> di Politeknik Negeri Semarang dengan latar belakang <strong>Rekayasa Perangkat Lunak</strong>. Minat saya berada pada pengembangan web, khususnya membangun antarmuka yang modern, responsif, dan nyaman dipakai.</span>
                     </p>
                     <p>
-                        Titik baliknya ketika saya sadar: kesalahan di browser adalah pelajaran
-                        terbaik yang pernah saya dapat. Dari situ saya belajar JavaScript secara
-                        bertahap, lalu beralih ke framework frontend, backend, dan basis data.
+                        <span data-en="I got to know programming through my software engineering education. Not only understanding how an application works, but also how a digital product should be designed so that it can actually be used.">Saya mulai mengenal dunia pemrograman dari pendidikan Rekayasa Perangkat Lunak. Bukan hanya memahami bagaimana sebuah aplikasi bekerja, tetapi juga bagaimana sebuah produk digital ought to be designed agar benar-benar bisa dipakai.</span>
                     </p>
                     <p>
-                        Karena itu, cara saya belajar terasa melompat-lompat. Saya sering mengerjakan
-                        proyek kecil hanya untuk memahami satu konsep — membuat API CRUD,
-                        menghitung zakat dengan JavaScript murni, membangun generator QR. Semua
-                        repository itu publik dan masih bisa dibuka.
+                        <span data-en="Most of my skills grew through real projects: landing pages, asset management systems, database-driven applications, up to a personal platform called MafynGate, my space for developing various digital experiments and tools inside one ecosystem.">Sebagian besar kemampuan saya tumbuh melalui proyek nyata: landing page, sistem manajemen aset, aplikasi berbasis database, hingga platform personal bernama <strong>MafynGate</strong>, ruang saya untuk mengembangkan berbagai eksperimen dan alat digital dalam satu ekosistem.</span>
                     </p>
                     <p>
-                        Yang membuat saya bertahan adalah kesukaan pada prosesnya. Mengubah
-                        kebutuhan, menemukan bug yang elusive, lalu menyelesaikannya dengan cara yang
-                        elegan — itu bagian yang paling saya nikmati.
+                        <span data-en="Outside of programming, I am now studying D4 Financial Analysis, which means I also learn accounting, taxation, economics, financial analysis, and data processing. The combination of technology and finance is one field I want to keep exploring.">Di luar pemrograman, saya kini menempuh pendidikan D4 Analisis Keuangan, sehingga saya juga mempelajari akuntansi, perpajakan, ekonomi, analisis keuangan, serta pengolahan data. Perpaduan teknologi dan keuangan menjadi salah satu bidang yang ingin terus saya eksplorasi.</span>
                     </p>
-
-                    <div class="cluster" style="margin-top:var(--space-lg)">
-                        <span class="badge badge--accent">
-                            <span class="badge__dot" aria-hidden="true"></span> Terbuka untuk kerja sama
-                        </span>
-                        <span class="badge">Magang &amp; Freelance</span>
-                        <span class="badge">Remote friendly</span>
-                    </div>
+                    <p>
+                        <span data-en="That is why I do not want to stop as someone who can only build a website. I want to understand the problem first, and then build the solution.">Karena itu, saya tidak ingin berhenti hanya sebagai orang yang bisa membuat website. Saya ingin memahami <strong>masalahnya terlebih dahulu, lalu membangun solusinya.</strong></span>
+                    </p>
                 </div>
 
                 <aside class="about-side reveal">
                     <div class="card">
+                        <h2 class="footer__title">Quick Profile</h2>
                         <div class="facts">
                             <div class="facts__row">
-                                <span class="facts__key">Nama</span>
+                                <span class="facts__key" data-en="Name">Nama</span>
                                 <span class="facts__val">Muhammad Afiq Yunanto</span>
                             </div>
                             <div class="facts__row">
-                                <span class="facts__key">Peran</span>
-                                <span class="facts__val">Fullstack Developer</span>
+                                <span class="facts__key" data-en="Role">Peran</span>
+                                <span class="facts__val">Software Developer</span>
                             </div>
                             <div class="facts__row">
-                                <span class="facts__key">Lokasi</span>
+                                <span class="facts__key" data-en="Education">Pendidikan</span>
+                                <span class="facts__val">D4 Analisis Keuangan, Polines</span>
+                            </div>
+                            <div class="facts__row">
+                                <span class="facts__key" data-en="Background">Latar Belakang</span>
+                                <span class="facts__val" data-en="Software Engineering">Rekayasa Perangkat Lunak</span>
+                            </div>
+                            <div class="facts__row">
+                                <span class="facts__key" data-en="Focus">Fokus</span>
+                                <span class="facts__val">Web Dev · Financial Analysis</span>
+                            </div>
+                            <div class="facts__row">
+                                <span class="facts__key" data-en="Location">Lokasi</span>
                                 <span class="facts__val">Indonesia</span>
                             </div>
                             <div class="facts__row">
-                                <span class="facts__key">Bahasa</span>
-                                <span class="facts__val">Indonesia, Inggris</span>
-                            </div>
-                            <div class="facts__row">
-                                <span class="facts__key">Fokus</span>
-                                <span class="facts__val">Web App, REST API</span>
-                            </div>
-                            <div class="facts__row">
-                                <span class="facts__key">Status</span>
-                                <span class="facts__val" style="color:var(--success)">Tersedia</span>
+                                <span class="facts__key" data-en="Status">Status</span>
+                                <span class="facts__val" style="color:var(--success)" data-en="Available">Tersedia</span>
                             </div>
                         </div>
                         <a class="btn btn--primary btn--block" style="margin-top:var(--space-md)" href="./contact.html">
-                            Hubungi Saya <i class="bx bx-right-arrow-alt" aria-hidden="true"></i>
+                            <span data-en="Contact Me">Hubungi Saya</span> <i class="bx bx-right-arrow-alt" aria-hidden="true"></i>
                         </a>
                     </div>
 
                     <div class="card">
-                        <h2 class="footer__title">Temukan saya</h2>
+                        <h2 class="footer__title"><span data-en="Find me">Temukan saya</span></h2>
                         <div class="socials">
                             <a class="socials__link" href="https://github.com/muhammadafiqyunanto27" target="_blank"
                                 rel="noopener" aria-label="GitHub"><i class="bx bxl-github" aria-hidden="true"></i></a>
@@ -189,11 +182,10 @@
         <section class="section" id="skill">
             <div class="container">
                 <div class="section__head reveal">
-                    <span class="eyebrow">Keahlian</span>
-                    <h2 class="section__title">Seberapa jauh saya bisa</h2>
+                    <span class="eyebrow" data-en="Skills">Keahlian</span>
+                    <h2 class="section__title"><span data-en="How far I can go">Seberapa jauh saya bisa</span></h2>
                     <p class="section__lead">
-                        Angka ini perkiraan jujur, diukur dari berapa sering saya memakai teknologi
-                        tersebut di project nyata — bukan dari course yang pernah saya tonton.
+                        <span data-en="These numbers are honest estimates, measured by how often I actually use each technology in real projects, not by courses I have watched.">Angka ini perkiraan jujur, diukur dari berapa sering saya memakai teknologi tersebut di proyek nyata, bukan dari course yang pernah saya tonton.</span>
                     </p>
                 </div>
 
@@ -209,16 +201,20 @@
                             <div class="skill__bar"><div class="skill__fill" data-skill-fill="85"></div></div>
                         </div>
                         <div class="skill">
-                            <div class="skill__head"><span>Tailwind CSS</span><span class="skill__value">80%</span></div>
-                            <div class="skill__bar"><div class="skill__fill" data-skill-fill="80"></div></div>
+                            <div class="skill__head"><span>Tailwind CSS</span><span class="skill__value">82%</span></div>
+                            <div class="skill__bar"><div class="skill__fill" data-skill-fill="82"></div></div>
                         </div>
                         <div class="skill">
-                            <div class="skill__head"><span>TypeScript</span><span class="skill__value">75%</span></div>
-                            <div class="skill__bar"><div class="skill__fill" data-skill-fill="75"></div></div>
+                            <div class="skill__head"><span>TypeScript</span><span class="skill__value">76%</span></div>
+                            <div class="skill__bar"><div class="skill__fill" data-skill-fill="76"></div></div>
                         </div>
                         <div class="skill">
-                            <div class="skill__head"><span>React &amp; Next.js</span><span class="skill__value">72%</span></div>
-                            <div class="skill__bar"><div class="skill__fill" data-skill-fill="72"></div></div>
+                            <div class="skill__head"><span>React &amp; Next.js</span><span class="skill__value">74%</span></div>
+                            <div class="skill__bar"><div class="skill__fill" data-skill-fill="74"></div></div>
+                        </div>
+                        <div class="skill">
+                            <div class="skill__head"><span>Astro</span><span class="skill__value">68%</span></div>
+                            <div class="skill__bar"><div class="skill__fill" data-skill-fill="68"></div></div>
                         </div>
                     </div>
 
@@ -229,130 +225,116 @@
                             <div class="skill__bar"><div class="skill__fill" data-skill-fill="80"></div></div>
                         </div>
                         <div class="skill">
-                            <div class="skill__head"><span>REST API Design</span><span class="skill__value">78%</span></div>
+                            <div class="skill__head"><span data-en="REST API Design">Desain REST API</span><span class="skill__value">78%</span></div>
                             <div class="skill__bar"><div class="skill__fill" data-skill-fill="78"></div></div>
                         </div>
                         <div class="skill">
-                            <div class="skill__head"><span>TypeScript (server)</span><span class="skill__value">75%</span></div>
-                            <div class="skill__bar"><div class="skill__fill" data-skill-fill="75"></div></div>
-                        </div>
-                        <div class="skill">
-                            <div class="skill__head"><span>Autentikasi &amp; JWT</span><span class="skill__value">72%</span></div>
+                            <div class="skill__head"><span>PHP &amp; Laravel</span><span class="skill__value">72%</span></div>
                             <div class="skill__bar"><div class="skill__fill" data-skill-fill="72"></div></div>
                         </div>
                         <div class="skill">
-                            <div class="skill__head"><span>PHP &amp; Laravel</span><span class="skill__value">70%</span></div>
-                            <div class="skill__bar"><div class="skill__fill" data-skill-fill="70"></div></div>
+                            <div class="skill__head"><span data-en="Authentication &amp; JWT">Autentikasi &amp; JWT</span><span class="skill__value">72%</span></div>
+                            <div class="skill__bar"><div class="skill__fill" data-skill-fill="72"></div></div>
                         </div>
                         <div class="skill">
-                            <div class="skill__head"><span>Unit Testing (Vitest)</span><span class="skill__value">65%</span></div>
+                            <div class="skill__head"><span data-en="Cloud Storage">Penyimpanan Cloud</span><span class="skill__value">65%</span></div>
                             <div class="skill__bar"><div class="skill__fill" data-skill-fill="65"></div></div>
                         </div>
                     </div>
 
                     <div class="skill-group reveal">
-                        <h3 class="skill-group__title">Data &amp; Tools</h3>
+                        <h3 class="skill-group__title" data-en="Database &amp; Tools">Database &amp; Tools</h3>
+                        <div class="skill">
+                            <div class="skill__head"><span>PostgreSQL</span><span class="skill__value">78%</span></div>
+                            <div class="skill__bar"><div class="skill__fill" data-skill-fill="78"></div></div>
+                        </div>
+                        <div class="skill">
+                            <div class="skill__head"><span>MySQL</span><span class="skill__value">76%</span></div>
+                            <div class="skill__bar"><div class="skill__fill" data-skill-fill="76"></div></div>
+                        </div>
+                        <div class="skill">
+                            <div class="skill__head"><span>Prisma ORM</span><span class="skill__value">70%</span></div>
+                            <div class="skill__bar"><div class="skill__fill" data-skill-fill="70"></div></div>
+                        </div>
                         <div class="skill">
                             <div class="skill__head"><span>Git &amp; GitHub</span><span class="skill__value">85%</span></div>
                             <div class="skill__bar"><div class="skill__fill" data-skill-fill="85"></div></div>
                         </div>
                         <div class="skill">
-                            <div class="skill__head"><span>Vercel / Deployment</span><span class="skill__value">80%</span></div>
+                            <div class="skill__head"><span>Vercel &amp; Railway</span><span class="skill__value">80%</span></div>
                             <div class="skill__bar"><div class="skill__fill" data-skill-fill="80"></div></div>
-                        </div>
-                        <div class="skill">
-                            <div class="skill__head"><span>MySQL</span><span class="skill__value">75%</span></div>
-                            <div class="skill__bar"><div class="skill__fill" data-skill-fill="75"></div></div>
-                        </div>
-                        <div class="skill">
-                            <div class="skill__head"><span>PostgreSQL</span><span class="skill__value">70%</span></div>
-                            <div class="skill__bar"><div class="skill__fill" data-skill-fill="70"></div></div>
-                        </div>
-                        <div class="skill">
-                            <div class="skill__head"><span>Astro</span><span class="skill__value">68%</span></div>
-                            <div class="skill__bar"><div class="skill__fill" data-skill-fill="68"></div></div>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- ================= TIMELINE ================= -->
+        <!-- ================= EXPERIENCE & EDUCATION ================= -->
         <section class="section" id="pengalaman">
             <div class="container">
                 <div class="section__head reveal">
-                    <span class="eyebrow">Perjalanan</span>
-                    <h2 class="section__title">Pengalaman &amp; pendidikan</h2>
+                    <span class="eyebrow" data-en="My Journey">Perjalanan</span>
+                    <h2 class="section__title">Experience &amp; Education</h2>
                 </div>
 
                 <div class="grid" style="grid-template-columns:repeat(auto-fit,minmax(300px,1fr))">
                     <div class="reveal">
-                        <h3 class="skill-group__title" style="margin-bottom:var(--space-md)">Pengalaman</h3>
+                        <h3 class="skill-group__title" style="margin-bottom:var(--space-md)">Experience</h3>
                         <div class="timeline">
                             <article class="timeline__item">
-                                <p class="timeline__period">2026 — Sekarang</p>
-                                <h4 class="timeline__role">Fullstack Web Developer</h4>
-                                <p class="timeline__org">Proyek Independen &amp; Freelance</p>
+                                <p class="timeline__period" data-en="3 months">3 bulan</p>
+                                <h4 class="timeline__role">Web Development Intern</h4>
+                                <p class="timeline__org">Mahir System</p>
                                 <ul class="timeline__list">
-                                    <li>Membangun aplikasi fullstack dengan Next.js, Express, dan PostgreSQL.</li>
-                                    <li>Menerapkan pengujian otomatis agar refactor tidak merusak fitur lama.</li>
+                                    <li data-en="Developing a web-based Asset and Dormitory Management system.">Mengembangkan sistem Manajemen Aset dan Asrama berbasis web.</li>
+                                    <li data-en="Involved in feature development, interface implementation, and data management.">Terlibat dalam pengembangan fitur, implementasi antarmuka, dan pengelolaan data.</li>
+                                    <li data-en="Solving technical problems along the development process.">Menyelesaikan masalah teknis selama proses pengembangan.</li>
                                 </ul>
                             </article>
 
                             <article class="timeline__item">
-                                <p class="timeline__period">2026</p>
-                                <h4 class="timeline__role">Magang — Manajemen Aset &amp; Asrama</h4>
-                                <p class="timeline__org">Proyek Magang</p>
+                                <p class="timeline__period">Freelance</p>
+                                <h4 class="timeline__role">Freelance Web Developer</h4>
+                                <p class="timeline__org">Rumah Qur'an Cahaya Kebaikan</p>
                                 <ul class="timeline__list">
-                                    <li>Mengembangkan aplikasi manajemen aset dan asrama dengan Laravel.</li>
-                                    <li>Membuat fitur CRUD, autentikasi, dan laporan.</li>
-                                    <li>Belajar alur kerja industri dan standar kode bersama tim.</li>
+                                    <li data-en="Developing a landing page for information needs and digital presence.">Mengembangkan landing page untuk kebutuhan informasi dan keberadaan digital.</li>
+                                    <li data-en="Handling the website implementation from concept to ready-to-use.">Menangani pembuatan website dari konsep hingga siap dipakai.</li>
                                 </ul>
                             </article>
 
                             <article class="timeline__item">
-                                <p class="timeline__period">2023 — Sekarang</p>
+                                <p class="timeline__period" data-en="Ongoing">Berlangsung</p>
                                 <h4 class="timeline__role">Self-Learning &amp; Open Source</h4>
                                 <p class="timeline__org">GitHub</p>
                                 <ul class="timeline__list">
-                                    <li>Belajar mandiri lewat project kecil dan dokumentasi resmi.</li>
-                                    <li>Menulis 57+ repository publik, dari HTML sederhana sampai aplikasi fullstack.</li>
-                                    <li>Menjaga disiplin version control dan dokumentasi README.</li>
+                                    <li data-en="Learning independently through real projects, documentation, and experiments.">Belajar mandiri lewat proyek nyata, dokumentasi, dan eksperimen.</li>
+                                    <li data-en="Writing 57+ public repositories, from simple HTML pages to full-stack applications.">Menulis 57+ repository publik, dari halaman HTML sederhana sampai aplikasi full-stack.</li>
+                                    <li data-en="Developing MafynGate as a personal platform for experiments.">Mengembangkan platform personal MafynGate sebagai ruang eksperimen.</li>
                                 </ul>
                             </article>
                         </div>
                     </div>
 
                     <div class="reveal">
-                        <h3 class="skill-group__title" style="margin-bottom:var(--space-md)">Pendidikan</h3>
+                        <h3 class="skill-group__title" style="margin-bottom:var(--space-md)">Education</h3>
                         <div class="timeline">
                             <article class="timeline__item">
-                                <p class="timeline__period">Sedang berlangsung</p>
-                                <h4 class="timeline__role">S1 Informatika</h4>
-                                <p class="timeline__org">Perguruan Tinggi</p>
+                                <p class="timeline__period" data-en="In progress">Sedang berlangsung</p>
+                                <h4 class="timeline__role">D4 Analisis Keuangan</h4>
+                                <p class="timeline__org">Politeknik Negeri Semarang</p>
                                 <ul class="timeline__list">
-                                    <li>Struktur Data, Basis Data, Jaringan, Pemrograman Berorientasi Objek, Pemrograman Web.</li>
-                                    <li>Tugas besar dan proyek kelompok dikerjakan lewat GitHub.</li>
+                                    <li data-en="Studying financial analysis, accounting, taxation, and economics.">Mempelajari analisis keuangan, akuntansi, perpajakan, dan ekonomi.</li>
+                                    <li data-en="Understanding data processing, information systems, and business analysis.">Memahami pengolahan data, sistem informasi, dan analisis bisnis.</li>
                                 </ul>
                             </article>
 
                             <article class="timeline__item">
-                                <p class="timeline__period">2023</p>
-                                <h4 class="timeline__role">Fondasi Web Development</h4>
-                                <p class="timeline__org">Mandiri</p>
+                                <p class="timeline__period" data-en="Graduate">Lulusan</p>
+                                <h4 class="timeline__role" data-en="Software Engineering">Rekayasa Perangkat Lunak</h4>
+                                <p class="timeline__org">PPQ IT Al-Mahir Boyolali</p>
                                 <ul class="timeline__list">
-                                    <li>Menguasai semantik HTML dan CSS modern dari nol.</li>
-                                    <li>Memahami DOM, event, asynchronous JavaScript, dan Fetch API.</li>
-                                </ul>
-                            </article>
-
-                            <article class="timeline__item">
-                                <p class="timeline__period">Berlangsung</p>
-                                <h4 class="timeline__role">Sertifikasi</h4>
-                                <p class="timeline__org">Udemy · Dicoding · Lainnya</p>
-                                <ul class="timeline__list">
-                                    <li>Kursus JavaScript, Node.js, dan PHP — langsung dipraktikkan di project.</li>
-                                    <li>Target berikutnya: sertifikasi cloud dan unit testing.</li>
+                                    <li data-en="Studying the fundamentals of software development and web development.">Mempelajari dasar-dasar pengembangan perangkat lunak dan web development.</li>
+                                    <li data-en="Developing various projects during the study period.">Mengembangkan berbagai proyek selama masa pendidikan.</li>
                                 </ul>
                             </article>
                         </div>
@@ -361,23 +343,21 @@
             </div>
         </section>
 
-        <!-- ================= HOW I WORK ================= -->
-        <section class="section" id="prinsip">
+        <!-- ================= STRENGTHS ================= -->
+        <section class="section" id="strengths">
             <div class="container">
                 <div class="section__head reveal">
-                    <span class="eyebrow">Prinsip kerja</span>
-                    <h2 class="section__title">Empat hal yang sayapegang</h2>
+                    <span class="eyebrow" data-en="Strengths">Kekuatan</span>
+                    <h2 class="section__title"><span data-en="What I usually bring">Yang biasanya saya bawa</span></h2>
                 </div>
 
                 <div class="capabilities">
                     <article class="capability reveal">
                         <span class="capability__label">01</span>
                         <div>
-                            <h3 class="capability__title">Kode yang bisa dirawat</h3>
+                            <h3 class="capability__title">Problem Solving</h3>
                             <p class="capability__text">
-                                Saya menulis agar orang lain — termasuk saya di masa depan —
-                                gampang membaca. Struktur jelas, nama variabel bermakna, komentar
-                                hanya di tempat yang perlu.
+                                <span data-en="I break a problem into small parts, look for the cause, then test the solution step by step.">Saya memecah masalah menjadi bagian-bagian kecil, mencari penyebabnya, lalu menguji solusinya bertahap.</span>
                             </p>
                         </div>
                     </article>
@@ -385,11 +365,9 @@
                     <article class="capability reveal">
                         <span class="capability__label">02</span>
                         <div>
-                            <h3 class="capability__title">Jujur soal kemampuan</h3>
+                            <h3 class="capability__title">Self Learning</h3>
                             <p class="capability__text">
-                                Saya lebih suka bilang "belum bisa" daripada mengklaim sesuatu
-                                belum dikuasai. Portofolio ini menunjukkan apa yang benar-benar saya
-                                bangun.
+                                <span data-en="Most of my technical skills grew through projects, documentation, experiments, and hands-on problem solving.">Sebagian besar kemampuan teknis saya berkembang melalui proyek, dokumentasi, eksperimen, dan pemecahan masalah secara langsung.</span>
                             </p>
                         </div>
                     </article>
@@ -397,10 +375,9 @@
                     <article class="capability reveal">
                         <span class="capability__label">03</span>
                         <div>
-                            <h3 class="capability__title">Terus belajar</h3>
+                            <h3 class="capability__title">Adaptability</h3>
                             <p class="capability__text">
-                                Teknologi web berubah cepat. Saya berusaha mempelajari minimal satu hal
-                                baru setiap bulanan dan langsung mempraktikkannya.
+                                <span data-en="A software development background combined with ongoing financial analysis studies makes me comfortable moving between technical and business perspectives.">Latar belakang pengembangan perangkat lunak yang saya kombinasikan dengan studi analisis keuangan membuat saya terbiasa berpindah antara perspektif teknis dan bisnis.</span>
                             </p>
                         </div>
                     </article>
@@ -408,10 +385,19 @@
                     <article class="capability reveal">
                         <span class="capability__label">04</span>
                         <div>
-                            <h3 class="capability__title">Kolaboratif</h3>
+                            <h3 class="capability__title">Attention to Detail</h3>
                             <p class="capability__text">
-                                Saya peduli pada konteks, bukan ego. Kalau ada cara yang lebih baik
-                                dari usulan saya, saya dengan senang hati beralih.
+                                <span data-en="I pay attention to the small details that affect the usability and reliability of an application.">Saya memperhatikan detail kecil yang memengaruhi kemudahan pakai dan keandalan sebuah aplikasi.</span>
+                            </p>
+                        </div>
+                    </article>
+
+                    <article class="capability reveal">
+                        <span class="capability__label">05</span>
+                        <div>
+                            <h3 class="capability__title">Continuous Improvement</h3>
+                            <p class="capability__text">
+                                <span data-en="A project does not have to be perfect from the start. What matters is that it keeps getting fixed, tested, and developed.">Sebuah proyek tidak harus langsung sempurna. Yang penting terus diperbaiki, diuji, dan dikembangkan.</span>
                             </p>
                         </div>
                     </article>
@@ -419,22 +405,101 @@
             </div>
         </section>
 
-        <!-- ================= CTA ================= -->
+        <!-- ================= CURRENT FOCUS ================= -->
+        <section class="section" id="fokus">
+            <div class="container">
+                <div class="section__head reveal">
+                    <span class="eyebrow" data-en="Current Focus">Fokus Saat Ini</span>
+                    <h2 class="section__title"><span data-en="My four current focuses">Empat fokus saya sekarang</span></h2>
+                </div>
+
+                <div class="capabilities">
+                    <article class="capability reveal">
+                        <span class="capability__label">01</span>
+                        <div>
+                            <h3 class="capability__title">Web Development</h3>
+                            <p class="capability__text">
+                                <span data-en="Going deeper into modern web development with React, Next.js, TypeScript, and the modern JavaScript ecosystem.">Memperdalam web development modern menggunakan React, Next.js, TypeScript, dan ekosistem JavaScript modern.</span>
+                            </p>
+                        </div>
+                    </article>
+
+                    <article class="capability reveal">
+                        <span class="capability__label">02</span>
+                        <div>
+                            <h3 class="capability__title">Financial Analysis</h3>
+                            <p class="capability__text">
+                                <span data-en="Strengthening my understanding of accounting, taxation, economics, and financial analysis.">Memperkuat pemahaman saya mengenai akuntansi, perpajakan, ekonomi, dan analisis keuangan.</span>
+                            </p>
+                        </div>
+                    </article>
+
+                    <article class="capability reveal">
+                        <span class="capability__label">03</span>
+                        <div>
+                            <h3 class="capability__title" data-en="Full-Stack Understanding">Pemahaman Full-Stack</h3>
+                            <p class="capability__text">
+                                <span data-en="Even though the frontend is my main focus, I keep understanding backend, APIs, databases, authentication, deployment, and system architecture.">Walaupun fokus utama saya ada di frontend, saya terus memahami backend, API, database, autentikasi, deployment, dan arsitektur sistem.</span>
+                            </p>
+                        </div>
+                    </article>
+
+                    <article class="capability reveal">
+                        <span class="capability__label">04</span>
+                        <div>
+                            <h3 class="capability__title" data-en="Personal Products">Produk Pribadi</h3>
+                            <p class="capability__text">
+                                <span data-en="Keeping my personal projects alive as a place to try technologies and to build things that are genuinely usable.">Terus mengembangkan proyek pribadi sebagai tempat mencoba teknologi dan membangun sesuatu yang benar-benar bisa dipakai.</span>
+                            </p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= PHILOSOPHY ================= -->
         <section class="section">
             <div class="container">
-                <div class="cta glass reveal">
-                    <span class="eyebrow">Langkah berikutnya</span>
-                    <h2 class="cta__title" style="margin-top:var(--space-sm)">Tertarik bekerja sama?</h2>
+                <div class="philosophy glass reveal">
+                    <span class="eyebrow" data-en="My Development Philosophy">Filosofi Pengembangan Saya</span>
+                    <p class="philosophy__quote">Build. Break. Understand. Improve.</p>
+                    <p class="philosophy__text">
+                        <span data-en="I do not want to stop as someone who can only build a website. I want to understand the problem first, then build the solution.">Saya tidak ingin berhenti hanya sebagai orang yang bisa membuat website. Saya ingin memahami masalahnya terlebih dahulu, kemudian membangun solusinya.</span>
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= CAREER DIRECTION ================= -->
+        <section class="section" style="padding-top:0">
+            <div class="container">
+                <div class="section__head reveal">
+                    <span class="eyebrow" data-en="Career Direction">Arah Karier</span>
+                    <h2 class="section__title"><span data-en="Fields I am aiming for">Bidang yang saya incar</span></h2>
+                </div>
+
+                <div class="cluster reveal">
+                    <span class="badge">Front-End Development</span>
+                    <span class="badge">Web Development</span>
+                    <span class="badge">Full-Stack Development</span>
+                    <span class="badge">Software Development</span>
+                    <span class="badge badge--accent">Financial Technology</span>
+                    <span class="badge" data-en="Technology &amp; Business">Teknologi &amp; Bisnis</span>
+                    <span class="badge" data-en="Remote Development">Pengembangan Jarak Jauh</span>
+                </div>
+
+                <div class="cta glass reveal" style="margin-top:var(--space-xl)">
+                    <span class="eyebrow" data-en="Interested in working together?">Tertarik bekerja sama?</span>
+                    <h2 class="cta__title" style="margin-top:var(--space-sm)"><span data-en="Let's talk">Mari ngobrol</span></h2>
                     <p class="cta__text">
-                        Kalau Anda sedang membuka lowongan magang atau freelance, saya sangat
-                        tertarik mendengarnya. Mari ngobrol.
+                        <span data-en="I am interested in working in an environment that gives me room to learn, to build real products, and to solve problems directly.">Saya tertarik bekerja dalam lingkungan yang memberi saya kesempatan untuk belajar, membangun produk nyata, dan menyelesaikan masalah secara langsung.</span>
                     </p>
                     <div class="cta__actions">
                         <a class="btn btn--primary" href="./contact.html">
-                            <i class="bx bx-envelope" aria-hidden="true"></i> Kirim Pesan
+                            <i class="bx bx-envelope" aria-hidden="true"></i> <span data-en="Send a Message">Kirim Pesan</span>
                         </a>
                         <a class="btn btn--ghost" href="./portofolio.html">
-                            Lihat Portofolio <i class="bx bx-right-arrow-alt" aria-hidden="true"></i>
+                            <span data-en="See Portfolio">Lihat Portofolio</span> <i class="bx bx-right-arrow-alt" aria-hidden="true"></i>
                         </a>
                     </div>
                 </div>
@@ -452,8 +517,7 @@
                             height="30">
                     </a>
                     <p class="footer__text">
-                        Fullstack Web Developer. Builds clean, measurable web apps that people
-                        actually use.
+                        <span data-en="A Full-Stack and Software Developer with a software engineering background, currently studying Financial Analysis at Politeknik Negeri Semarang.">Full-Stack Developer dan Software Developer berlatar belakang Rekayasa Perangkat Lunak, sedang studi Analisis Keuangan di Politeknik Negeri Semarang.</span>
                     </p>
                     <div class="socials socials--footer" style="margin-top:var(--space-md)">
                         <a class="socials__link" href="https://github.com/muhammadafiqyunanto27" target="_blank"
@@ -472,17 +536,17 @@
                 </div>
 
                 <div>
-                    <h2 class="footer__title">Halaman</h2>
+                    <h2 class="footer__title"><span data-en="Pages">Halaman</span></h2>
                     <ul class="footer__list">
                         <li><a href="./index.html">Home</a></li>
                         <li><a href="./about.html">About</a></li>
-                        <li><a href="./portofolio.html">Portofolio</a></li>
-                        <li><a href="./contact.html">Contact</a></li>
+                        <li><a href="./portofolio.html" data-en="Portfolio">Portofolio</a></li>
+                        <li><a href="./contact.html" data-en="Contact">Contact</a></li>
                     </ul>
                 </div>
 
                 <div>
-                    <h2 class="footer__title">Kontak</h2>
+                    <h2 class="footer__title"><span data-en="Contact">Kontak</span></h2>
                     <ul class="footer__list">
                         <li><a href="mailto:muhammadafiqyunanto@gmail.com">muhammadafiqyunanto@gmail.com</a></li>
                         <li><a href="https://wa.me/6282219785260" target="_blank" rel="noopener">+62 822-1978-5260</a></li>
@@ -493,12 +557,12 @@
 
             <div class="footer__bottom">
                 <p>&copy; <span data-year>2026</span> Muhammad Afiq Yunanto</p>
-                <p>HTML · CSS · JavaScript — tanpa framework</p>
+                <p data-en="HTML · CSS · JavaScript, no framework">HTML · CSS · JavaScript, tanpa framework</p>
             </div>
         </div>
     </footer>
 
-    <button class="back-to-top" type="button" aria-label="Kembali ke atas">
+    <button class="back-to-top" type="button" aria-label="Kembali ke atas" data-en-aria="Back to top">
         <i class="bx bx-chevron-up" aria-hidden="true"></i>
     </button>
 

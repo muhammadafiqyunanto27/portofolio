@@ -91,7 +91,7 @@ h4,
 h5,
 h6 {
     line-height: var(--lh-snug);
-    font-weight: 700;
+    font-weight: 600;
     letter-spacing: var(--tracking-tight);
     text-wrap: balance;
 }

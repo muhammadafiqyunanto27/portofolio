@@ -1,36 +1,35 @@
 <!DOCTYPE html>
-<html lang="id" data-theme="dark" class="no-js">
+<html lang="id" data-theme="dark" class="no-js"
+    data-en-title="Muhammad Afiq Yunanto — Software Developer"
+    data-en-desc="Portfolio of Muhammad Afiq Yunanto — Full-Stack and Software Developer with a software engineering background, currently studying D4 Financial Analysis at POLINES.">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Muhammad Afiq Yunanto — Fullstack Web Developer</title>
-    <meta name="description" content="Portofolio Muhammad Afiq Yunanto, Fullstack Web Developer yang membangun aplikasi web dengan React, Next.js, Node.js, Laravel, dan TypeScript.">
+    <title>Muhammad Afiq Yunanto — Software Developer</title>
+    <meta name="description" content="Portofolio Muhammad Afiq Yunanto — Software Developer dengan latar belakang Rekayasa Perangkat Lunak, kini studi D4 Analisis Keuangan di Polines.">
     <meta name="author" content="Muhammad Afiq Yunanto">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://afiq-portofolio.vercel.app/">
 
     <meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)">
-    <meta name="theme-color" content="#fbfbfc" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#f5f5f5" media="(prefers-color-scheme: light)">
 
     <meta property="og:type" content="website">
     <meta property="og:locale" content="id_ID">
     <meta property="og:site_name" content="Muhammad Afiq Yunanto">
-    <meta property="og:title" content="Muhammad Afiq Yunanto — Fullstack Web Developer">
-    <meta property="og:description" content="Saya membangun aplikasi web yang bersih, terukur, dan benar-benar dipakai.">
+    <meta property="og:title" content="Muhammad Afiq Yunanto — Software Developer">
+    <meta property="og:description" content="Software Developer dengan background Rekayasa Perangkat Lunak, sedang studi D4 Analisis Keuangan.">
     <meta property="og:url" content="https://afiq-portofolio.vercel.app/">
     <meta property="og:image" content="https://afiq-portofolio.vercel.app/assets/portrait.png">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Muhammad Afiq Yunanto — Fullstack Web Developer">
+    <meta name="twitter:title" content="Muhammad Afiq Yunanto — Software Developer">
     <meta name="twitter:image" content="https://afiq-portofolio.vercel.app/assets/portrait.png">
 
-    <link rel="icon" href="./assets/favicon.svg" type="image/svg+xml">
+    <link rel="icon" href="./assets/favicon.png" type="image/png">
     <link rel="apple-touch-icon" href="./assets/portrait.png">
     <link rel="manifest" href="./site.webmanifest">
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap">
     <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css">
 
     <link rel="stylesheet" href="./styles/tokens.css">
@@ -58,24 +57,29 @@
         "@context": "https://schema.org",
         "@type": "Person",
         "name": "Muhammad Afiq Yunanto",
-        "jobTitle": "Fullstack Web Developer",
+        "jobTitle": "Full-Stack Developer",
+        "description": "Software Developer dengan latar belakang Rekayasa Perangkat Lunak, saat ini menempuh D4 Analisis Keuangan di Politeknik Negeri Semarang.",
         "url": "https://afiq-portofolio.vercel.app/",
         "image": "https://afiq-portofolio.vercel.app/assets/portrait.png",
         "email": "mailto:muhammadafiqyunanto@gmail.com",
         "address": { "@type": "PostalAddress", "addressCountry": "ID" },
+        "alumniOf": [
+            { "@type": "CollegeOrUniversity", "name": "Politeknik Negeri Semarang" },
+            { "@type": "EducationalOrganization", "name": "PPQ IT Al-Mahir Boyolali" }
+        ],
         "sameAs": [
             "https://github.com/muhammadafiqyunanto27",
             "https://id.linkedin.com/in/muhammad-afiq-yunanto-093391296",
             "https://www.instagram.com/muhammadafiqyunanto/",
             "https://www.youtube.com/@Muhammadafiqyunanto"
         ],
-        "knowsAbout": ["JavaScript", "TypeScript", "React", "Next.js", "Node.js", "Express", "PHP", "Laravel", "MySQL", "PostgreSQL", "Tailwind CSS", "Astro"]
+        "knowsAbout": ["JavaScript", "TypeScript", "React", "Next.js", "Node.js", "Express", "Laravel", "PostgreSQL", "MySQL", "Prisma", "Financial Analysis", "Akuntansi", "Perpajakan"]
     }
     </script>
 </head>
 
 <body>
-    <a class="skip-link" href="#main">Lompat ke konten utama</a>
+    <a class="skip-link" href="#main"><span data-en="Skip to main content">Lompat ke konten utama</span></a>
 
     <header class="header">
         <div class="container header__inner">
@@ -87,18 +91,23 @@
 
             <nav class="nav" id="nav" aria-label="Navigasi utama">
                 <a class="nav__link" href="./index.html">Home</a>
-                <a class="nav__link" href="./about.html">About</a>
-                <a class="nav__link" href="./portofolio.html">Portofolio</a>
-                <a class="nav__link" href="./contact.html">Contact</a>
+                <a class="nav__link" href="./about.html" data-en="About">About</a>
+                <a class="nav__link" href="./portofolio.html" data-en="Portfolio">Portofolio</a>
+                <a class="nav__link" href="./contact.html" data-en="Contact">Contact</a>
             </nav>
 
             <div class="header__controls">
-                <button class="icon-btn theme-toggle" type="button" aria-label="Ganti tema terang/gelap">
+                <div class="lang-switch" role="group" aria-label="Bahasa / Language">
+                    <button class="lang-switch__btn" type="button" data-lang="id" aria-pressed="true">ID</button>
+                    <button class="lang-switch__btn" type="button" data-lang="en" aria-pressed="false">EN</button>
+                </div>
+                <button class="icon-btn theme-toggle" type="button"
+                    aria-label="Ganti tema terang/gelap" data-en-aria="Switch between light and dark theme">
                     <i class="bx bx-sun icon-sun" aria-hidden="true"></i>
                     <i class="bx bx-moon icon-moon" aria-hidden="true"></i>
                 </button>
-                <button class="icon-btn nav-toggle" type="button" aria-label="Buka menu" aria-expanded="false"
-                    aria-controls="nav">
+                <button class="icon-btn nav-toggle" type="button" aria-label="Buka menu"
+                    data-en-aria="Open menu" aria-expanded="false" aria-controls="nav">
                     <span class="nav-toggle__bars" aria-hidden="true"></span>
                 </button>
             </div>
@@ -108,76 +117,75 @@
     <main id="main">
         <!-- ================= HERO ================= -->
         <section class="hero container">
-            <div class="hero__content">
-                <p class="hero__hello">Halo, saya Afiq</p>
-                <h1 class="hero__name">Fullstack Web<br>Developer</h1>
+            <div class="hero__layout">
+                <div class="hero__content">
+                <h1 class="hero__name">Software<br>Developer</h1>
 
-                <p class="hero__role">
-                    <span data-typewriter
-                        data-roles="JavaScript &amp; TypeScript|React &amp; Next.js|Node.js &amp; Laravel|Selalu belajar hal baru">JavaScript &amp;
-                        TypeScript</span><span class="hero__caret" aria-hidden="true"></span>
-                </p>
+                    <p class="hero__role">
+                        <span data-typewriter
+                            data-roles="JavaScript &amp; TypeScript|React &amp; Next.js|Astro &amp; Tailwind CSS|Analisis Keuangan &amp; Akuntansi"
+                            data-roles-en="JavaScript &amp; TypeScript|React &amp; Next.js|Astro &amp; Tailwind CSS|Financial Analysis &amp; Accounting">JavaScript &amp;
+                            TypeScript</span><span class="hero__caret" aria-hidden="true"></span>
+                    </p>
 
-                <p class="hero__desc">
-                    Saya membangun aplikasi web dari ujung ke ujung — antarmuka yang terasa cepat,
-                    API yang rapi, dan basis data yang bertahan di bawah beban. Tulisannya terbuka,
-                    jadi saya menilai diri sendiri pada kode yang benar-benar saya tulis.
-                </p>
+                    <p class="hero__desc">
+                        <span data-en="I build interfaces that are modern, responsive, and genuinely pleasant to use, then I dig underneath to understand how the system works behind them. Raised in software engineering, I am now pursuing a D4 in Financial Analysis at Politeknik Negeri Semarang.">Saya membangun antarmuka yang modern, responsif, dan nyaman dipakai, lalu saya menelusuri bagian teknis di baliknya. Berawal dari pendidikan Rekayasa Perangkat Lunak, kini saya menempuh studi D4 Analisis Keuangan di Politeknik Negeri Semarang.</span>
+                    </p>
 
-                <div class="hero__actions">
-                    <a class="btn btn--primary" href="./portofolio.html">
-                        Lihat Karya <i class="bx bx-right-arrow-alt" aria-hidden="true"></i>
-                    </a>
-                    <a class="btn btn--ghost" href="https://wa.me/6282219785260?text=Halo%20Afiq%2C%20saya%20melihat%20portofoliomu%20dan%20tertarik%20untuk%20berdiskusi."
-                        target="_blank" rel="noopener">
-                        Hire Me
-                    </a>
+                    <div class="hero__actions">
+                        <a class="btn btn--primary" href="./portofolio.html">
+                            <span data-en="See My Work">Lihat Karya</span> <i class="bx bx-right-arrow-alt" aria-hidden="true"></i>
+                        </a>
+                        <a class="btn btn--ghost" href="https://wa.me/6282219785260?text=Halo%20Afiq%2C%20saya%20melihat%20portofoliomu%20dan%20tertarik%20untuk%20berdiskusi."
+                            target="_blank" rel="noopener">
+                            Hire Me
+                        </a>
+                    </div>
                 </div>
+
+                <figure class="hero__figure">
+                    <img src="./assets/portrait.png" alt="Foto Muhammad Afiq Yunanto"
+                        data-en-alt="Photo of Muhammad Afiq Yunanto" width="300" height="300">
+                </figure>
             </div>
 
             <div class="hero__bottom">
                 <div class="hero__facts">
                     <div class="hero__fact">
                         <span class="hero__fact-value">57</span>
-                        <span class="hero__fact-label">Repository</span>
+                        <span class="hero__fact-label" data-en="Repositories">Repository</span>
                     </div>
                     <div class="hero__fact">
-                        <span class="hero__fact-value">16</span>
-                        <span class="hero__fact-label">Project Pilihan</span>
+                        <span class="hero__fact-value">15</span>
+                        <span class="hero__fact-label" data-en="Featured Projects">Project Pilihan</span>
                     </div>
                     <div class="hero__fact">
                         <span class="hero__fact-value">20+</span>
-                        <span class="hero__fact-label">Demo Daring</span>
+                        <span class="hero__fact-label" data-en="Live Demos">Demo Daring</span>
                     </div>
                     <div class="hero__fact">
-                        <span class="hero__fact-value" style="color:var(--success)">Tersedia</span>
-                        <span class="hero__fact-label">Status</span>
+                        <span class="hero__fact-value" style="color:var(--success)" data-en="Available">Tersedia</span>
+                        <span class="hero__fact-label" data-en="Status">Status</span>
                     </div>
-                </div>
-
-                <div class="hero__portrait">
-                    <img src="./assets/portrait.png" alt="Foto Muhammad Afiq Yunanto" width="110" height="110">
                 </div>
             </div>
         </section>
 
-        <!-- ================= CAPABILITIES ================= -->
+        <!-- ================= WHAT I DO ================= -->
         <section class="section" id="keahlian">
             <div class="container">
                 <div class="section__head reveal">
-                    <span class="eyebrow">Yang saya kerjakan</span>
-                    <h2 class="section__title">Empat hal yang saya kerjakan terus</h2>
+                    <span class="eyebrow" data-en="What I Do">Yang Saya Kerjakan</span>
+                    <h2 class="section__title"><span data-en="Six things I work on">Enam hal yang saya kerjakan</span></h2>
                 </div>
 
                 <div class="capabilities">
                     <article class="capability reveal">
                         <span class="capability__label">01</span>
                         <div>
-                            <h3 class="capability__title">Antarmuka web</h3>
+                            <h3 class="capability__title">Full-Stack Web Development</h3>
                             <p class="capability__text">
-                                Layout responsif yang rapi di layar kecil maupun besar, aksesibel
-                                sejak awal, dan tidak berat dimuat. Saya pakai React, Next.js, dan
-                                Astro, dengan Tailwind CSS untuk styling.
+                                <span data-en="Building complete web applications: frontend interfaces, backend services, REST APIs, databases, authentication, business logic, and deployment.">Membangun aplikasi web lengkap: antarmuka frontend, layanan backend, REST API, database, autentikasi, logika bisnis, dan deployment.</span>
                             </p>
                         </div>
                     </article>
@@ -185,11 +193,9 @@
                     <article class="capability reveal">
                         <span class="capability__label">02</span>
                         <div>
-                            <h3 class="capability__title">API &amp; backend</h3>
+                            <h3 class="capability__title" data-en="Software Development">Software Development</h3>
                             <p class="capability__text">
-                                REST API dengan Express atau Laravel. Endpoint-nya tervalidasi,
-                                errornya ditangani jelas, dan dokumentasinya bisa dibaca orang lain
-                                di tim.
+                                <span data-en="Developing practical software solutions based on specific requirements and real use cases.">Mengembangkan solusi perangkat lunak praktis berdasarkan kebutuhan dan kasus penggunaan yang nyata.</span>
                             </p>
                         </div>
                     </article>
@@ -197,10 +203,9 @@
                     <article class="capability reveal">
                         <span class="capability__label">03</span>
                         <div>
-                            <h3 class="capability__title">Data &amp; basis data</h3>
+                            <h3 class="capability__title" data-en="Backend Development">Backend Development</h3>
                             <p class="capability__text">
-                                Model data yang benar di MySQL dan PostgreSQL, termasuk relasi,
-                                indeks, dan migrasi — bukan sekadar tabel yang kebetulan jalan.
+                                <span data-en="Building server-side applications, APIs, database integrations, authentication systems, and application logic.">Membangun aplikasi sisi server, API, integrasi database, sistem autentikasi, dan logika aplikasi.</span>
                             </p>
                         </div>
                     </article>
@@ -208,11 +213,29 @@
                     <article class="capability reveal">
                         <span class="capability__label">04</span>
                         <div>
-                            <h3 class="capability__title">Kualitas &amp; pengujian</h3>
+                            <h3 class="capability__title" data-en="Frontend Development">Frontend Development</h3>
                             <p class="capability__text">
-                                Unit testing dengan Vitest, version control yang rapi, dan bias
-                                kecil menulis dokumentasi. Tujuannya: perubahan tidak diam-diam
-                                merusak fitur lama.
+                                <span data-en="Creating responsive, interactive interfaces with modern JavaScript frameworks and component-based architecture.">Membuat interface responsif dan interaktif dengan framework JavaScript modern dan arsitektur berbasis komponen.</span>
+                            </p>
+                        </div>
+                    </article>
+
+                    <article class="capability reveal">
+                        <span class="capability__label">05</span>
+                        <div>
+                            <h3 class="capability__title" data-en="Business &amp; Management Systems">Business &amp; Management Systems</h3>
+                            <p class="capability__text">
+                                <span data-en="Developing applications for managing data, users, assets, transactions, and operational workflows.">Mengembangkan aplikasi untuk mengelola data, pengguna, aset, transaksi, dan alur kerja operasional.</span>
+                            </p>
+                        </div>
+                    </article>
+
+                    <article class="capability reveal">
+                        <span class="capability__label">06</span>
+                        <div>
+                            <h3 class="capability__title" data-en="API Development">API Development</h3>
+                            <p class="capability__text">
+                                <span data-en="Designing and implementing RESTful APIs for communication between frontend apps, backend services, and databases.">Merancang dan mengimplementasikan RESTful API untuk komunikasi antara aplikasi frontend, layanan backend, dan database.</span>
                             </p>
                         </div>
                     </article>
@@ -220,32 +243,91 @@
             </div>
         </section>
 
-        <!-- ================= STACK ================= -->
+        <!-- ================= TECH STACK ================= -->
         <section class="section--tight">
             <div class="container">
                 <div class="section__head reveal">
-                    <span class="eyebrow">Stack</span>
-                    <h2 class="section__title">Teknologi yang saya pakai</h2>
+                    <span class="eyebrow">Tech Stack</span>
+                    <h2 class="section__title"><span data-en="Technologies I work with">Teknologi yang saya pakai</span></h2>
                 </div>
-                <div class="stack reveal">
-                    <span class="tag">HTML5</span>
-                    <span class="tag">CSS3</span>
-                    <span class="tag">JavaScript</span>
-                    <span class="tag">TypeScript</span>
-                    <span class="tag">React</span>
-                    <span class="tag">Next.js</span>
-                    <span class="tag">Astro</span>
-                    <span class="tag">Tailwind CSS</span>
-                    <span class="tag">Node.js</span>
-                    <span class="tag">Express</span>
-                    <span class="tag">PHP</span>
-                    <span class="tag">Laravel</span>
-                    <span class="tag">MySQL</span>
-                    <span class="tag">PostgreSQL</span>
-                    <span class="tag">PWA</span>
-                    <span class="tag">Git</span>
-                    <span class="tag">Vercel</span>
-                    <span class="tag">Vitest</span>
+
+                <div class="stack-groups">
+                    <div class="stack-group reveal">
+                        <h3 class="stack-group__title" data-en="Languages">Bahasa</h3>
+                        <div class="stack">
+                            <span class="tag">JavaScript</span>
+                            <span class="tag">TypeScript</span>
+                            <span class="tag">PHP</span>
+                            <span class="tag">HTML</span>
+                            <span class="tag">CSS</span>
+                            <span class="tag">SQL</span>
+                        </div>
+                    </div>
+
+                    <div class="stack-group reveal">
+                        <h3 class="stack-group__title" data-en="Frontend">Frontend</h3>
+                        <div class="stack">
+                            <span class="tag">React</span>
+                            <span class="tag">Next.js</span>
+                            <span class="tag">Vite</span>
+                            <span class="tag">Astro</span>
+                            <span class="tag">Tailwind CSS</span>
+                        </div>
+                    </div>
+
+                    <div class="stack-group reveal">
+                        <h3 class="stack-group__title" data-en="Backend">Backend</h3>
+                        <div class="stack">
+                            <span class="tag">Node.js</span>
+                            <span class="tag">Express.js</span>
+                            <span class="tag">Laravel</span>
+                            <span class="tag">REST API</span>
+                            <span class="tag" data-en="CRUD systems">Sistem CRUD</span>
+                        </div>
+                    </div>
+
+                    <div class="stack-group reveal">
+                        <h3 class="stack-group__title" data-en="Database">Database</h3>
+                        <div class="stack">
+                            <span class="tag">PostgreSQL</span>
+                            <span class="tag">MySQL</span>
+                            <span class="tag">Prisma ORM</span>
+                            <span class="tag">IndexedDB</span>
+                        </div>
+                    </div>
+
+                    <div class="stack-group reveal">
+                        <h3 class="stack-group__title" data-en="Testing">Pengujian</h3>
+                        <div class="stack">
+                            <span class="tag">Vitest</span>
+                            <span class="tag" data-en="Unit Testing">Unit Testing</span>
+                            <span class="tag" data-en="End-to-End Testing">End-to-End Testing</span>
+                        </div>
+                    </div>
+
+                    <div class="stack-group reveal">
+                        <h3 class="stack-group__title" data-en="Tools &amp; Deployment">Tools &amp; Deployment</h3>
+                        <div class="stack">
+                            <span class="tag">Git</span>
+                            <span class="tag">GitHub</span>
+                            <span class="tag">VS Code</span>
+                            <span class="tag">Laragon</span>
+                            <span class="tag">Vercel</span>
+                            <span class="tag">Railway</span>
+                            <span class="tag">Cloudinary</span>
+                        </div>
+                    </div>
+
+                    <div class="stack-group reveal">
+                        <h3 class="stack-group__title" data-en="AI &amp; Workflow">AI &amp; Workflow</h3>
+                        <div class="stack">
+                            <span class="tag">Antigravity</span>
+                            <span class="tag">OpenCode</span>
+                            <span class="tag" data-en="AI-assisted Development">AI-assisted Development</span>
+                            <span class="tag">Google OAuth</span>
+                            <span class="tag">PWA</span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -254,60 +336,32 @@
         <section class="section" id="karya">
             <div class="container">
                 <div class="section__head reveal">
-                    <span class="eyebrow">Pilihan</span>
-                    <h2 class="section__title">Tiga project terbaru</h2>
-                    <p class="section__lead">Kodenya terbuka, jadi Anda bisa membacanya sendiri.</p>
+                    <span class="eyebrow" data-en="Featured Projects">Project Unggulan</span>
+                    <h2 class="section__title"><span data-en="My main projects">Project utama saya</span></h2>
+                    <p class="section__lead"><span data-en="The code is open, so you can read it yourself.">Kodenya terbuka, jadi Anda bisa membacanya sendiri.</span></p>
                 </div>
 
                 <div class="grid work-grid">
                     <article class="card card--hover project reveal">
                         <div class="project__top">
-                            <span class="project__lang" style="--lang-color:#3178c6">TypeScript</span>
-                        </div>
-                        <h3 class="project__title">
-                            <a href="https://ku-a.vercel.app" target="_blank" rel="noopener">KU-A — Website Kelas</a>
-                        </h3>
-                        <p class="project__desc">
-                            Website profil kelas dengan empat tingkat hak akses: pengunjung melihat
-                            portofolio anggota dan laporan keuangan, tiap pengguna hanya mengedit
-                            bagian sesuai otoritasnya.
-                        </p>
-                        <div class="project__tags">
-                            <span class="tag">Next.js</span>
-                            <span class="tag">Tailwind</span>
-                            <span class="tag">PostgreSQL</span>
-                        </div>
-                        <div class="project__links">
-                            <a class="project__link" href="https://ku-a.vercel.app" target="_blank" rel="noopener">
-                                <i class="bx bx-world" aria-hidden="true"></i> Demo
-                            </a>
-                            <a class="project__link" href="https://github.com/muhammadafiqyunanto27/KU-A"
-                                target="_blank" rel="noopener">
-                                <i class="bx bxl-github" aria-hidden="true"></i> Kode
-                            </a>
-                        </div>
-                    </article>
-
-                    <article class="card card--hover project reveal">
-                        <div class="project__top">
-                            <span class="project__lang" style="--lang-color:#f1e05a">JavaScript</span>
+                            <span class="project__lang">TypeScript</span>
+                            <span class="badge badge--accent" data-en="Active Development">Personal Platform</span>
                         </div>
                         <h3 class="project__title">
                             <a href="https://mafyngate.vercel.app" target="_blank" rel="noopener">MafynGate</a>
                         </h3>
                         <p class="project__desc">
-                            Aplikasi gerbang sekolah, dipisah jadi dua repository: frontend Next.js
-                            untuk antarmuka, backend JavaScript untuk API, autentikasi, dan data
-                            kehadiran.
+                            <span data-en="A personal full-stack platform built as a central entry point for applications, tools, communication, and future productivity features — a real-world application, not a frontend showcase.">Platform full-stack pribadi yang saya bangun sebagai pintu masuk terpusat untuk aplikasi, alat, komunikasi, dan fitur produktivitas ke depan. Bukan sekadar pajangan frontend.</span>
                         </p>
                         <div class="project__tags">
                             <span class="tag">Next.js</span>
-                            <span class="tag">Node.js</span>
-                            <span class="tag">REST API</span>
+                            <span class="tag">TypeScript</span>
+                            <span class="tag">Prisma</span>
+                            <span class="tag">PostgreSQL</span>
                         </div>
                         <div class="project__links">
                             <a class="project__link" href="https://mafyngate.vercel.app" target="_blank" rel="noopener">
-                                <i class="bx bx-world" aria-hidden="true"></i> Demo
+                                <i class="bx bx-world" aria-hidden="true"></i> Live
                             </a>
                             <a class="project__link"
                                 href="https://github.com/muhammadafiqyunanto27/mafyngate-frontend" target="_blank"
@@ -319,19 +373,45 @@
 
                     <article class="card card--hover project reveal">
                         <div class="project__top">
-                            <span class="project__lang" style="--lang-color:#ff5a03">Astro</span>
+                            <span class="project__lang">Laravel</span>
+                            <span class="badge" data-en="Internship">Magang</span>
                         </div>
                         <h3 class="project__title">
-                            <a href="https://rqcahayakebaikan.web.id/" target="_blank" rel="noopener">RQCK Landing Page</a>
+                            <a href="https://github.com/muhammadafiqyunanto27/magang-manajemen-aset-dan-asrama"
+                                target="_blank" rel="noopener"><span data-en="Asset &amp; Dormitory Management System">Sistem Manajemen Aset &amp; Asrama</span></a>
                         </h3>
                         <p class="project__desc">
-                            Landing page untuk lembaga belajar Al-Qur'an. Dibangun dengan Astro
-                            supaya cepat dimuat dan mudah dikelola editor non-teknis.
+                            <span data-en="A management system built during a three-month internship, supporting asset and dormitory administration with role-based access for administrators, school leadership, supervisors, and students.">Sistem manajemen yang saya kembangkan selama magang tiga bulan mendukung administrasi aset dan asrama, lengkap dengan hak akses berdasarkan peran untuk administrator, pimpinan sekolah, pembina, dan siswa.</span>
+                        </p>
+                        <div class="project__tags">
+                            <span class="tag">Laravel</span>
+                            <span class="tag">Blade</span>
+                            <span class="tag">MySQL</span>
+                        </div>
+                        <div class="project__links">
+                            <a class="project__link"
+                                href="https://github.com/muhammadafiqyunanto27/magang-manajemen-aset-dan-asrama"
+                                target="_blank" rel="noopener">
+                                <i class="bx bxl-github" aria-hidden="true"></i> Kode
+                            </a>
+                        </div>
+                    </article>
+
+                    <article class="card card--hover project reveal">
+                        <div class="project__top">
+                            <span class="project__lang">Astro</span>
+                            <span class="badge" data-en="Freelance">Freelance</span>
+                        </div>
+                        <h3 class="project__title">
+                            <a href="https://rqcahayakebaikan.web.id/" target="_blank" rel="noopener"><span data-en="Rumah Qur'an Cahaya Kebaitan">Rumah Qur'an Cahaya Kebaikan</span></a>
+                        </h3>
+                        <p class="project__desc">
+                            <span data-en="A landing page giving the organisation an online presence, focused on structured content, a modern interface, and mobile accessibility.">Landing page untuk membangun keberadaan daring lembaga, dengan fokus pada konten terstruktur, antarmuka modern, dan kemudahan akses di ponsel.</span>
                         </p>
                         <div class="project__tags">
                             <span class="tag">Astro</span>
                             <span class="tag">SEO</span>
-                            <span class="tag">Responsif</span>
+                            <span class="tag" data-en="Responsive">Responsif</span>
                         </div>
                         <div class="project__links">
                             <a class="project__link" href="https://rqcahayakebaikan.web.id/" target="_blank"
@@ -347,11 +427,79 @@
                 </div>
 
                 <p class="work-note reveal">
-                    <span>Project lengkap, termasuk latihan harian dan tugas kuliah, ada di GitHub saya.</span>
+                    <span data-en="The full repository list, including daily exercises and coursework, is on my GitHub.">Repo lengkap, termasuk latihan harian dan tugas kuliah, ada di GitHub saya.</span>
                     <a class="btn btn--ghost btn--sm" href="./portofolio.html">
-                        Lihat semua 16 project <i class="bx bx-right-arrow-alt" aria-hidden="true"></i>
+                        <span data-en="See all 15 projects">Lihat semua 15 project</span> <i class="bx bx-right-arrow-alt" aria-hidden="true"></i>
                     </a>
                 </p>
+            </div>
+        </section>
+
+        <!-- ================= PHILOSOPHY ================= -->
+        <section class="section">
+            <div class="container">
+                <div class="philosophy glass reveal">
+                    <span class="eyebrow" data-en="My Development Philosophy">Filosofi Pengembangan Saya</span>
+                    <p class="philosophy__quote">Build. Break. Understand. Improve.</p>
+                    <p class="philosophy__text">
+                        <span data-en="I don't always start out knowing every answer. I would rather build something, find the problem, understand why it happens, and then fix it properly.">Saya tidak selalu mulai dengan mengetahui seluruh jawabannya. Saya lebih memilih membangun sesuatu, menemukan masalahnya, memahami kenapa itu terjadi, lalu memperbaikinya dengan benar.</span>
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= TECHNOLOGY & FINANCE ================= -->
+        <section class="section" style="padding-top:0">
+            <div class="container">
+                <div class="section__head reveal">
+                    <span class="eyebrow" data-en="Technology &amp; Finance">Teknologi &amp; Keuangan</span>
+                    <h2 class="section__title"><span data-en="Where software meets financial analysis">Di mana software bertemu analisis keuangan</span></h2>
+                    <p class="section__lead">
+                        <span data-en="Software gives me the ability to build systems. Financial analysis gives me a deeper understanding of financial data, business processes, and decision-making.">Software memberi saya kemampuan membangun sistem. Analisis keuangan memberi saya pemahaman yang lebih dalam tentang data keuangan, proses bisnis, dan pengambilan keputusan.</span>
+                    </p>
+                </div>
+
+                <div class="capabilities">
+                    <article class="capability reveal">
+                        <span class="capability__label">01</span>
+                        <div>
+                            <h3 class="capability__title" data-en="FinTech">FinTech</h3>
+                            <p class="capability__text">
+                                <span data-en="Software that supports financial services and money-related workflows.">Software yang تساعد layanan keuangan dan alur kerja yang berkaitan dengan uang.</span>
+                            </p>
+                        </div>
+                    </article>
+
+                    <article class="capability reveal">
+                        <span class="capability__label">02</span>
+                        <div>
+                            <h3 class="capability__title" data-en="Financial Applications">Aplikasi Keuangan</h3>
+                            <p class="capability__text">
+                                <span data-en="Tools for income, expenses, transactions, and a clear financial overview.">Alat untuk mencatat pemasukan, pengeluaran, dan transaksi, sekaligus memberi gambaran keuangan yang jelas.</span>
+                            </p>
+                        </div>
+                    </article>
+
+                    <article class="capability reveal">
+                        <span class="capability__label">03</span>
+                        <div>
+                            <h3 class="capability__title" data-en="Business Information Systems">Sistem Informasi Bisnis</h3>
+                            <p class="capability__text">
+                                <span data-en="Applications that turn operational data into something decision-makers can use.">Aplikasi yang mengubah data operasional menjadi informasi yang benar-benar bisa dipakai saat mengambil keputusan.</span>
+                            </p>
+                        </div>
+                    </article>
+
+                    <article class="capability reveal">
+                        <span class="capability__label">04</span>
+                        <div>
+                            <h3 class="capability__title" data-en="Automation">Otomatisasi</h3>
+                            <p class="capability__text">
+                                <span data-en="Replacing repetitive manual work with systems that run on their own.">Mengganti pekerjaan manual yang berulang dengan sistem yang berjalan sendiri.</span>
+                            </p>
+                        </div>
+                    </article>
+                </div>
             </div>
         </section>
 
@@ -359,20 +507,19 @@
         <section class="section">
             <div class="container">
                 <div class="cta glass reveal">
-                    <span class="eyebrow">Mari bekerja sama</span>
-                    <h2 class="cta__title" style="margin-top:var(--space-sm)">Punya proyek yang ingin dikerjakan?</h2>
+                    <span class="eyebrow" data-en="Let's Build Something">Mari Bangun Sesuatu</span>
+                    <h2 class="cta__title" style="margin-top:var(--space-sm)"><span data-en="Got an idea or a problem to solve?">Punya ide atau masalah yang ingin diselesaikan?</span></h2>
                     <p class="cta__text">
-                        Saya terbuka untuk magang, freelance, maupun kolaborasi jangka panjang.
-                        Ceritakan kebutuhannya — biasanya saya balas dalam 1×24 jam.
+                        <span data-en="Whether it's a web application, an API, a management system, a financial tool, or a new product idea, I'd like to understand the problem first and figure out how technology can help.">Baik itu aplikasi web, API, sistem manajemen, aplikasi keuangan, atau ide produk baru, saya ingin memahami masalahnya dulu, lalu mencari bagaimana teknologi bisa membantu.</span>
                     </p>
                     <div class="cta__actions">
                         <a class="btn btn--primary"
                             href="https://wa.me/6282219785260?text=Halo%20Afiq%2C%20saya%20punya%20ide%20proyek%20yang%20ingin%20kita%20diskusikan."
                             target="_blank" rel="noopener">
-                            <i class="bx bxl-whatsapp" aria-hidden="true"></i> Chat via WhatsApp
+                            <i class="bx bxl-whatsapp" aria-hidden="true"></i> <span data-en="Chat on WhatsApp">Chat via WhatsApp</span>
                         </a>
                         <a class="btn btn--ghost" href="mailto:muhammadafiqyunanto@gmail.com">
-                            <i class="bx bx-envelope" aria-hidden="true"></i> Kirim Email
+                            <i class="bx bx-envelope" aria-hidden="true"></i> <span data-en="Send Email">Kirim Email</span>
                         </a>
                     </div>
                 </div>
@@ -390,8 +537,7 @@
                             height="30">
                     </a>
                     <p class="footer__text">
-                        Fullstack Web Developer. Builds clean, measurable web apps that people
-                        actually use.
+                        <span data-en="Full-Stack and Software Developer with a software engineering background, currently studying Financial Analysis at Politeknik Negeri Semarang.">Full-Stack Developer dan Software Developer dengan latar belakang Rekayasa Perangkat Lunak, sedang studi Analisis Keuangan di Politeknik Negeri Semarang.</span>
                     </p>
                     <div class="socials socials--footer" style="margin-top:var(--space-md)">
                         <a class="socials__link" href="https://github.com/muhammadafiqyunanto27" target="_blank"
@@ -410,17 +556,17 @@
                 </div>
 
                 <div>
-                    <h2 class="footer__title">Halaman</h2>
+                    <h2 class="footer__title"><span data-en="Pages">Halaman</span></h2>
                     <ul class="footer__list">
                         <li><a href="./index.html">Home</a></li>
-                        <li><a href="./about.html">About</a></li>
-                        <li><a href="./portofolio.html">Portofolio</a></li>
-                        <li><a href="./contact.html">Contact</a></li>
+                        <li><a href="./about.html" data-en="About">About</a></li>
+                        <li><a href="./portofolio.html" data-en="Portfolio">Portofolio</a></li>
+                        <li><a href="./contact.html" data-en="Contact">Contact</a></li>
                     </ul>
                 </div>
 
                 <div>
-                    <h2 class="footer__title">Kontak</h2>
+                    <h2 class="footer__title"><span data-en="Contact">Kontak</span></h2>
                     <ul class="footer__list">
                         <li><a href="mailto:muhammadafiqyunanto@gmail.com">muhammadafiqyunanto@gmail.com</a></li>
                         <li><a href="https://wa.me/6282219785260" target="_blank" rel="noopener">+62 822-1978-5260</a></li>
@@ -431,12 +577,13 @@
 
             <div class="footer__bottom">
                 <p>&copy; <span data-year>2026</span> Muhammad Afiq Yunanto</p>
-                <p>HTML · CSS · JavaScript — tanpa framework</p>
+                <p>HTML · CSS · JavaScript — no framework</p>
             </div>
         </div>
     </footer>
 
-    <button class="back-to-top" type="button" aria-label="Kembali ke atas">
+    <button class="back-to-top" type="button" aria-label="Kembali ke atas"
+        data-en-aria="Back to top">
         <i class="bx bx-chevron-up" aria-hidden="true"></i>
     </button>
 

@@ -1,10 +1,15 @@
 # Portofolio — Muhammad Afiq Yunanto
 
-Website portofolio pribadi untuk **Muhammad Afiq Yunanto**, Fullstack Web Developer.
+Website portofolio pribadi untuk **Muhammad Afiq Yunanto**, Full-Stack Developer
+dan Software Developer dengan latar belakang Rekayasa Perangkat Lunak, sekaligus
+mahasiswa D4 Analisis Keuangan di Politeknik Negeri Semarang.
 
 Situs statis murni: **HTML + CSS + JavaScript**, tanpa framework, tanpa build step,
 tanpa dependensi. Bisa langsung di-hosting di GitHub Pages, Vercel, Netlify, atau
 di-Mo lewat file biasa.
+
+Halaman tersedia dalam dua bahasa (Indonesia dan Inggris) dan bisa berganti lewat
+tombol **ID / EN** di header.
 
 ---
 
@@ -38,13 +43,13 @@ npm run check
 
 ```
 .
-├── index.html            # Beranda: hero, ringkasan, kemampuan, karya pilihan
-├── about.html            # Tentang: biodata, keahlian, timeline, prinsip kerja
-├── portofolio.html       # Kumpulan 16 project dengan filter kategori
+├── index.html            # Beranda: hero, what I do, tech stack, featured project, philosophy
+├── about.html            # Tentang: bio, skill bars, pengalaman, pendidikan, strengths, fokus
+├── portofolio.html       # MafynGate sebagai project unggulan + filter kategori project lain
 ├── contact.html          # Kontak: form tervalidasi, kanal komunikasi, FAQ
 │
 ├── assets/
-│   ├── favicon.svg       # Ikon tab (SVG, ikut tema)
+│   ├── favicon.png       # Ikon tab, dibuat dari logo navbar
 │   ├── logo-dark.png     # Logo untuk latar gelap
 │   ├── logo-light.png    # Logo untuk latar terang
 │   ├── portrait.png      # Foto profil
@@ -57,7 +62,7 @@ npm run check
 │   └── pages.css         # Layout khusus tiap halaman
 │
 ├── js/
-│   └── main.js           # Semua perilaku bersama (IIFE, tanpa dependensi)
+│   └── main.js           # Semua perilaku bersama (IIFE, tanpa dependensi) + lapisan i18n
 │
 ├── scripts/
 │   ├── serve.mjs         # Server statis tanpa dependensi
@@ -72,6 +77,15 @@ npm run check
 ---
 
 ## Fitur
+
+**Dua bahasa (ID / EN)**
+Satu file per halaman, tanpa folder `/en/`. Bahasa Indonesia ditulis langsung di
+markup, sedangkan versi Inggris disimpan di atribut `data-en` (teks),
+`data-en-aria` (atribut aksesibel), `data-en-ph` (placeholder), serta
+`data-en-title` dan `data-en-desc` pada `<html>`. Pilihan bahasa disimpan di
+`localStorage` dengan key `may-portfolio-lang`, dan default-nya Indonesia.
+Teks asli bertanda `<strong>`/`<em>` dicadangkan sekali sebelum pergantian bahasa,
+sehingga kembali ke ID tidak merusak format.
 
 **Tema terang / gelap**
 Pilihan disimpan di `localStorage` dan diterapkan lewat skrip inline di `<head>`,
@@ -114,8 +128,14 @@ JSON-LD (`Person` dan `BreadcrumbList`), sitemap, dan robots.
 3. Jumlah per kategori dihitung ulang otomatis oleh JavaScript — tidak perlu
    menyunting angka pada tombol filter.
 
-Kategori yang tersedia: `frontend`, `backend`, `fullstack`, `laravel`.
+Kategori yang tersedia: `frontend`, `backend`, `fullstack`, `laravel`, `testing`.
 Untuk menambah kategori baru, cukup tambahkan satu tombol `<button data-filter="...">`.
+
+## Menambah Fitur MafynGate
+
+Daftar fitur platform personal ada di `portofolio.html`, di dalam blok
+`cluster` berlabel **Fitur yang dikembangkan**. Tambah `<span class="tag">` di sana
+untuk memperbarui daftar — tidak ada angka atau hitungan yang perlu disunting.
 
 ---
 
@@ -127,13 +147,15 @@ Semua warna terkumpul di `styles/tokens.css`. Ubah nilai pada blok `:root` untuk
 merek dan blok `[data-theme="light"]` untuk tema terang:
 
 ```css
-:root { --accent: #22b4f2; }                /* aksen dark mode */
-[data-theme="light"] { --accent: #00729f; }  /* aksen light mode */
+:root { --accent: #f5f5f5; }                 /* aksen dark mode — putih */
+[data-theme="light"] { --accent: #1d1d1d; }  /* aksen light mode — hitam */
 ```
 
-Nilai aksen pada tema terang sengaja lebih gelap agar tetap memenuhi kontras WCAG AA
-di atas latar putih. Tema gelap memakai latar `#000000` dengan permukaan kaca
-(`backdrop-filter`) dan satu aksen cyan, tema terang memakai `#fbfbfc`.
+Palet mengikuti bahasa desain Apple dan sepenuhnya monokrom: kanvas hitam pekat
+dengan panel `#1d1d1d` dan teks `#f5f5f5` di tema gelap, serta latar `#f5f5f5`
+dan teks `#1d1d1d` di tema terang. Tidak ada hue warna sama sekali — penekanan
+hanya lewat kontras putih/hitam. Tipografi memakai font sistem (`-apple-system`,
+SF Pro di perangkat Apple, Segoe UI di Windows), tanpa webfont eksternal.
 
 ### Logo
 
@@ -164,6 +186,8 @@ jika ada yang tidak cocok.
 - form kontak punya `data-phone`, `data-channel`, dan keempat field
 - setiap filter portofolio cocok dengan minimal satu project
 - tidak ada karakter asing yang menyelinap ke dalam teks
+- setiap punya tombol ID/EN, `data-en-title`, `data-en-desc`, dan tidak ada
+  terjemahan `data-en` yang kosong
 
 ---
 

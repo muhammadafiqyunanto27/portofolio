@@ -2,22 +2,33 @@
    main.js — Shared behaviour for every page.
    Plain ES2018+, no dependencies, no build step.
 
-   Modules (each one bails out quietly if its markup is absent):
-     1. theme        light/dark switch, persisted, respects OS preference
-     2. nav          sticky header state + mobile drawer
-     3. reveal       fade-in on scroll via IntersectionObserver
-     4. typewriter   cycling job titles in the hero
-     5. skills       animate proficiency bars when scrolled into view
-     6. filters      client-side project filtering
-     7. contactForm  validation + hand-off to WhatsApp / email
-     8. misc         footer year, back-to-top button
-   ========================================================================== */
+Modules (each one bails out quietly if its markup is absent):
+      1. i18n         Indonesian/English switch, persisted
+      2. theme        light/dark switch, persisted, respects OS preference
+      3. nav          sticky header state + mobile drawer
+      4. reveal       fade-in on scroll via IntersectionObserver
+      5. typewriter   cycling job titles in the hero
+      6. skills       animate proficiency bars when scrolled into view
+      7. filters      client-side project filtering
+      8. contactForm  validation + hand-off to WhatsApp / email
+      9. misc         footer year, back-to-top button
+    ====================================================================== */
 
-(function () {
-    "use strict";
+    (function () {
+"use strict";
 
     var THEME_KEY = "may-portfolio-theme";
+    var LANG_KEY = "may-portfolio-lang";
     var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+    /* Indonesian is the source language baked into the HTML. English lives in
+       data-* attributes and is swapped in by I18n when the visitor asks for it. */
+    var lang = "id";
+    try {
+        if (window.localStorage.getItem(LANG_KEY) === "en") lang = "en";
+    } catch (error) {
+        /* Storage disabled — Indonesian is a safe default. */
+    }
 
     function $(selector, scope) {
         return (scope || document).querySelector(selector);
@@ -25,6 +36,11 @@
 
     function $$(selector, scope) {
         return Array.prototype.slice.call((scope || document).querySelectorAll(selector));
+    }
+
+    /* Picks the right string from an { id, en } pair. */
+    function tr(pairs) {
+        return (lang === "en" && pairs.en) ? pairs.en : pairs.id;
     }
 
     /* ======================================================================
@@ -185,17 +201,40 @@
        ====================================================================== */
 
     var Typewriter = {
-        init: function () {
-            var target = $("[data-typewriter]");
-            if (!target) return;
+        target: null,
+        timer: null,
 
-            var roles = (target.getAttribute("data-roles") || "")
+        roles: function () {
+            var target = Typewriter.target;
+            if (!target) return [];
+
+            var source =
+                lang === "en"
+                    ? target.getAttribute("data-roles-en") || target.getAttribute("data-roles")
+                    : target.getAttribute("data-roles");
+
+            return (source || "")
                 .split("|")
                 .map(function (role) {
                     return role.trim();
                 })
                 .filter(Boolean);
+        },
+
+        init: function () {
+            Typewriter.target = $("[data-typewriter]");
+            Typewriter.start();
+        },
+
+        /* Restartable, so a language switch picks up the other set of roles. */
+        start: function () {
+            var target = Typewriter.target;
+            if (!target) return;
+
+            var roles = Typewriter.roles();
             if (!roles.length) return;
+
+            window.clearTimeout(Typewriter.timer);
 
             if (reduceMotion) {
                 target.textContent = roles[0];
@@ -222,11 +261,11 @@
                     delay = 320;
                 }
 
-                window.setTimeout(tick, delay);
+                Typewriter.timer = window.setTimeout(tick, delay);
             };
 
             target.textContent = "";
-            window.setTimeout(tick, 320);
+            Typewriter.timer = window.setTimeout(tick, 320);
         }
     };
 
@@ -282,6 +321,8 @@
        ====================================================================== */
 
     var Filters = {
+        active: "all",
+
         init: function () {
             var controls = $$("[data-filter]");
             var grid = $("[data-work-grid]");
@@ -306,7 +347,8 @@
                 slot.textContent = String(matches);
             });
 
-            var apply = function (value) {
+            var apply = function (value, silent) {
+                Filters.active = value;
                 var shown = 0;
 
                 projects.forEach(function (project, index) {
@@ -316,7 +358,7 @@
                     project.hidden = !match;
                     if (match) {
                         shown += 1;
-                        if (!reduceMotion) {
+                        if (!reduceMotion && !silent) {
                             project.style.animationDelay = Math.min(shown, 8) * 45 + "ms";
                             // Restart the entry animation.
                             project.style.animation = "none";
@@ -335,14 +377,22 @@
                 if (counter) {
                     counter.textContent =
                         shown === projects.length
-                            ? "Menampilkan seluruh " + projects.length + " project"
-                            : "Menampilkan " + shown + " dari " + projects.length + " project";
+                            ? tr({
+                                  id: "Menampilkan seluruh " + projects.length + " project",
+                                  en: "Showing all " + projects.length + " projects"
+                              })
+                            : tr({
+                                  id: "Menampilkan " + shown + " dari " + projects.length + " project",
+                                  en: "Showing " + shown + " of " + projects.length + " projects"
+                              });
                 }
             };
 
+            Filters.apply = apply;
+
             controls.forEach(function (control) {
                 control.addEventListener("click", function () {
-                    apply(control.getAttribute("data-filter"));
+                    apply(control.getAttribute("data-filter"), false);
                 });
             });
 
@@ -351,7 +401,7 @@
             var known = controls.some(function (c) {
                 return c.getAttribute("data-filter") === requested;
             });
-            apply(known ? requested : "all");
+            apply(known ? requested : "all", true);
         }
     };
 
@@ -381,44 +431,70 @@
             }
 
             /* --- Helpers --- */
-            var setFieldError = function (field, messageText) {
+            var errors = {};
+            var lastStatus = null;
+
+            var setFieldError = function (field, pairs) {
                 var wrapper = field.closest(".field");
                 var slot = wrapper ? $(".field__error", wrapper) : null;
-                if (wrapper) wrapper.classList.toggle("has-error", Boolean(messageText));
-                if (slot) slot.textContent = messageText || "";
-                field.setAttribute("aria-invalid", messageText ? "true" : "false");
+                var messageText = pairs ? tr(pairs) : "";
+
+                if (pairs) errors[field.id] = pairs;
+                else delete errors[field.id];
+
+                if (wrapper) wrapper.classList.toggle("has-error", Boolean(pairs));
+                if (slot) slot.textContent = messageText;
+                field.setAttribute("aria-invalid", pairs ? "true" : "false");
             };
 
-            var setStatus = function (state, text) {
+            var setStatus = function (state, pairs) {
                 if (!status) return;
+                lastStatus = state ? { state: state, pairs: pairs } : null;
                 status.className = "form__status" + (state ? " is-visible is-" + state : "");
-                status.textContent = text;
+                status.textContent = state ? tr(pairs) : "";
             };
 
             var validate = function (field, test) {
                 var value = field.value.trim();
                 if (!value) {
-                    setFieldError(field, "Wajib diisi.");
+                    setFieldError(field, { id: "Wajib diisi.", en: "This field is required." });
                     return false;
                 }
                 var error = test(value);
-                setFieldError(field, error || "");
+                setFieldError(field, error || null);
                 return !error;
             };
 
             var rules = {
                 name: function (value) {
-                    return value.length >= 2 ? "" : "Nama minimal 2 karakter.";
+                    return value.length >= 2
+                        ? ""
+                        : { id: "Nama minimal 2 karakter.", en: "Name must be at least 2 characters." };
                 },
                 email: function (value) {
-                    return /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(value) ? "" : "Format email belum benar.";
+                    return /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(value)
+                        ? ""
+                        : { id: "Format email belum benar.", en: "That email format is not valid." };
                 },
                 subject: function (value) {
-                    return value.length >= 3 ? "" : "Subjek minimal 3 karakter.";
+                    return value.length >= 3
+                        ? ""
+                        : { id: "Subjek minimal 3 karakter.", en: "Subject must be at least 3 characters." };
                 },
                 message: function (value) {
-                    return value.length >= 10 ? "" : "Pesan minimal 10 karakter.";
+                    return value.length >= 10
+                        ? ""
+                        : { id: "Pesan minimal 10 karakter.", en: "Message must be at least 10 characters." };
                 }
+            };
+
+            ContactForm.rerender = function () {
+                Object.keys(errors).forEach(function (id) {
+                    var field = document.getElementById(id);
+                    var slot = field ? $(".field__error", field.closest(".field")) : null;
+                    if (slot) slot.textContent = tr(errors[id]);
+                });
+                if (lastStatus && status) status.textContent = tr(lastStatus.pairs);
             };
 
             /* --- Clear the error as soon as the field becomes valid --- */
@@ -446,7 +522,10 @@
                 });
 
                 if (firstInvalid) {
-                    setStatus("error", "Ada beberapa kolom yang perlu diperbaiki sebelum dikirim.");
+                    setStatus("error", {
+                        id: "Ada beberapa kolom yang perlu diperbaiki sebelum dikirim.",
+                        en: "Please fix the highlighted fields before sending."
+                    });
                     firstInvalid.focus();
                     return;
                 }
@@ -457,10 +536,15 @@
                 var body = document.getElementById("message").value.trim();
 
                 var text =
-                    "Halo Afiq, saya " + name + " ingin menghubungi Anda.\n\n" +
-                    "Subjek: " + subject + "\n\n" +
-                    body + "\n\n" +
-                    "Email saya: " + email;
+                    lang === "en"
+                        ? "Hi Afiq, I would like to get in touch.\n\n" +
+                          "Subject: " + subject + "\n\n" +
+                          body + "\n\n" +
+                          "My email: " + email
+                        : "Halo Afiq, saya " + name + " ingin menghubungi Anda.\n\n" +
+                          "Subjek: " + subject + "\n\n" +
+                          body + "\n\n" +
+                          "Email saya: " + email;
 
                 var channel = form.getAttribute("data-channel") || "whatsapp";
 
@@ -468,10 +552,12 @@
                     // Digits only, no "+" — wa.me expects that format.
                     var phone = (form.getAttribute("data-phone") || "").replace(/\D/g, "");
                     window.open("https://wa.me/" + phone + "?text=" + encodeURIComponent(text), "_blank", "noopener");
-                    setStatus(
-                        "success",
-                        "Terima kasih, " + name + "! Pesan Anda sudah dibuka di WhatsApp — tekan kirim untuk menyelesaikannya."
-                    );
+                    setStatus("success", {
+                        id:
+                            "Terima kasih, " + name + "! Pesan Anda sudah dibuka di WhatsApp — tekan kirim untuk menyelesaikannya.",
+                        en:
+                            "Thank you, " + name + "! Your message is open in WhatsApp — press send to finish."
+                    });
                 } else {
                     window.location.href =
                         "mailto:" +
@@ -480,22 +566,146 @@
                         encodeURIComponent("[Portofolio] " + subject) +
                         "&body=" +
                         encodeURIComponent(text);
-                    setStatus("success", "Aplikasi email Anda sudah dibuka dengan pesan yang terisi.");
+                    setStatus("success", {
+                        id: "Aplikasi email Anda sudah dibuka dengan pesan yang terisi.",
+                        en: "Your email app is open with the message ready to send."
+                    });
                 }
 
                 form.reset();
                 if (counter) counter.textContent = "0 / 2000";
+                errors = {};
+                lastStatus = null;
                 $$(".field", form).forEach(function (wrapper) {
                     wrapper.classList.remove("has-error");
                     var slot = $(".field__error", wrapper);
                     if (slot) slot.textContent = "";
                 });
             });
+        },
+
+        /* Re-renders validation messages after a language switch. */
+        rerender: function () {
+            /* replaced during init when a form is present */
         }
     };
 
     /* ======================================================================
-       8. Odds and ends
+       8. Language
+       Indonesian is baked into the HTML. English sits in data-* attributes
+       and is swapped in here, so the Indonesian copy stays readable in the
+       source and remains the fallback when JavaScript is unavailable.
+       ====================================================================== */
+
+    var I18n = {
+        /* Attribute-driven translations, in the form [marker, real attribute]. */
+        ATTRS: [
+            ["data-en-alt", "alt"],
+            ["data-en-aria", "aria-label"],
+            ["data-en-ph", "placeholder"]
+        ],
+
+        /* The Indonesian copy lives in the markup, so it is captured once before the
+           first swap. Without this, elements that contain markup (<strong>, <em>)
+           would lose it permanently the first time English is applied. */
+        originals: new WeakMap(),
+
+        capture: function (el) {
+            var record = I18n.originals.get(el);
+            if (record) return record;
+
+            record = { html: el.innerHTML, attrs: {} };
+            I18n.ATTRS.forEach(function (pair) {
+                record.attrs[pair[1]] = el.getAttribute(pair[1]);
+            });
+            I18n.originals.set(el, record);
+            return record;
+        },
+
+        init: function () {
+            var buttons = $$("[data-lang]");
+            if (!buttons.length) return;
+
+            var targets = $$("[data-en]");
+            I18n.ATTRS.forEach(function (pair) {
+                targets = targets.concat($$("[" + pair[0] + "]"));
+            });
+            targets.forEach(I18n.capture);
+
+            buttons.forEach(function (button) {
+                button.addEventListener("click", function () {
+                    var next = button.getAttribute("data-lang") === "en" ? "en" : "id";
+                    if (next === lang) return;
+                    lang = next;
+                    try {
+                        window.localStorage.setItem(LANG_KEY, lang);
+                    } catch (error) {
+                        /* Storage disabled — the choice lasts for this visit only. */
+                    }
+                    I18n.apply();
+                });
+            });
+
+            I18n.apply();
+        },
+
+        apply: function () {
+            var en = lang === "en";
+            document.documentElement.setAttribute("lang", lang);
+
+            $$("[data-en]").forEach(function (el) {
+                var record = I18n.capture(el);
+                // textContent towards English keeps any markup in data-en unparsed;
+                // innerHTML back to Indonesian restores the original <strong>/<em> nodes.
+                if (en) el.textContent = el.getAttribute("data-en") || record.html;
+                else el.innerHTML = record.html;
+            });
+
+            I18n.ATTRS.forEach(function (pair) {
+                var marker = pair[0];
+                var attribute = pair[1];
+                $$("[" + marker + "]").forEach(function (el) {
+                    var record = I18n.capture(el);
+                    var value = en ? el.getAttribute(marker) : record.attrs[attribute];
+                    if (value !== null) el.setAttribute(attribute, value);
+                });
+            });
+
+            // Title and description live on <html> so the validator can still read a plain <title>.
+            var root = document.documentElement;
+            var idTitle = root.getAttribute("data-id-title");
+            if (idTitle === null) {
+                root.setAttribute("data-id-title", document.title);
+                idTitle = document.title;
+            }
+            var enTitle = root.getAttribute("data-en-title");
+            if (enTitle) document.title = en ? enTitle : idTitle;
+
+            var idDesc = root.getAttribute("data-id-desc");
+            var description = document.querySelector('meta[name="description"]');
+            if (description) {
+                if (idDesc === null) {
+                    root.setAttribute("data-id-desc", description.getAttribute("content") || "");
+                    idDesc = root.getAttribute("data-id-desc");
+                }
+                document.querySelectorAll('meta[name="description"]').forEach(function (meta) {
+                    meta.setAttribute("content", en ? root.getAttribute("data-en-desc") || idDesc : idDesc);
+                });
+            }
+
+            $$("[data-lang]").forEach(function (button) {
+                button.setAttribute("aria-pressed", String(button.getAttribute("data-lang") === lang));
+            });
+
+            // Re-render anything the modules generated in the other language.
+            if (Typewriter.target) Typewriter.start();
+            if (Filters.apply) Filters.apply(Filters.active, true);
+            if (typeof ContactForm.rerender === "function") ContactForm.rerender();
+        }
+    };
+
+    /* ======================================================================
+       9. Odds and ends
        ====================================================================== */
 
     var Misc = {
@@ -526,6 +736,7 @@
        ====================================================================== */
 
     function init() {
+        I18n.init();
         Theme.init();
         Nav.init();
         Reveal.init();
