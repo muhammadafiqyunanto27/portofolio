@@ -180,7 +180,8 @@
 
 /* A circle beside the hero heading, vertically centred on the hero copy. */
 .hero__figure {
-    width: min(clamp(190px, 23vw, 300px), 42vh);
+    width: min(clamp(240px, 32vw, 440px), 50vh);
+    margin-right: clamp(0px, 2.5vw, 48px);
     aspect-ratio: 1;
     overflow: hidden;
     border: 1px solid var(--glass-border);
@@ -203,8 +204,7 @@
     }
 
     .hero__figure {
-        width: min(clamp(150px, 38vw, 210px), 34vh);
-        margin-inline: auto;
+        display: none;
     }
 }
 

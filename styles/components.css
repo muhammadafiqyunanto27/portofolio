@@ -65,6 +65,16 @@
     object-fit: contain;
 }
 
+/* Force the wordmark to one flat colour per theme. The PNGs carry internal
+   shading/anti-aliasing that looks muddy on the warm light background. */
+[data-theme="light"] .brand__logo {
+    filter: brightness(0);
+}
+
+[data-theme="dark"] .brand__logo {
+    filter: brightness(0) invert(1);
+}
+
 /* --- Nav --- */
 
 .nav {

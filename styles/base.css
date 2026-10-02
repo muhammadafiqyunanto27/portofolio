@@ -35,20 +35,20 @@ body {
     transition: background-color var(--dur-base) var(--ease-out);
 }
 
-/* A single soft light source. Without it, frosted glass over pure black has
-   nothing to refract and reads as a flat rectangle. */
+/* A faint line grid that drifts slower than the page (parallax). It is
+   structure, not light: no glow, no halo. `--scroll-shift` is set by JS. */
 body::before {
     content: "";
     position: fixed;
-    top: -30vh;
-    left: 50%;
-    width: min(1100px, 130vw);
-    aspect-ratio: 1.6;
-    transform: translateX(-50%);
-    background: radial-gradient(ellipse at center, var(--glow-1), transparent 70%);
-    filter: blur(30px);
+    inset: -25% 0;
+    background-image: linear-gradient(to right, var(--grid-line) 1px, transparent 1px),
+        linear-gradient(to bottom, var(--grid-line) 1px, transparent 1px);
+    background-size: 76px 76px;
+    transform: translate3d(0, var(--scroll-shift, 0px), 0);
     pointer-events: none;
     z-index: -1;
+    -webkit-mask-image: linear-gradient(180deg, transparent, #000 18%, #000 82%, transparent);
+    mask-image: linear-gradient(180deg, transparent, #000 18%, #000 82%, transparent);
 }
 
 img,

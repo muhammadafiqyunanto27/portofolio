@@ -47,8 +47,14 @@ Modules (each one bails out quietly if its markup is absent):
        1. Theme
        ====================================================================== */
 
+    var THEME_COLORS = { dark: "#000000", light: "#f2eee5" };
+
     var Theme = {
         init: function () {
+            // The inline <head> script already picked the theme. Sync the logos
+            // and browser chrome to it so a stored "light" doesn't keep a white logo.
+            Theme.apply(document.documentElement.getAttribute("data-theme") || "dark", false);
+
             var toggle = $(".theme-toggle");
             if (!toggle) return;
 
@@ -67,18 +73,17 @@ Modules (each one bails out quietly if its markup is absent):
 
         apply: function (theme, persist) {
             document.documentElement.setAttribute("data-theme", theme);
-            var meta = $('meta[name="theme-color"]');
-            if (meta) {
-                meta.setAttribute("content", theme === "light" ? "#fbfbfc" : "#000000");
-            }
-            // Swap the cut-out logo so it stays legible on the new background.
-            var logo = $("[data-logo-dark]");
-            if (logo) {
+            var color = THEME_COLORS[theme] || THEME_COLORS.dark;
+            document.querySelectorAll('meta[name="theme-color"]').forEach(function (meta) {
+                meta.setAttribute("content", color);
+            });
+            // Swap every cut-out logo (header and footer) so it stays legible.
+            document.querySelectorAll("[data-logo-dark]").forEach(function (logo) {
                 logo.setAttribute(
                     "src",
                     theme === "light" ? logo.getAttribute("data-logo-light") : logo.getAttribute("data-logo-dark")
                 );
-            }
+            });
             if (persist) {
                 try {
                     window.localStorage.setItem(THEME_KEY, theme);
@@ -732,6 +737,29 @@ Modules (each one bails out quietly if its markup is absent):
     };
 
     /* ======================================================================
+       9. Parallax
+       ====================================================================== */
+
+    var Parallax = {
+        init: function () {
+            if (reduceMotion) return;
+            var root = document.documentElement;
+            var ticking = false;
+            var update = function () {
+                ticking = false;
+                root.style.setProperty("--scroll-shift", (-window.scrollY * 0.06).toFixed(2) + "px");
+            };
+            var onScroll = function () {
+                if (ticking) return;
+                ticking = true;
+                window.requestAnimationFrame(update);
+            };
+            update();
+            window.addEventListener("scroll", onScroll, { passive: true });
+        }
+    };
+
+    /* ======================================================================
        Boot
        ====================================================================== */
 
@@ -745,6 +773,7 @@ Modules (each one bails out quietly if its markup is absent):
         Filters.init();
         ContactForm.init();
         Misc.init();
+        Parallax.init();
     }
 
     if (document.readyState === "loading") {
